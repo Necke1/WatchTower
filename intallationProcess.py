@@ -3,3 +3,4 @@
 import classla
 classla.download('sr')# download the ML model, specificalz for Serbian language
 
+
