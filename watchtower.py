@@ -33,21 +33,22 @@ def check_terror_words(text):
             if  any(lemma.startswith(prefix) for prefix in recnik): #using the prefix dictionary as it will simplify the search of the words 
                 found_words.add(lemma)
     return found_words 
-#need to find an option on how  cound duplicate words as for now word_count is not working propeprly because of this func
+#need to find an option on how cound duplicate words as for now word_count is not working propeprly because of this func
 
 #loading the dictionary for checking the text
 recnik= load_words('recnik.txt')
 text="terorista je pustio 🚀 i doslo je do velikog praska terorista. Novac koji je dobio za napad preko ofšor banke je potrošio na bombe" #test text for testing the functions 
 
 # will be using hunspell-sr for spellcheking of the words in serbian
+# need to make function where we chek how much the words are used to determine if text has terrorsit meaning or not 
 
-
+#making the list of words from text and function
 matches = check_terror_words(text)
-word_count = {}
+word_count = {} #object to count the words 
 for word in matches:
     word_count[word]= word_count.get(word,0)+1
 
-
+#chekcing if there are terrorist words or not
 if matches:
     print(f"Sledeće reči od značaja su pronađene: {matches}")
     print(f"Učetalost reči se može videti {word_count}")
@@ -83,6 +84,6 @@ def cyrillic_to_latin(text):
     }
 
     # Transliterate character by character
-    transliterated_text = ''.join(cyrillic_to_latin_map.get(char, char) for char in text)
+    transliterated_text = ''.join(cyrillic_to_latin_map.get(char, char) for char in text) # type: ignore
     return transliterated_text
 
