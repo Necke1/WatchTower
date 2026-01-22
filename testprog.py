@@ -1,16 +1,11 @@
 """
 Serbian Text Analysis Tool 
-Detects and counts relevant keywords in Serbian text with risk assessment
 """
 
 import classla
 from collections import Counter
 from typing import Set, Dict, List, Tuple
-try:
-    from phunspell import Phunspell
-except ImportError:
-    print("Warning: phunspell not installed. Install with: pip install phunspell")
-    Phunspell = None
+from phunspell import Phunspell
 
 # Initialize the Serbian NLP pipeline
 nlpc = classla.Pipeline('sr')
@@ -231,40 +226,63 @@ def initialize_spellchecker():
         return None
 
 
-def spell_check_text(text: str, spellchecker) -> Dict[str, List[str]]:
-    """Check spelling of words in text.
+def spell_check_and_correct_text(text: str, spellchecker, auto_correct: bool = True) -> Dict:
+    """Check spelling and optionally auto-correct the text.
     
     Args:
         text: Text to check
         spellchecker: SerbianSpellChecker object
+        auto_correct: If True, automatically apply first suggestion
         
     Returns:
-        Dictionary with misspelled words and suggestions
+        Dictionary with original text, corrected text, and correction details
     """
     if spellchecker is None or not spellchecker.initialized:
-        return {'misspelled': [], 'suggestions': {}}
+        return {
+            'original_text': text,
+            'corrected_text': text,
+            'corrections': {},
+            'misspelled_count': 0,
+            'corrected_count': 0
+        }
     
     doc = nlpc(text)
-    misspelled = []
-    suggestions = {}
+    corrections = {}
+    corrected_text = text
     
+    # Collect all misspelled words and their positions
     for sent in doc.sentences:
         for word in sent.words:
             word_text = word.text
-            # Skip punctuation and short words
+            
+            # Skip punctuation, short words, and numbers
             if len(word_text) < 2 or not word_text.isalpha():
                 continue
             
             if not spellchecker.lookup(word_text):
-                misspelled.append(word_text)
-                # Get suggestions for misspelled word
-                suggs = spellchecker.suggest(word_text)
-                if suggs:
-                    suggestions[word_text] = suggs[:5]  # Top 5 suggestions
+                suggestions = spellchecker.suggest(word_text)
+                
+                if suggestions:
+                    corrections[word_text] = {
+                        'suggestions': suggestions[:5],
+                        'chosen': suggestions[0] if auto_correct else None
+                    }
+                    
+                    # Auto-correct by replacing with first suggestion
+                    if auto_correct:
+                        corrected_text = corrected_text.replace(word_text, suggestions[0])
+                else:
+                    corrections[word_text] = {
+                        'suggestions': [],
+                        'chosen': None
+                    }
     
     return {
-        'misspelled': misspelled,
-        'suggestions': suggestions
+        'original_text': text,
+        'corrected_text': corrected_text,
+        'corrections': corrections,
+        'misspelled_count': len(corrections),
+        'corrected_count': sum(1 for c in corrections.values() if c['chosen'])
     }
 
 
@@ -330,24 +348,31 @@ def calculate_risk_level(total_score: int, unique_count: int, total_words: int) 
 
 
 def analyze_text(text: str, recnik: Set[str], weights: Dict[str, int] = None, 
-                spellchecker=None) -> Dict:
-    """Comprehensive text analysis with risk assessment.
+                spellchecker=None, auto_correct: bool = True) -> Dict:
+    """Comprehensive text analysis: spell check first, then risk assessment.
     
     Args:
         text: Text to analyze
         recnik: Dictionary of keywords
         weights: Word weights for scoring
-        spellchecker: Phunspell object for spell checking
+        spellchecker: SerbianSpellChecker object
+        auto_correct: If True, use corrected text for analysis
         
     Returns:
         Dictionary with analysis results
     """
+    # STEP 1: Spell check and correct the text
+    spell_results = spell_check_and_correct_text(text, spellchecker, auto_correct)
+    
+    # STEP 2: Use corrected text for analysis (or original if no corrections)
+    analysis_text = spell_results['corrected_text'] if auto_correct else text
+    
     # Get word count from NLP
-    doc = nlpc(text)
+    doc = nlpc(analysis_text)
     total_word_count = sum(len(sent.words) for sent in doc.sentences)
     
     # Find matches and weights
-    matches, match_weights = check_terror_words(text, recnik, weights)
+    matches, match_weights = check_terror_words(analysis_text, recnik, weights)
     word_count = Counter(matches)
     
     # Calculate weighted score
@@ -358,12 +383,9 @@ def analyze_text(text: str, recnik: Set[str], weights: Dict[str, int] = None,
         total_score, len(word_count), total_word_count
     )
     
-    # Spell check if available
-    spelling_results = {}
-    if spellchecker:
-        spelling_results = spell_check_text(text, spellchecker)
-    
     return {
+        'spell_check': spell_results,
+        'analysis_text': analysis_text,
         'unique_words': set(matches),
         'word_count': dict(word_count),
         'total_matches': len(matches),
@@ -372,17 +394,16 @@ def analyze_text(text: str, recnik: Set[str], weights: Dict[str, int] = None,
         'total_word_count': total_word_count,
         'match_density': (len(matches) / max(total_word_count, 1)) * 100,
         'risk_level': risk_level,
-        'risk_description': risk_description,
-        'spelling': spelling_results
+        'risk_description': risk_description
     }
 
 
-def format_results(results: Dict, text: str) -> str:
+def format_results(results: Dict, original_text: str) -> str:
     """Format analysis results for output.
     
     Args:
         results: Analysis results dictionary
-        text: Original text
+        original_text: Original text before correction
         
     Returns:
         Formatted string with results
@@ -391,11 +412,36 @@ def format_results(results: Dict, text: str) -> str:
     output.append("=" * 70)
     output.append("ANALIZA TEKSTA / TEXT ANALYSIS")
     output.append("=" * 70)
-    output.append(f"\nAnalizirani tekst:\n{text}\n")
+    
+    # SPELL CHECK SECTION
+    spell = results['spell_check']
+    output.append(f"\n--- PROVERA PRAVOPISA ---")
+    output.append(f"Originalni tekst:\n{spell['original_text']}\n")
+    
+    if spell['misspelled_count'] > 0:
+        output.append(f"Pronađeno {spell['misspelled_count']} pogrešno napisanih reči")
+        output.append(f"Automatski ispravljeno: {spell['corrected_count']} reči\n")
+        
+        output.append("Ispravke:")
+        for word, correction in spell['corrections'].items():
+            if correction['chosen']:
+                output.append(f"  ✓ {word} → {correction['chosen']}")
+            else:
+                sugg_str = ', '.join(correction['suggestions']) if correction['suggestions'] else 'Nema predloga'
+                output.append(f"  ✗ {word} (Predlozi: {sugg_str})")
+        
+        output.append(f"\nIspravljeni tekst:\n{spell['corrected_text']}\n")
+    else:
+        output.append("✓ Nema pravopisnih grešaka\n")
+    
     output.append("-" * 70)
     
+    # RISK ASSESSMENT SECTION
+    output.append(f"\n--- ANALIZA RIZIKA ---")
+    output.append(f"Analizirani tekst:\n{results['analysis_text']}\n")
+    
     if results['total_matches'] > 0:
-        output.append(f"\n✓ Pronađeno reči od značaja: {results['unique_words']}")
+        output.append(f"✓ Pronađeno reči od značaja: {results['unique_words']}")
         output.append(f"\nUčestalost reči:")
         for word, count in sorted(results['word_count'].items(), 
                                   key=lambda x: x[1], reverse=True):
@@ -412,20 +458,9 @@ def format_results(results: Dict, text: str) -> str:
         output.append(f"Nivo rizika: {results['risk_level']}")
         output.append(f"Opis: {results['risk_description']}")
     else:
-        output.append("\n✗ Nisu nađene reči od značaja.")
+        output.append("✗ Nisu nađene reči od značaja.")
         output.append(f"\n--- PROCENA RIZIKA ---")
         output.append(f"Nivo rizika: {results['risk_level']}")
-    
-    # Add spelling results if available
-    if results['spelling'] and results['spelling']['misspelled']:
-        output.append(f"\n--- PROVERA PRAVOPISA ---")
-        output.append(f"Pronađeno {len(results['spelling']['misspelled'])} potencijalno pogrešno napisanih reči:")
-        for word in results['spelling']['misspelled'][:10]:  # Show first 10
-            output.append(f"  - {word}", end="")
-            if word in results['spelling']['suggestions']:
-                output.append(f" → Predlozi: {', '.join(results['spelling']['suggestions'][word])}")
-            else:
-                output.append("")
     
     output.append("\n" + "=" * 70)
     return "\n".join(output)
@@ -445,22 +480,27 @@ def main():
         print("Warning: Dictionary is empty or failed to load.")
         return
     
-    # Initialize spell checker (provide paths if you have .dic and .aff files)
+    # Initialize spell checker
     spellchecker = initialize_spellchecker()
     
-    # Test text
+    # Test text with intentional spelling errors
     text = ("terorista je pustio 🚀 i doslo je do velikog praska terorista. "
             "Novac koji je dobio za napad preko ofšor banke je potrošio na bombe. "
             "Terorizam je ozbiljan problem.")
     
-    print("Analiza u toku...\n")
+    print("=" * 70)
+    print("Faza 1: Provera pravopisa i ispravka teksta...")
+    print("=" * 70)
     
-    # Analyze text
-    results = analyze_text(text, recnik, weights, spellchecker)
+    # Analyze text (spell check first, then risk assessment)
+    results = analyze_text(text, recnik, weights, spellchecker, auto_correct=True)
+    
+    print("\nFaza 2: Analiza rizika ispravljenog teksta...")
+    print("=" * 70)
     
     # Format and display results
     formatted_output = format_results(results, text)
-    print(formatted_output)
+    print(f"\n{formatted_output}")
     
     # Save results to file
     ispisivanje(formatted_output)
