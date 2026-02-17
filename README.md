@@ -9,3 +9,6 @@ I will be using the Stanza (Stanford NLP) model for this project (specifically C
 
 
 the property of @Necke1 (aka Nemanja Mosurović)
+
+
+#flask za integracije veb aplikacie
