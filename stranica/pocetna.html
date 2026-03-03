@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WatchTower — Analiza Rizika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="\stranica\glavni.css">
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+  <div class="logo"><span class="logo-dot"></span> WatchTower</div>
+  <div id="status-bar">
+    <div class="status-pill" id="pill-api"><span class="dot"></span> FastAPI</div>
+    <div class="status-pill" id="pill-classla"><span class="dot"></span> CLASSLA</div>
+    <div class="status-pill" id="pill-phunspell"><span class="dot"></span> Phunspell</div>
+    <span id="dict-size-label" style="font-size:.78rem;color:var(--muted);"></span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Tabs card ── -->
+  <div class="card" style="overflow:visible;">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('analyze')">Analiza teksta</button>
+      <button class="tab-btn" onclick="switchTab('demo')">Demo</button>
+      <button class="tab-btn" onclick="switchTab('dictionary')">Rečnik</button>
+      <button class="tab-btn" onclick="switchTab('corrections')">Korekcije</button>
+    </div>
+
+    <!-- ═══ TAB: Analyze ═══ -->
+    <div class="tab-panel active" id="tab-analyze">
+
+      <!-- Input mode toggle -->
+      <div class="input-mode-toggle">
+        <button class="mode-btn active" id="mode-text-btn" onclick="setInputMode('text')">Unos teksta</button>
+        <button class="mode-btn"        id="mode-file-btn" onclick="setInputMode('file')">Učitaj fajl</button>
+      </div>
+
+      <!-- Text input -->
+      <div id="input-text-wrap">
+        <label>Tekst za analizu</label>
+        <textarea id="input-text" placeholder="Unesite srpski tekst ovde (latinica ili ćirilica)…"></textarea>
+      </div>
+
+      <!-- File input -->
+      <div id="input-file-wrap" class="hidden">
+        <div class="drop-zone" id="drop-zone"
+             ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+          <input type="file" id="file-input" accept=".txt,.json" onchange="onFileChosen(event)">
+          <div class="drop-icon">📄</div>
+          <div class="drop-title">Prevucite fajl ovde ili kliknite da izaberete</div>
+          <div class="drop-sub">Podržani formati: <strong>.txt</strong> i <strong>.json</strong> (maks. 5 MB)</div>
+        </div>
+        <div class="file-loaded-banner hidden" id="file-banner" style="margin-top:.75rem;">
+          <div class="file-loaded-info">
+            <span class="file-type-badge" id="file-ext-badge">TXT</span>
+            <span class="file-loaded-name" id="file-name-label"></span>
+            <span class="file-loaded-meta" id="file-size-label"></span>
+          </div>
+          <button class="btn btn-ghost" onclick="clearFile()" style="font-size:.8rem;">✕ Ukloni</button>
+        </div>
+        <!-- JSON text preview -->
+        <div id="json-preview-wrap" class="hidden" style="margin-top:.75rem;">
+          <div class="section-label">Pregled izvučenog teksta</div>
+          <textarea id="json-preview-text" readonly placeholder="Ovde će se prikazati tekst izvučen iz JSON fajla…"></textarea>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div style="margin-top:1rem;">
+        <label>Opcije</label>
+        <div class="options-grid">
+          <label class="option-item selected" id="opt-spellcheck">
+            <input type="checkbox" id="chk-spellcheck" checked onchange="syncOption(this,'opt-spellcheck')">
+            <div>
+              <div class="option-label">Provera pravopisa</div>
+              <div class="option-flag">--no-spellcheck (isključuje)</div>
+            </div>
+          </label>
+          <label class="option-item" id="opt-autocorrect">
+            <input type="checkbox" id="chk-autocorrect" onchange="syncOption(this,'opt-autocorrect')">
+            <div>
+              <div class="option-label">Automatska korekcija</div>
+              <div class="option-flag">--auto-correct</div>
+            </div>
+          </label>
+          <label class="option-item" id="opt-json">
+            <input type="checkbox" id="chk-json" onchange="syncOption(this,'opt-json')">
+            <div>
+              <div class="option-label">JSON izlaz</div>
+              <div class="option-flag">--json</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <div class="action-row-left">
+          <button class="btn btn-primary" onclick="submitAnalysis()" id="btn-analyze">Analiziraj</button>
+        </div>
+        <div class="action-row-right">
+          <button class="btn btn-outline" onclick="clearAnalysis()">Obriši</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB: Demo ═══ -->
+    <div class="tab-panel" id="tab-demo">
+      <p style="font-size:.875rem;color:var(--muted);margin-bottom:1rem;">
+        Pokrenite analizu na unapred pripremljenim tekstovima koji demonstriraju različite nivoe rizika.
+        Ekvivalent sa <code style="font-family:'DM Mono',monospace;background:var(--bg);padding:.1rem .3rem;border-radius:3px;">--demo</code> opcijom.
+      </p>
+      <div class="options-grid" style="max-width:400px;">
+        <label class="option-item selected" id="opt-demo-spellcheck">
+          <input type="checkbox" id="chk-demo-spellcheck" checked onchange="syncOption(this,'opt-demo-spellcheck')">
+          <div><div class="option-label">Provera pravopisa</div><div class="option-flag">--no-spellcheck</div></div>
+        </label>
+        <label class="option-item" id="opt-demo-autocorrect">
+          <input type="checkbox" id="chk-demo-autocorrect" onchange="syncOption(this,'opt-demo-autocorrect')">
+          <div><div class="option-label">Auto korekcija</div><div class="option-flag">--auto-correct</div></div>
+        </label>
+      </div>
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="runDemo()" id="btn-demo">Pokreni demo</button>
+      </div>
+      <div id="demo-results" style="margin-top:1.25rem;"></div>
+    </div>
+
+    <!-- ═══ TAB: Dictionary ═══ -->
+    <div class="tab-panel" id="tab-dictionary">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <div id="dict-info" style="font-size:.875rem;color:var(--muted);"></div>
+        <button class="btn btn-outline" onclick="reloadDictionary()">↻ Reload rečnika</button>
+      </div>
+      <div id="dict-content">
+        <div class="empty-state"><div class="empty-icon">📖</div>Kliknite tab "Rečnik" da učitate termine.</div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB: Corrections ═══ -->
+    <div class="tab-panel" id="tab-corrections">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <p style="font-size:.875rem;color:var(--muted);">
+          Naučene korekcije iz interaktivnog moda.
+          Ekvivalent sa <code style="font-family:'DM Mono',monospace;background:var(--bg);padding:.1rem .3rem;border-radius:3px;">--show-corrections</code>.
+        </p>
+        <button class="btn btn-danger" onclick="clearCorrections()">Obriši sve</button>
+      </div>
+      <div id="corrections-content">
+        <div class="empty-state"><div class="empty-icon">✏️</div>Učitavanje…</div>
+      </div>
+    </div>
+
+  </div><!-- /tabs card -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       RESULTS
+  ════════════════════════════════════════════════════════════ -->
+  <div id="results-section" class="hidden">
+
+    <!-- File info (file uploads only) -->
+    <div class="card hidden" id="res-file-info-card">
+      <div class="card-header"><span class="card-title">Informacije o fajlu</span></div>
+      <div class="card-body" id="res-file-info-body"></div>
+    </div>
+
+    <!-- ═══ CHAT EXPORT ANALYSIS (shown only for chat JSON files) ═══ -->
+    <div class="card hidden" id="res-chat-card">
+      <!-- Banner -->
+      <div style="padding:1.25rem 1.25rem .75rem;">
+        <div class="chat-banner" id="res-chat-banner">
+          <span class="chat-banner-icon">💬</span>
+          <div class="chat-banner-text" id="res-chat-banner-text"></div>
+        </div>
+      </div>
+      <!-- Aggregate stats -->
+      <div class="chat-stats-row" id="res-chat-stats"></div>
+      <!-- Top users -->
+      <div style="padding:1.25rem;">
+        <div class="section-label" style="margin-bottom:.6rem;">Korisnici po ukupnom skoru</div>
+        <div id="res-top-users"></div>
+      </div>
+      <!-- Flagged messages -->
+      <div style="border-top:1px solid var(--border);">
+        <div style="padding:1.1rem 1.25rem .25rem;display:flex;align-items:center;justify-content:space-between;">
+          <span class="card-title">Sumnjive poruke</span>
+          <span id="res-flagged-count" class="pill pill-red"></span>
+        </div>
+        <div id="res-flagged-list" class="flagged-list"></div>
+      </div>
+    </div>
+
+    <!-- Risk hero -->
+    <div class="card">
+      <div class="result-hero">
+        <div>
+          <div class="section-label" style="margin-bottom:.5rem;">Procena rizika</div>
+          <div id="res-risk-badge"></div>
+          <div id="res-risk-desc" style="margin-top:.6rem;font-size:.875rem;color:var(--muted);"></div>
+        </div>
+        <div style="text-align:right;">
+          <div class="section-label">Ukupan skor</div>
+          <div class="result-score" id="res-score">0</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell"><div class="stat-value" id="res-words">–</div><div class="stat-label">Ukupno reči</div></div>
+        <div class="stat-cell"><div class="stat-value" id="res-unique">–</div><div class="stat-label">Rizičnih termina</div></div>
+        <div class="stat-cell"><div class="stat-value" id="res-density">–</div><div class="stat-label">Gustina</div></div>
+        <div class="stat-cell"><div class="stat-value" id="res-time">–</div><div class="stat-label">Vreme obrade</div></div>
+      </div>
+    </div>
+
+    <!-- Found terms -->
+    <div class="card" id="res-terms-card">
+      <div class="card-header">
+        <span class="card-title">Pronađeni termini</span>
+        <span id="res-terms-count" class="pill pill-muted"></span>
+      </div>
+      <div id="res-terms-body"></div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="card">
+      <div class="card-header"><span class="card-title">Preporuke</span></div>
+      <div class="card-body"><ul class="recs-list" id="res-recs"></ul></div>
+    </div>
+
+    <!-- Spell check -->
+    <div class="card" id="res-spell-card">
+      <div class="card-header">
+        <span class="card-title">Provera pravopisa</span>
+        <span id="res-spell-badge" class="pill"></span>
+      </div>
+      <div class="card-body" id="res-spell-body"></div>
+    </div>
+
+    <!-- Console output -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Konzolni izlaz</span>
+        <button class="btn btn-ghost" onclick="toggleConsole()" style="font-size:.78rem;">Prikaži/sakrij</button>
+      </div>
+      <div id="console-wrap" style="padding:1rem;">
+        <div class="console-box" id="res-console"></div>
+      </div>
+    </div>
+
+    <!-- Formatted report -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Formatizovani izveštaj</span>
+        <button class="btn btn-outline" onclick="copyReport()" style="font-size:.78rem;">Kopiraj</button>
+      </div>
+      <div style="padding:1rem;">
+        <div class="console-box" id="res-report" style="color:#c8d4c8;max-height:400px;"></div>
+      </div>
+    </div>
+
+  </div><!-- /results -->
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════
+     INTERACTIVE CORRECTION DIALOG
+══════════════════════════════════════════════════════════════ -->
+<div class="ic-overlay hidden" id="ic-overlay">
+  <div class="ic-dialog">
+    <div class="ic-dialog-header">
+      <span class="ic-dialog-title">Interaktivna korekcija pravopisa</span>
+      <span class="ic-dialog-progress" id="ic-progress"></span>
+    </div>
+    <div class="ic-dialog-body">
+      <div class="ic-prog-bar"><div class="ic-prog-fill" id="ic-prog-fill" style="width:0%"></div></div>
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:.6rem;">Reč sa greškom:</div>
+      <div class="ic-word-chip" id="ic-word"></div>
+      <div class="ic-sugg-list" id="ic-sugg-list"></div>
+      <div class="ic-manual-row">
+        <input type="text" id="ic-manual-input" placeholder="Ili unesite ispravku ručno…">
+        <button class="btn btn-outline" onclick="icApplyManual()">Primeni</button>
+      </div>
+      <div class="ic-rating-row hidden" id="ic-rating-row">
+        <span class="ic-rating-lbl">Ocenite:</span>
+        <div class="ic-stars" id="ic-stars">
+          <span class="ic-star" onclick="icSetRating(1)">★</span>
+          <span class="ic-star" onclick="icSetRating(2)">★</span>
+          <span class="ic-star" onclick="icSetRating(3)">★</span>
+          <span class="ic-star" onclick="icSetRating(4)">★</span>
+        </div>
+      </div>
+    </div>
+    <div class="ic-dialog-footer">
+      <button class="btn btn-ghost" onclick="icSkip()">Preskoči</button>
+      <button class="btn btn-primary" id="ic-confirm-btn" onclick="icConfirm()" disabled>Potvrdi</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="\stranica\glavni.js"></script>
+</body>
+</html>
