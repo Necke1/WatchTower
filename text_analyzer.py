@@ -15,9 +15,12 @@ Performance improvements over v1.1:
 
 import os
 import re
+import logging
 from typing import Dict, List, Optional, Tuple, Any
 from collections import Counter
 from datetime import datetime
+
+logger = logging.getLogger(__name__)
 
 from constants import (
     DEFAULT_DICTIONARY_FILE,
@@ -30,7 +33,7 @@ try:
     import classla
     CLASSLA_AVAILABLE = True
 except ImportError:
-    print("Warning: CLASSLA-Stanza not found. Install with: pip install classla")
+    logger.warning("CLASSLA-Stanza not found. Install with: pip install classla")
     CLASSLA_AVAILABLE = False
 
 
@@ -164,24 +167,27 @@ class TextAnalyzer:
     """Main text analysis engine for Serbian content (optimized)."""
 
     def __init__(self,
-                 dictionary_file: str  = DEFAULT_DICTIONARY_FILE,
-                 use_spellcheck:  bool = True,
-                 auto_correct:    bool = False,
-                 interactive_correct: bool = False):
+                 dictionary_file:    str  = DEFAULT_DICTIONARY_FILE,
+                 use_spellcheck:     bool = True,
+                 auto_correct:       bool = False,
+                 interactive_correct: bool = False,
+                 use_gpu:            bool = False):
 
         self.dictionary_file     = dictionary_file
         self.words_set           = set()
-        self.term_to_weight      = {}   # O(1) weight lookup
-        self.emoji_terms:  set   = set()  # non-word terms (emojis etc.) — pre-separated
+        self.term_to_weight      = {}
+        self.emoji_terms:  set   = set()
+        self._emoji_pattern      = None   # compiled regex; built by load_dictionary()
         self._trie               = PrefixTrie()
 
         self.use_spellcheck      = use_spellcheck
         self.auto_correct        = auto_correct
         self.interactive_correct = interactive_correct
+        self.use_gpu             = use_gpu
 
         if self.auto_correct and self.interactive_correct:
-            print("Warning: Both auto-correct and interactive-correct enabled. "
-                  "Interactive mode takes precedence.")
+            logger.warning("Both auto-correct and interactive-correct enabled. "
+                           "Interactive mode takes precedence.")
             self.auto_correct = False
 
         # NLP pipeline
@@ -191,13 +197,13 @@ class TextAnalyzer:
                 self.nlp_pipeline = classla.Pipeline(   # type: ignore
                     'sr',
                     processors='tokenize,pos,lemma',
-                    use_gpu=False,
+                    use_gpu=use_gpu,
                 )
-                print("NLP pipeline initialized successfully.")
+                logger.info("NLP pipeline initialized successfully.")
             except Exception as e:
-                print(f"Warning: Could not initialize NLP pipeline: {e}")
+                logger.warning("Could not initialize NLP pipeline: %s", e)
         else:
-            print("NLP pipeline disabled: CLASSLA not available.")
+            logger.info("NLP pipeline disabled: CLASSLA not available.")
 
         self.spell_checker = SerbianSpellChecker() if use_spellcheck else None
 
@@ -212,14 +218,16 @@ class TextAnalyzer:
         Load risky words + weights from file and build the trie.
         Format: one term per line, optional integer weight after a space.
         Lines starting with # are comments.
+        Weights must be positive integers; zero/negative values are skipped.
         """
         self.words_set      = set()
         self.term_to_weight = {}
         self.emoji_terms    = set()
+        self._emoji_pattern = None
         self._trie          = PrefixTrie()
 
         if not os.path.exists(self.dictionary_file):
-            print(f"Warning: Dictionary file '{self.dictionary_file}' not found.")
+            logger.warning("Dictionary file '%s' not found.", self.dictionary_file)
             self._create_default_dictionary()
             return
 
@@ -236,22 +244,38 @@ class TextAnalyzer:
                     if len(parts) >= 2:
                         try:
                             weight = int(parts[1])
+                            if weight <= 0:
+                                logger.warning(
+                                    "Zero/negative weight ignored on line %d: %s",
+                                    line_num, line
+                                )
+                                continue
                         except ValueError:
-                            print(f"Warning: Invalid weight on line {line_num}: {line}")
+                            logger.warning("Invalid weight on line %d: %s", line_num, line)
+                            continue
 
                     self.words_set.add(term)
                     self.term_to_weight[term] = weight
 
-                    # Separate emoji / special-char terms (not matched by the trie)
                     if _RE_WORD_ONLY.match(term):
                         self._trie.insert(term)
                     else:
                         self.emoji_terms.add(term)
 
-            print(f"Loaded {len(self.words_set)} terms from dictionary "
-                  f"({len(self.emoji_terms)} emoji/special).")
+            # Compile a single combined regex for all emoji/special terms so
+            # find_all_risky_terms can use one finditer() pass instead of N
+            # individual str.count() calls.
+            if self.emoji_terms:
+                self._emoji_pattern = re.compile(
+                    '|'.join(re.escape(e) for e in self.emoji_terms)
+                )
+
+            logger.info(
+                "Loaded %d terms from dictionary (%d emoji/special).",
+                len(self.words_set), len(self.emoji_terms)
+            )
         except Exception as e:
-            print(f"Error loading dictionary: {e}")
+            logger.error("Error loading dictionary: %s", e)
             self._create_default_dictionary()
 
     def _create_default_dictionary(self) -> None:
@@ -267,7 +291,10 @@ class TextAnalyzer:
         for t in default_terms:
             if _RE_WORD_ONLY.match(t):
                 self._trie.insert(t)
-        print(f"Using default dictionary with {len(self.words_set)} terms.")
+        self._emoji_pattern = re.compile(
+            '|'.join(re.escape(e) for e in self.emoji_terms)
+        )
+        logger.info("Using default dictionary with %d terms.", len(self.words_set))
 
     # ------------------------------------------------------------------
     # Text processing
@@ -358,7 +385,7 @@ class TextAnalyzer:
             return lemmas
 
         except Exception as e:
-            print(f"Error in NLP processing: {e}")
+            logger.error("Error in NLP processing: %s", e)
             return [w.lower() for w in _RE_WORDS.findall(text)]
 
     # ------------------------------------------------------------------
@@ -385,8 +412,10 @@ class TextAnalyzer:
 
         # Auto-threshold: skip spell check for very large texts
         if len(all_words) > SPELL_CHECK_WORD_LIMIT:
-            print(f"Note: Spell checking skipped (text has {len(all_words):,} words "
-                  f"> limit of {SPELL_CHECK_WORD_LIMIT:,}).")
+            logger.info(
+                "Spell checking skipped (text has %s words > limit of %s).",
+                f"{len(all_words):,}", f"{SPELL_CHECK_WORD_LIMIT:,}"
+            )
             return empty
 
         # --- Build per-unique-word result cache ----------------------------
@@ -501,7 +530,7 @@ class TextAnalyzer:
         Unified search for risky terms.
 
         Word terms  → trie lookup: O(word_length) per lemma
-        Emoji terms → str.count() on raw text (unchanged from v1.1)
+        Emoji terms → single compiled regex finditer() over raw text
 
         Returns (term_frequencies, total_weighted_score).
         """
@@ -515,12 +544,12 @@ class TextAnalyzer:
                 found_terms[lemma] += 1
                 total_score += self.term_to_weight.get(matched, 1)
 
-        # ── Emoji / special-char matching via raw text scan ────────────
-        for term in self.emoji_terms:
-            count = text.count(term)
-            if count:
-                found_terms[term] += count
-                total_score += self.term_to_weight.get(term, 1) * count
+        # ── Emoji / special-char matching via single regex pass ────────
+        if self._emoji_pattern:
+            for match in self._emoji_pattern.finditer(text):
+                term = match.group(0)
+                found_terms[term] += 1
+                total_score += self.term_to_weight.get(term, 1)
 
         return dict(found_terms), total_score
 

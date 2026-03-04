@@ -6,16 +6,29 @@ Supports Latin and Cyrillic scripts with a learned-corrections system.
 
 import os
 import re
+import logging
 from typing import Optional, Tuple, List
 from datetime import datetime
 
 from constants import USER_CORRECTIONS_FILE, MAX_SUGGESTIONS
+
+logger = logging.getLogger(__name__)
 
 try:
     import phunspell
     PHUNSPELL_AVAILABLE = True
 except ImportError:
     PHUNSPELL_AVAILABLE = False
+
+try:
+    import filelock as _filelock_module
+    _FILELOCK_AVAILABLE = True
+except ImportError:
+    logger.warning(
+        "filelock not found — corrections file writes are not concurrency-safe. "
+        "Install with: pip install filelock"
+    )
+    _FILELOCK_AVAILABLE = False
 
 
 class SerbianSpellChecker:
@@ -33,12 +46,12 @@ class SerbianSpellChecker:
                 self.latin_dict    = phunspell.Phunspell('sr-Latn')  # type: ignore
                 self.cyrillic_dict = phunspell.Phunspell('sr')        # type: ignore
                 self.initialized   = True
-                print("Spell checker initialized successfully.")
+                logger.info("Spell checker initialized successfully.")
             except Exception as e:
-                print(f"Warning: Could not initialize spell checker dictionaries: {e}")
-                print("Spell checking will be disabled.")
+                logger.warning("Could not initialize spell checker dictionaries: %s", e)
+                logger.warning("Spell checking will be disabled.")
         else:
-            print("Spell checker disabled: Phunspell not available.")
+            logger.info("Spell checker disabled: Phunspell not available.")
 
         self._load_user_corrections()
 
@@ -49,7 +62,10 @@ class SerbianSpellChecker:
     def _load_user_corrections(self):
         """Load user corrections from file."""
         if not os.path.exists(self.user_corrections_file):
-            print(f"User corrections file not found. Will create: {self.user_corrections_file}")
+            logger.info(
+                "User corrections file not found. Will create on first save: %s",
+                self.user_corrections_file
+            )
             return
 
         try:
@@ -83,33 +99,46 @@ class SerbianSpellChecker:
                             self.user_corrections[original] = (corrected, rating, count, last_used)
                             loaded_count += 1
                     except Exception:
-                        print(f"Warning: Could not parse correction line: {line}")
+                        logger.warning("Could not parse correction line: %s", line)
 
             if loaded_count > 0:
-                print(f"Loaded {loaded_count} user corrections.")
+                logger.info("Loaded %d user corrections.", loaded_count)
         except Exception as e:
-            print(f"Error loading user corrections: {e}")
+            logger.error("Error loading user corrections: %s", e)
 
     def _save_user_corrections(self):
-        """Save user corrections to file."""
-        try:
+        """
+        Save user corrections to file.
+        Uses a file lock when filelock is available so concurrent API workers
+        cannot interleave writes and corrupt the file.
+        """
+        lock_path = self.user_corrections_file + ".lock"
+
+        def _write():
             with open(self.user_corrections_file, 'w', encoding='utf-8') as f:
                 f.write("# WatchTower User Corrections Dictionary\n")
                 f.write("# Format: original → corrected | rating:X | count:Y | last_used:DATE\n")
                 f.write("# This file stores learned corrections from interactive mode\n#\n")
-
-                sorted_corrections = sorted(
+                for original, (corrected, rating, count, last_used) in sorted(
                     self.user_corrections.items(),
-                    key=lambda x: x[1][2],  # Sort by count
-                    reverse=True
-                )
+                    key=lambda x: x[1][2],
+                    reverse=True,
+                ):
+                    f.write(
+                        f"{original} → {corrected} "
+                        f"| rating:{rating} | count:{count} | last_used:{last_used}\n"
+                    )
+            logger.info("Saved %d corrections to %s",
+                        len(self.user_corrections), self.user_corrections_file)
 
-                for original, (corrected, rating, count, last_used) in sorted_corrections:
-                    f.write(f"{original} → {corrected} | rating:{rating} | count:{count} | last_used:{last_used}\n")
-
-            print(f"✓ Saved {len(self.user_corrections)} corrections to {self.user_corrections_file}")
+        try:
+            if _FILELOCK_AVAILABLE:
+                with _filelock_module.FileLock(lock_path, timeout=5): # type: ignore
+                    _write()
+            else:
+                _write()
         except Exception as e:
-            print(f"Error saving user corrections: {e}")
+            logger.error("Error saving user corrections: %s", e)
 
     # ------------------------------------------------------------------
     # Public API
@@ -126,7 +155,7 @@ class SerbianSpellChecker:
             try:
                 os.remove(self.user_corrections_file)
             except Exception as e:
-                print(f"Error deleting corrections file: {e}")
+                logger.error("Error deleting corrections file: %s", e)
         return count
 
     def get_all_corrections(self) -> list:

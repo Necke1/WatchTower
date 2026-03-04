@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-WatchTower API  
+WatchTower API  v1.3
 ====================
 All analysis goes through two endpoints:
 
@@ -20,10 +20,13 @@ Supporting endpoints:
 """
 
 import io
+import os
+import logging
+import threading
 import contextlib
 
 from pathlib import Path
-from typing import Optional
+from typing import Dict, Tuple
 
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
@@ -41,17 +44,37 @@ from watchtower import analyze_file
 # ---------------------------------------------------------------------------
 # App setup
 # ---------------------------------------------------------------------------
+
+# CORS origins: comma-separated list in WT_ALLOWED_ORIGINS, or "*" for dev.
+# Example: WT_ALLOWED_ORIGINS="https://app.example.com,http://localhost:3000"
+_raw_origins = os.getenv("WT_ALLOWED_ORIGINS", "*")
+_ALLOWED_ORIGINS: list = (
+    [o.strip() for o in _raw_origins.split(",") if o.strip()]
+    if _raw_origins != "*"
+    else ["*"]
+)
+
 app = FastAPI(title="WatchTower API", version="1.3.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
+    allow_origins=_ALLOWED_ORIGINS, allow_methods=["*"], allow_headers=["*"],
 )
 
-STATIC_DIR = Path(__file__).parent / "stranica"
+STATIC_DIR = Path(__file__).parent / "static"
 STATIC_DIR.mkdir(exist_ok=True)
-app.mount("/stranica", StaticFiles(directory=str(STATIC_DIR)), name="stranica")
+app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
-_analyzer: Optional[TextAnalyzer] = None
+# ---------------------------------------------------------------------------
+# Thread-safe analyzer cache  (fix 4)
+# ---------------------------------------------------------------------------
+# Key: (use_spellcheck, auto_correct, dictionary_file)
+# Each unique combination gets its own TextAnalyzer instance.
+# A lock prevents two concurrent requests from both deciding to create the
+# same instance simultaneously.
+
+_AnalyzerKey = Tuple[bool, bool, str]
+_analyzer_cache: Dict[_AnalyzerKey, TextAnalyzer] = {}
+_analyzer_lock  = threading.Lock()
 
 
 # ---------------------------------------------------------------------------
@@ -68,34 +91,52 @@ class DemoRequest(BaseModel):
     auto_correct:   bool = False
 
 
-
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 @contextlib.contextmanager
-def capture_stdout():
-    buf = io.StringIO()
-    with contextlib.redirect_stdout(buf):
-        yield buf
+def capture_output():
+    """
+    Capture both print() output and logging records for the duration of a
+    request and return them as a single string.
+
+    print()   → captured via contextlib.redirect_stdout
+    logging   → captured via a temporary StreamHandler on the root logger
+    """
+    buf     = io.StringIO()
+    handler = logging.StreamHandler(buf)
+    handler.setLevel(logging.DEBUG)
+    root_logger = logging.getLogger()
+    root_logger.addHandler(handler)
+    try:
+        with contextlib.redirect_stdout(buf):
+            yield buf
+    finally:
+        root_logger.removeHandler(handler)
 
 
 def _get_analyzer(use_spellcheck: bool = True,
                   auto_correct:   bool = False,
                   dictionary_file: str = DEFAULT_DICTIONARY_FILE) -> TextAnalyzer:
-    global _analyzer
-    if (
-        _analyzer is None
-        or _analyzer.use_spellcheck  != use_spellcheck
-        or _analyzer.auto_correct    != auto_correct
-        or _analyzer.dictionary_file != dictionary_file
-    ):
-        _analyzer = TextAnalyzer(
-            dictionary_file     = dictionary_file,
-            use_spellcheck      = use_spellcheck,
-            auto_correct        = auto_correct,
-            interactive_correct = False,
-        )
-    return _analyzer
+    """
+    Return a cached TextAnalyzer for the given configuration.
+    Thread-safe: uses a lock so concurrent requests never race to create the
+    same instance, and never see a partially-initialised one.
+    """
+    key: _AnalyzerKey = (use_spellcheck, auto_correct, dictionary_file)
+    if key not in _analyzer_cache:
+        with _analyzer_lock:
+            # Re-check inside the lock — another thread may have created it
+            # while we were waiting.
+            if key not in _analyzer_cache:
+                _analyzer_cache[key] = TextAnalyzer(
+                    dictionary_file     = dictionary_file,
+                    use_spellcheck      = use_spellcheck,
+                    auto_correct        = auto_correct,
+                    interactive_correct = False,
+                )
+    return _analyzer_cache[key]
 
 
 def _get_corrections() -> list:
@@ -116,7 +157,7 @@ def _get_corrections() -> list:
 
 @app.get("/", include_in_schema=False)
 async def serve_frontend():
-    return FileResponse(str(STATIC_DIR / "pocetna.html"))
+    return FileResponse(str(STATIC_DIR / "index.html"))
 
 
 # ---------------------------------------------------------------------------
@@ -128,7 +169,7 @@ async def analyze(req: AnalyzeRequest):
     """Analyze a plain-text string."""
     if not req.text.strip():
         raise HTTPException(422, "Text must not be empty.")
-    with capture_stdout() as buf:
+    with capture_output() as buf:
         a      = _get_analyzer(req.use_spellcheck, req.auto_correct)
         raw    = a.analyze_text(req.text)
         report = (ReportGenerator.generate_json_report(raw)
@@ -177,7 +218,7 @@ async def analyze_file_route(
     ac = auto_correct.lower()   == "true"
     oj = output_json.lower()    == "true"
 
-    with capture_stdout() as buf:
+    with capture_output() as buf:
         a = _get_analyzer(sp, ac)
         try:
             result = analyze_file(raw_bytes, filename, a, output_json=oj)
@@ -196,7 +237,7 @@ async def analyze_file_route(
 @app.post("/api/demo", tags=["Analysis"])
 async def run_demo(req: DemoRequest):
     results = []
-    with capture_stdout() as buf:
+    with capture_output() as buf:
         a = _get_analyzer(req.use_spellcheck, req.auto_correct)
         for sample in SAMPLE_TEXTS:
             raw = a.analyze_text(sample['text'])
@@ -216,7 +257,7 @@ async def run_demo(req: DemoRequest):
 
 @app.get("/api/dictionary", tags=["Dictionary"])
 async def get_dictionary():
-    with capture_stdout():
+    with capture_output():
         a = _get_analyzer()
     terms = sorted(
         [{"term": t, "weight": a.term_to_weight.get(t, 1)} for t in a.words_set],
@@ -227,7 +268,7 @@ async def get_dictionary():
 
 @app.post("/api/dictionary/reload", tags=["Dictionary"])
 async def reload_dict():
-    with capture_stdout() as buf:
+    with capture_output() as buf:
         a = _get_analyzer()
         a.load_dictionary()
     return {"message": f"Reloaded — {len(a.words_set)} terms.", "console_output": buf.getvalue()}
@@ -249,7 +290,7 @@ async def get_corrections():
 
 @app.get("/api/health", tags=["System"])
 async def health():
-    with capture_stdout():
+    with capture_output():
         a = _get_analyzer()
     return {
         "status":              "ok",

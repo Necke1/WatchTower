@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
 """
 WatchTower: Constants and Configuration
+
+File-path constants can be overridden at runtime via environment variables:
+  WT_DICT_FILE        — path to the risk-term dictionary
+  WT_CORRECTIONS_FILE — path to the learned corrections file
+  WT_OUTPUT_FILE      — default path for saved text reports
 """
 
-# File paths
-DEFAULT_DICTIONARY_FILE = "biblioteke/recnik.txt"
-USER_CORRECTIONS_FILE   = "biblioteke/korekcija.txt"
-OUTPUT_FILE             = "biblioteke/rezultat.txt"
+import os
+
+# File paths  (env-var overridable for deployment flexibility)
+DEFAULT_DICTIONARY_FILE = os.getenv("WT_DICT_FILE",        "biblioteke/recnik.txt")
+USER_CORRECTIONS_FILE   = os.getenv("WT_CORRECTIONS_FILE", "biblioteke/korekcija.txt")
+OUTPUT_FILE             = os.getenv("WT_OUTPUT_FILE",      "biblioteke/rezultat.txt")
 
 # Spell checker
 MAX_SUGGESTIONS = 5
@@ -19,7 +26,7 @@ RISK_THRESHOLDS = {
 }
 
 # ---------------------------------------------------------------------------
-# Demo sample texts  
+# Demo sample texts  (single source of truth — used by both CLI and API)
 # ---------------------------------------------------------------------------
 SAMPLE_TEXTS = [
     {

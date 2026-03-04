@@ -1,13 +1,79 @@
-#!pip install classla #our ml
-#!pip install phunspell #for spellchecking
-import classla
-classla.download('sr')# download the ML model, specificalz for Serbian language
+# =============================================================================
+# WatchTower — Python dependencies
+# =============================================================================
+# Install with:  pip install -r requirements.txt
+#
+# Sections:
+#   1. Web server       — required to run the API
+#   2. NLP pipeline     — optional but recommended (lemmatisation)
+#   3. Spell checking   — optional but recommended
+#   4. Concurrency      — optional but recommended for multi-worker deployments
+#   5. Testing          — only needed for development / CI
+# =============================================================================
 
-import phunspell
-self.latin_dict = phunspell.Phunspell('sr-Latn') # type: ignore
-self.cyrillic_dict = phunspell.Phunspell('sr') # type: ignore
 
-fastapi>=0.110.0
-uvicorn[standard]>=0.29.0
-pydantic>=2.0.0
+# -----------------------------------------------------------------------------
+# 1. Web server  (required)
+# -----------------------------------------------------------------------------
 
+# FastAPI — the web framework used for all API routes
+fastapi>=0.115.0
+
+# Uvicorn — the ASGI server that runs the FastAPI app
+# [standard] includes uvloop + httptools for better performance in production
+uvicorn[standard]>=0.32.0
+
+# Pydantic — request/response validation (FastAPI depends on this)
+pydantic>=2.9.0
+
+# python-multipart — required by FastAPI to handle file uploads (UploadFile)
+# Without this, POST /api/analyze/file will raise a 422 error
+python-multipart>=0.0.12
+
+
+# -----------------------------------------------------------------------------
+# 2. NLP pipeline  (optional — enables proper Serbian lemmatisation)
+# -----------------------------------------------------------------------------
+# Without classla, the analyzer falls back to simple regex tokenisation.
+# Lemmatisation improves detection of morphological word variants
+# (e.g. "teroristi", "teroristima" → lemma "terorista").
+#
+# Note: classla downloads language models (~300 MB) on first use.
+# Pre-download in your Docker build step with:
+#   python -c "import classla; classla.download('sr')"
+
+classla>=2.1.0
+
+
+# -----------------------------------------------------------------------------
+# 3. Spell checking  (optional — enables Serbian spell checking)
+# -----------------------------------------------------------------------------
+# Without phunspell, spell checking is silently disabled and all words are
+# treated as correctly spelled.
+#
+# phunspell wraps the Hunspell C library via cffi.
+# The sr-Latn (Latin) and sr (Cyrillic) dictionaries are bundled with it.
+#
+# Requires libhunspell-dev on Debian/Ubuntu:
+#   apt-get install -y libhunspell-dev
+
+phunspell>=0.1.6
+
+
+# -----------------------------------------------------------------------------
+# 4. Concurrency  (optional — recommended for multi-worker / production use)
+# -----------------------------------------------------------------------------
+# filelock prevents concurrent uvicorn workers from interleaving writes to
+# korekcija.txt when multiple requests trigger spell-correction saves at the
+# same time.  Without it the app still runs but logs a warning and corrections
+# file writes are not race-condition-safe.
+
+filelock>=3.16.0
+
+
+# -----------------------------------------------------------------------------
+# 5. Testing  (development / CI only)
+# -----------------------------------------------------------------------------
+# Run the test suite with:  pytest tests/
+
+pytest>=8.3.0
