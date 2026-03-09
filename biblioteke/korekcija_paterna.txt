@@ -1,0 +1,21 @@
+# WatchTower Learned Context Patterns
+# Format: term | context_words | multiplier | count:N | last_used:DATE
+# multiplier 0.0=ignore  0.35=dampener 1.0=neutral 2.0=amplifier  3.0=strong
+#
+tajna | biti,lokacija,nedelja,obuka,organizovati,sledeći,tajna | 2.00 | count:3 | last_used:2026-03-09
+teror | biti,cilj,jasan,morati,odgovoriti,teror | 2.50 | count:2 | last_used:2026-03-09
+napad | crkva,džamija,ideja,morati,napad,sebe,text | 3.00 | count:1 | last_used:2026-03-08
+oružje | biti,dobrodošao,donacija,oružje,prikupljati,sredstvo,svaki,text | 2.00 | count:1 | last_used:2026-03-08
+propaganda | deliti,gde,kampanja,materijal,moći,propaganda,slediti,svuda,text | 0.00 | count:1 | last_used:2026-03-08
+rat | biti,mesto,rat,slabost,svet,text_entities | 3.00 | count:1 | last_used:2026-03-08
+tajnost | bezbednost,koordinisati,sebe,tajnost,text,text_entities,zbog | 2.00 | count:1 | last_used:2026-03-08
+džamija | crkva,džamija,ideja,morati,napad,realizovati,sebe | 3.00 | count:1 | last_used:2026-03-08
+crkva | crkva,džamija,ideja,morati,napad,realizovati,sebe | 3.00 | count:1 | last_used:2026-03-08
+stadion | ići,neki,stadion,text_entities,vikend | 0.35 | count:1 | last_used:2026-03-08
+donacija | donacija,novac,oprema,poslati,račun,trebati | 2.00 | count:1 | last_used:2026-03-08
+park | kafa,kafana,kod,park,preporučivati,text_entities | 0.00 | count:1 | last_used:2026-03-08
+računar | biti,istezanje,koristan,posle,računar,satlik,text_entities,vežba | 0.00 | count:1 | last_used:2026-03-08
+telefon | koji,preporučivati,telefon,text,text_entities | 0.35 | count:1 | last_used:2026-03-08
+šećer | biti,dobro,osećati,sebe,smanjiti,text,unos,šećer | 0.00 | count:1 | last_used:2026-03-08
+muzej | biti,izložba,ići,muzej,nov,otvoriti,text | 0.35 | count:1 | last_used:2026-03-08
+napad | institucija,koji,napad,planirati,ugnjetavati | 3.00 | count:1 | last_used:2026-03-09

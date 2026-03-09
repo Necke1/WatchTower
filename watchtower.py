@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 WatchTower: Serbian Text Analysis Tool for Content Risk Assessment
+Version: 1.1 - Optimized & Modular
 Author: Nemanja Mosurović (@Necke1)
 Date: 2025
 
@@ -12,6 +13,7 @@ import json
 import os
 import sys
 import argparse
+from datetime import datetime
 from pathlib import Path
 
 from constants import (
@@ -21,7 +23,13 @@ from constants import (
 )
 from text_analyzer import TextAnalyzer
 from report_generator import ReportGenerator
-from chat_analyzer import is_chat_export, process_chat_export, combine_messages_text
+from chat_analyzer import (
+    is_chat_export,
+    is_txt_chat_export,
+    parse_txt_chat_export,
+    process_chat_export,
+    combine_messages_text,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -42,6 +50,10 @@ def parse_arguments():
     parser.add_argument('--auto-correct',        action='store_true', help='Enable automatic spelling correction')
     parser.add_argument('--interactive-correct', action='store_true',
                         help='Enable interactive correction with user confirmation and rating')
+    parser.add_argument('--interactive-context', action='store_true',
+                        help='After analysis, review each flagged term and provide feedback '
+                             '(false positive / lower / higher / confirmed). '
+                             'Patterns are saved to korekcija_paterna.txt and applied automatically next time.')
     parser.add_argument('--json',  action='store_true', help='Output results in JSON format')
     parser.add_argument('--demo',  action='store_true', help='Run demo with sample texts')
     parser.add_argument('--show-corrections',  action='store_true',
@@ -68,7 +80,7 @@ def show_learned_corrections(analyzer: TextAnalyzer):
     print("\n" + "=" * 70)
     print(f"NAUČENE KOREKCIJE ({len(corrections)} ukupno)")
     print("=" * 70)
-    print(f"Fajl: {analyzer.spell_checker.user_corrections_file}\n")
+    print(f"Fajl: {analyzer.spell_checker.spell_corrections_file}\n")
     for i, c in enumerate(corrections, 1):
         print(f"{i:3d}. {c['original']} → {c['corrected']} "
               f"| ocena:{c['rating']} | broj:{c['count']} | datum:{c['last_used']}")
@@ -143,6 +155,53 @@ def run_demo(analyzer: TextAnalyzer):
 
 
 # ---------------------------------------------------------------------------
+# JSON extraction helpers  (module-level so they're not redefined per call)
+# ---------------------------------------------------------------------------
+
+_PRIORITY_KEYS = [
+    "text", "tekst", "content", "sadrzaj", "message", "poruka",
+    "body", "telo", "description", "opis", "data", "podatak",
+]
+
+
+def _find_by_key(obj, keys):
+    """Recursively find the first string value under any of the given keys."""
+    if isinstance(obj, dict):
+        for k in keys:
+            if k in obj and isinstance(obj[k], str) and obj[k].strip():
+                return obj[k]
+        for v in obj.values():
+            r = _find_by_key(v, keys)
+            if r:
+                return r
+    elif isinstance(obj, list):
+        for item in obj:
+            r = _find_by_key(item, keys)
+            if r:
+                return r
+    return None
+
+
+def _collect_strings(obj, depth=0):
+    """Recursively collect all non-empty strings from a JSON object."""
+    if depth > 10:
+        return []
+    if isinstance(obj, str):
+        return [obj] if obj.strip() else []
+    if isinstance(obj, list):
+        out = []
+        for item in obj:
+            out.extend(_collect_strings(item, depth + 1))
+        return out
+    if isinstance(obj, dict):
+        out = []
+        for v in obj.values():
+            out.extend(_collect_strings(v, depth + 1))
+        return out
+    return []
+
+
+# ---------------------------------------------------------------------------
 # File analysis  (shared by CLI --file and the API upload route)
 # ---------------------------------------------------------------------------
 
@@ -151,14 +210,18 @@ def analyze_file(raw_bytes: bytes, filename: str, analyzer: TextAnalyzer,
     """
     Analyse the contents of an uploaded / opened file.
 
-    Handles two cases:
-      .txt  → full content analysed as a single text.
-      .json → auto-detected:
-                • Chat export (top-level "messages" array):
-                    each message is analysed individually.
-                    Returns chat_analysis dict alongside standard fields.
-                • Generic JSON:
-                    text extracted by key priority, then analysed as a whole.
+    Handles three cases:
+      .txt (plain)  → full content analysed as a single text.
+      .txt (chat)   → auto-detected by timestamped line pattern:
+                        [YYYY-MM-DD HH:MM:SS] Sender: text
+                        Each message analysed individually, same output
+                        shape as a JSON chat export.
+      .json         → auto-detected:
+                        • Chat export (top-level "messages" array):
+                            each message is analysed individually.
+                        • Generic JSON:
+                            text extracted by key priority, then analysed
+                            as a whole.
 
     Returns the same dict shape used by /api/analyze/file, so api.py can
     return it directly and the CLI can print a summary from it.
@@ -170,6 +233,7 @@ def analyze_file(raw_bytes: bytes, filename: str, analyzer: TextAnalyzer,
     analyzer    : Configured TextAnalyzer instance.
     output_json : If True, formatted_report is JSON; otherwise plain text.
     """
+    _start = datetime.now()
     extension = Path(filename).suffix.lower()
 
     if extension not in (".txt", ".json"):
@@ -182,18 +246,26 @@ def analyze_file(raw_bytes: bytes, filename: str, analyzer: TextAnalyzer,
 
     # ── .txt ────────────────────────────────────────────────────────────────
     if extension == ".txt":
-        text_to_analyze  = raw_text
-        extraction_notes = ["Plain text — entire file content used."]
-        chat_analysis    = None
+        if is_txt_chat_export(raw_text):
+            parsed        = parse_txt_chat_export(raw_text)
+            chat_analysis = process_chat_export(parsed, filename, raw_bytes, analyzer)
+            msgs_text     = parsed.get("messages", [])
+            text_to_analyze  = combine_messages_text(msgs_text) or " "
+            extraction_notes = [
+                f"TXT chat export detected — {len(msgs_text)} messages parsed. "
+                "Individual message analysis in chat_analysis field."
+            ]
+        else:
+            text_to_analyze  = raw_text
+            extraction_notes = ["Plain text — entire file content used."]
+            chat_analysis    = None
 
-    # ── .json ────────────────────────────────────────────────────────────────
     else:
         try:
             parsed = json.loads(raw_text)
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON: {e}")
 
-        # ── Branch A: chat export ──────────────────────────────────────────
         if is_chat_export(parsed):
             chat_analysis = process_chat_export(parsed, filename, raw_bytes, analyzer)
             msgs_text        = parsed.get("messages", [])
@@ -202,50 +274,9 @@ def analyze_file(raw_bytes: bytes, filename: str, analyzer: TextAnalyzer,
                 f"Chat export detected — {len(msgs_text)} messages found. "
                 "Individual message analysis in chat_analysis field."
             ]
-
-        # ── Branch B: generic JSON ─────────────────────────────────────────
         else:
             chat_analysis = None
-
-            PRIORITY_KEYS = [
-                "text", "tekst", "content", "sadrzaj", "message", "poruka",
-                "body", "telo", "description", "opis", "data", "podatak",
-            ]
-
-            def _find_by_key(obj, keys):
-                if isinstance(obj, dict):
-                    for k in keys:
-                        if k in obj and isinstance(obj[k], str) and obj[k].strip():
-                            return obj[k]
-                    for v in obj.values():
-                        r = _find_by_key(v, keys)
-                        if r:
-                            return r
-                elif isinstance(obj, list):
-                    for item in obj:
-                        r = _find_by_key(item, keys)
-                        if r:
-                            return r
-                return None
-
-            def _collect_strings(obj, depth=0):
-                if depth > 10:
-                    return []
-                if isinstance(obj, str):
-                    return [obj] if obj.strip() else []
-                if isinstance(obj, list):
-                    out = []
-                    for item in obj:
-                        out.extend(_collect_strings(item, depth + 1))
-                    return out
-                if isinstance(obj, dict):
-                    out = []
-                    for v in obj.values():
-                        out.extend(_collect_strings(v, depth + 1))
-                    return out
-                return []
-
-            found = _find_by_key(parsed, PRIORITY_KEYS)
+            found = _find_by_key(parsed, _PRIORITY_KEYS)
             if found:
                 text_to_analyze  = found
                 extraction_notes = ["Extracted from JSON key matching priority list."]
@@ -263,13 +294,44 @@ def analyze_file(raw_bytes: bytes, filename: str, analyzer: TextAnalyzer,
         raise ValueError("The file contains no readable text.")
 
     result = analyzer.analyze_text(text_to_analyze)
-    report = (ReportGenerator.generate_json_report(result)
-              if output_json
-              else ReportGenerator.generate_text_report(result, analyzer))
+    total_time = (datetime.now() - _start).total_seconds()
+
+    # ── Build formatted report ───────────────────────────────────────────────
+    if chat_analysis and not output_json:
+        # For chat exports the overall risk uses average score per message
+        # and the percentage of flagged messages — not the raw sum — so a
+        # chat with many low-scoring messages isn't inflated to VISOK RIZIK.
+        st = chat_analysis["stats"]
+        overall_level, overall_desc = analyzer.calculate_chat_risk_level(
+            weighted_score   = st.get("weighted_score_sum", st["total_score_sum"]),
+            total_messages   = st["analysable_messages"],
+            flagged_messages = st["flagged_messages_count"],
+            weighted_avg     = st.get("weighted_avg", 0.0),
+        )
+        from constants import RISK_LEVELS
+        overall_recs = RISK_LEVELS[overall_level]["recommendations"]
+
+        # Inject the chat-level risk into chat_analysis so the API can use it
+        chat_analysis["overall_risk_level"]       = overall_level
+        chat_analysis["overall_risk_description"] = overall_desc
+        chat_analysis["overall_recommendations"]  = overall_recs
+
+        report = ReportGenerator.generate_chat_report(
+            chat_analysis            = chat_analysis,
+            overall_risk_level       = overall_level,
+            overall_risk_description = overall_desc,
+            overall_recommendations  = overall_recs,
+            total_processing_time    = total_time,
+        )
+    elif output_json:
+        report = ReportGenerator.generate_json_report(result)
+    else:
+        report = ReportGenerator.generate_text_report(result, analyzer)
 
     return {
         **result,
         "formatted_report": report,
+        "total_processing_time": total_time,
         "term_weights": {
             t: analyzer.term_to_weight.get(t, 1)
             for t in result["analysis"]["term_frequencies"]
@@ -283,6 +345,253 @@ def analyze_file(raw_bytes: bytes, filename: str, analyzer: TextAnalyzer,
         },
         "chat_analysis": chat_analysis,
     }
+
+
+# ---------------------------------------------------------------------------
+# Interactive context review  (CLI equivalent of browser context IC mode)
+# ---------------------------------------------------------------------------
+
+_FEEDBACK_OPTIONS = {
+    '1': ('false_positive',  'Lažni alarm       — term nije rizičan u ovom kontekstu  (× 0.0)'),
+    '2': ('lower_severity',  'Niži rizik        — rizičan ali manje nego procenjeno   (× 0.35)'),
+    '3': ('higher_severity', 'Viši rizik        — opasnije nego što skor pokazuje     (× 3.0)'),
+    '4': ('confirmed',       'Potvrđena pretnja — direktna operativna pretnja         (× 2.0)'),
+    '5': ('skip',            'Preskoči ovu pojavu'),
+}
+
+
+def _split_into_units(raw_text: str, result: dict) -> list:
+    """
+    Return a list of clean text units for the interactive context reviewer.
+
+    For chat exports  → individual message dicts (user_name, date, text).
+    For plain text    → individual sentences split on .  !  ?  or newline.
+
+    A "unit" is the smallest piece of text in which a term appears with a
+    specific meaning — the right granularity for per-occurrence feedback.
+    """
+    ca = result.get('chat_analysis')
+    if ca:
+        # Use flagged messages (already have clean text extracted by chat_analyzer)
+        flagged = ca.get('flagged_messages', [])
+        units = []
+        for m in flagged:
+            txt = (m.get('text') or '').strip()
+            if txt:
+                units.append({
+                    'text':      txt,
+                    'label':     f"{m.get('user_name','?')}  [{m.get('date','')}]",
+                    'risk':      m.get('risk_level', ''),
+                    'score':     m.get('total_score', 0),
+                })
+        return units
+
+    # Plain text — split on sentence-ending punctuation or blank lines
+    import re as _re
+    parts = _re.split(r'(?<=[.!?])\s+|\n{2,}', raw_text.strip())
+    return [{'text': p.strip(), 'label': '', 'risk': '', 'score': 0}
+            for p in parts if p.strip()]
+
+
+def _highlight(text: str, term: str, width: int = 80) -> str:
+    """
+    Return a terminal-safe snippet of `text` with `term` wrapped in [brackets].
+    Finds the first occurrence, extracts a window of `width` chars around it,
+    and replaces matched text (case-insensitive, word-boundary aware).
+    """
+    import re as _re
+    lo = text.lower()
+    idx = lo.find(term.lower())
+    if idx < 0:
+        # Fallback: first `width` chars of text
+        return text[:width].replace('\n', ' ')
+
+    half   = width // 2
+    start  = max(0, idx - half)
+    end    = min(len(text), idx + len(term) + half)
+    window = text[start:end].replace('\n', ' ')
+
+    # Re-find term inside the window (offset may have shifted)
+    rel = window.lower().find(term.lower())
+    if rel >= 0:
+        window = (window[:rel]
+                  + '[' + window[rel:rel + len(term)] + ']'
+                  + window[rel + len(term):])
+
+    prefix = '…' if start > 0 else ''
+    suffix = '…' if end < len(text) else ''
+    return prefix + window + suffix
+
+
+def _ask_feedback(analyzer, term: str, unit_text: str, term_weight) -> bool:
+    """
+    Show the menu for one (term, unit_text) pair and process the analyst's answer.
+    Returns True to continue, False if the analyst interrupted the session.
+    """
+    print()
+    for key, (_, label) in _FEEDBACK_OPTIONS.items():
+        print(f"    [{key}] {label}")
+    print("        — nebo unesite decimalni broj (npr. 1.5) za prilagođeni multiplikator")
+    print()
+
+    while True:
+        try:
+            raw = input("    Vaš izbor: ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print("\nInteraktivni pregled prekinut.")
+            return False
+
+        if raw in _FEEDBACK_OPTIONS:
+            feedback, _ = _FEEDBACK_OPTIONS[raw]
+            if feedback == 'skip':
+                print("    → Preskočeno.\n")
+                return True
+            fp = analyzer.submit_feedback(unit_text, term, feedback)
+            if fp:
+                print(f"    ✓ Sačuvano: '{term}' + {sorted(fp)} → {feedback}\n")
+            else:
+                print(f"    ⚠  Patern nije sačuvan (prozor sadrži samo stop-reči).\n")
+            return True
+
+        # Custom multiplier
+        try:
+            mult = float(raw)
+            if not (0.0 <= mult <= 10.0):
+                raise ValueError("out of range")
+            lemmas = analyzer.extract_lemmas(analyzer.normalize_text(unit_text))
+            fp = analyzer.learned_patterns.learn(term, lemmas, mult, label='[cli:custom]')
+            if fp:
+                print(f"    ✓ Sačuvano: '{term}' + {sorted(fp)} → multiplikator {mult}\n")
+            else:
+                print(f"    ⚠  Patern nije sačuvan (stop-reči).\n")
+            return True
+        except ValueError:
+            print("    Unesite broj od 1–5 ili decimalni multiplikator (0.0–10.0).")
+
+
+def build_context_items(results: dict, raw_text: str, analyzer) -> list:
+    """
+    Build the list of context items that the browser IC dialog consumes.
+
+    Reuses the same _split_into_units / _highlight helpers that power the
+    terminal interactive mode, so browser and CLI always show identical snippets.
+
+    Each item:
+        term         — the matched dictionary term
+        weight       — term weight from the dictionary
+        snippet      — windowed text with term wrapped in [brackets]
+        unit_text    — full clean sentence / message text (sent to /api/feedback)
+        label        — "UserName  [date]" for chat messages, "" for plain text
+        risk         — risk level of the containing message (chat only)
+        score        — score of the containing message (chat only)
+        occurrence_n — which occurrence of this term this item represents (1-based)
+        occ_total    — total occurrences of this term across all units
+    """
+    term_freq    = results['analysis']['term_frequencies']
+    term_weights = {t: analyzer.term_to_weight.get(t, 1) for t in term_freq}
+
+    if not term_freq:
+        return []
+
+    units = _split_into_units(raw_text, results)
+    if not units:
+        return []
+
+    # Sort terms by weight descending — highest risk reviewed first
+    terms = sorted(term_freq.items(), key=lambda x: term_weights.get(x[0], 1), reverse=True)
+
+    items = []
+    for term, _total_count in terms:
+        containing = [u for u in units if term.lower() in u['text'].lower()]
+        for j, unit in enumerate(containing, 1):
+            items.append({
+                'term':        term,
+                'weight':      term_weights.get(term, 1),
+                'snippet':     _highlight(unit['text'], term),
+                'unit_text':   unit['text'],
+                'label':       unit.get('label', ''),
+                'risk':        unit.get('risk', ''),
+                'score':       unit.get('score', 0),
+                'occurrence_n':  j,
+                'occ_total':     len(containing),
+            })
+
+    return items
+
+
+def run_interactive_context(analyzer, results: dict, raw_text: str):
+    """
+    Walk through every occurrence of every flagged term — one occurrence at a
+    time — and ask the analyst to classify each one.
+
+    For chat exports each 'occurrence' is the individual flagged message that
+    contained the term.  For plain text each 'occurrence' is the sentence that
+    contained the term.
+
+    This means the same term seen in five different messages produces five
+    separate prompts, each showing the correct context — so "napad" in a news
+    headline and "napad" in an operational planning message can be classified
+    differently.
+
+    Confirmed answers are saved to korekcija_paterna.txt via LearnedPatternStore
+    and applied automatically on future analyses.
+    """
+    term_freq    = results['analysis']['term_frequencies']
+    term_weights = {t: analyzer.term_to_weight.get(t, 1) for t in term_freq}
+
+    if not term_freq:
+        print("\n✓ Nisu pronađeni rizični termini — nema šta da se pregleda.")
+        return
+
+    # Split source into clean text units
+    units = _split_into_units(raw_text, results)
+    if not units:
+        print("\n⚠  Nije moguće izvući pojedinačne jedinice teksta za pregled.")
+        return
+
+    # Sort terms by weight desc (highest risk first)
+    terms = sorted(term_freq.items(), key=lambda x: term_weights.get(x[0], 1), reverse=True)
+
+    # For each term, collect only the units that actually contain it
+    # Each (term, unit) pair becomes one prompt
+    work_items = []   # list of (term, unit, occurrence_n, total_occurrences_for_term)
+    for term, _total_count in terms:
+        containing = [u for u in units if term.lower() in u['text'].lower()]
+        for j, unit in enumerate(containing, 1):
+            work_items.append((term, unit, j, len(containing)))
+
+    if not work_items:
+        print("\n✓ Termini pronađeni ali nije moguće locirati ih u pojedinačnim porukama.")
+        return
+
+    print("\n" + "=" * 70)
+    print("INTERAKTIVNA ANALIZA KONTEKSTA")
+    print("=" * 70)
+    print(f"Pronađeno {len(terms)} term(a) u {len(work_items)} pojav(a).")
+    print("Svaka pojava u drugoj poruci/rečenici se prikazuje zasebno.")
+    print("Naučeni paterna → biblioteke/korekcija_paterna.txt\n")
+
+    for idx, (term, unit, occ_n, occ_total) in enumerate(work_items, 1):
+        weight  = term_weights.get(term, '—')
+        snippet = _highlight(unit['text'], term)
+
+        print(f"─── Pojava {idx}/{len(work_items)}  "
+              f"(term '{term}', pojava {occ_n}/{occ_total}) "
+              + "─" * max(0, 70 - 30 - len(term)))
+        print(f"  Term:    {term}   |   Težina: {weight}")
+        if unit['label']:
+            risk_tag = f"  [{unit['risk']} · skor {unit['score']}]" if unit['risk'] else ''
+            print(f"  Poruka:  {unit['label']}{risk_tag}")
+        print(f"  Tekst:   {snippet}")
+
+        ok = _ask_feedback(analyzer, term, unit['text'], weight)
+        if not ok:
+            return
+
+    print("=" * 70)
+    print("Interaktivni pregled konteksta završen.")
+    print(f"Fajl paterna: biblioteke/korekcija_paterna.txt")
+    print("=" * 70)
 
 
 # ---------------------------------------------------------------------------
@@ -326,27 +635,33 @@ def main():
             print(f"Greška: {e}")
             return
 
-        an = result["analysis"]
+        total_time = result.get("total_processing_time",
+                                 result["statistics"]["processing_time_seconds"])
         print(f"\nAnaliziran fajl: {args.file}")
 
-        # Chat export — print per-user summary
+        # Chat export — print brief terminal summary; full report goes to file
         if result.get("chat_analysis"):
             ca = result["chat_analysis"]
             st = ca["stats"]
+            overall = ca.get("overall_risk_level", result["analysis"]["risk_level"])
             print(f"\nChat export: {ca['chat_meta']['chat_name']}")
+            print(f"Nivo rizika: {overall}")
             print(f"Poruka ukupno: {st['analysable_messages']} | "
                   f"Označenih: {st['flagged_messages_count']} | "
+                  f"Prosečan skor: {st['average_score']:.2f} | "
                   f"Maks. skor: {st['max_score']}")
-            if ca["flagged_messages"]:
-                print("\nOznačene poruke:")
-                for m in ca["flagged_messages"]:
-                    print(f"  [{m['risk_level']}] {m['user_name']} ({m['date']}): "
-                          f"skor={m['total_score']}  {m['text'][:60]}…")
+            print(f"Vreme obrade: {total_time:.3f}s")
+            print(f"\nDetaljan izveštaj sačuvan u: {args.output}")
         else:
+            an = result["analysis"]
             print(f"\nNivo rizika: {an['risk_level']}")
             print(f"Skor: {an['total_score']} | Termina: {an['unique_terms_count']}")
+            print(f"Vreme obrade: {total_time:.3f}s")
 
         ReportGenerator.save_report(result["formatted_report"], args.output)
+
+        if args.interactive_context:
+            run_interactive_context(analyzer, result, raw_bytes.decode('utf-8', errors='replace'))
 
     else:
         print("Unesite tekst za analizu (Ctrl+D ili Ctrl+Z kada završite):")
@@ -385,6 +700,9 @@ def _run_text_analysis(args, analyzer: TextAnalyzer, text: str):
     print(f"Pronađeno termina:{results['analysis']['unique_terms_count']}")
     print(f"Vreme obrade:     {results['statistics']['processing_time_seconds']:.3f}s")
     print("-" * 50)
+
+    if args.interactive_context:
+        run_interactive_context(analyzer, results, text)
 
 
 if __name__ == "__main__":

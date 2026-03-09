@@ -260,3 +260,117 @@ textarea { min-height: 140px; }
   header        { padding: 0 1rem; }
   main          { padding: 1rem; }
 }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   LOADING OVERLAY — radar scanner animation
+══════════════════════════════════════════════════════════════════ */
+
+.loading-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(10, 10, 8, 0.82);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+}
+.loading-card {
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2.5rem 3rem;
+  box-shadow: 0 32px 80px rgba(0,0,0,.4);
+  animation: dlgIn .25s ease;
+}
+.loading-label { font-size: 1.05rem; font-weight: 600; letter-spacing: -.01em; }
+.loading-sub   { font-size: .78rem; color: var(--muted); margin-top: -.75rem; }
+
+/* Radar widget */
+.radar-wrap {
+  position: relative; width: 100px; height: 100px;
+}
+.radar-ring {
+  position: absolute; border: 1px solid var(--accent); border-radius: 50%;
+  left: 50%; top: 50%; transform: translate(-50%,-50%);
+  animation: radar-pulse 2s ease-out infinite;
+}
+.radar-ring-1 { width: 30px; height: 30px; animation-delay: 0s;   opacity: .7; }
+.radar-ring-2 { width: 60px; height: 60px; animation-delay: .5s;  opacity: .45; }
+.radar-ring-3 { width: 90px; height: 90px; animation-delay: 1s;   opacity: .2; }
+
+@keyframes radar-pulse {
+  0%   { transform: translate(-50%,-50%) scale(0.6); opacity: .9; }
+  100% { transform: translate(-50%,-50%) scale(1.1); opacity: 0;  }
+}
+
+.radar-sweep {
+  position: absolute; left: 50%; top: 50%; width: 50%;
+  height: 2px; transform-origin: 0% 50%;
+  background: linear-gradient(to right, var(--accent), transparent);
+  animation: radar-sweep 1.5s linear infinite;
+  border-radius: 2px;
+}
+@keyframes radar-sweep { to { transform: rotate(360deg); } }
+
+.radar-center {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 10px; height: 10px;
+  background: var(--accent); border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTEXT CHECK INTERACTIVE DIALOG
+══════════════════════════════════════════════════════════════════ */
+
+.ctx-message-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: .7rem 1rem; font-size: .875rem; line-height: 1.65;
+  max-height: 130px; overflow-y: auto; margin-bottom: .85rem;
+  word-break: break-word;
+}
+.ctx-message-box mark {
+  background: #fef08a; color: #713f12;
+  border-radius: 3px; padding: .05em .25em; font-weight: 600;
+}
+
+.ctx-score-row  { margin-bottom: .25rem; }
+.ctx-score-lbl  { font-size: .8rem; font-weight: 500; color: var(--muted); }
+.ctx-score-input {
+  width: 90px; padding: .45rem .65rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-family: 'DM Mono', monospace; font-size: .875rem;
+  background: var(--bg); color: var(--text); outline: none;
+}
+.ctx-score-input:focus { border-color: var(--accent); }
+
+.ctx-choices {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .5rem;
+}
+.ctx-choice-btn {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .65rem .85rem; border: 1px solid var(--border);
+  border-radius: var(--radius); background: var(--bg);
+  cursor: pointer; text-align: left; font-family: inherit;
+  transition: border-color .12s, background .12s;
+}
+.ctx-choice-btn:hover { border-color: var(--accent); background: var(--accent-l); }
+.ctx-choice-icon { font-size: 1.3rem; flex-shrink: 0; }
+.ctx-choice-label { font-size: .875rem; font-weight: 600; }
+.ctx-choice-sub   { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+
+.ctx-false:hover   { border-color: #16a34a !important; background: var(--green-l) !important; }
+.ctx-lower:hover   { border-color: #ca8a04 !important; background: var(--yellow-l) !important; }
+.ctx-higher:hover  { border-color: #ea580c !important; background: var(--orange-l) !important; }
+.ctx-confirm:hover { border-color: var(--red) !important; background: var(--red-l) !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   CHAT OVERALL RISK BANNER
+══════════════════════════════════════════════════════════════════ */
+.chat-overall-risk {
+  display: flex; align-items: center; gap: 1rem;
+  padding: .75rem 1rem; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--bg);
+  font-size: .875rem;
+}
+.chat-overall-label { font-size: .72rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--muted); margin-bottom: .2rem; }
+.chat-weighted-info { font-size: .78rem; color: var(--muted); margin-top: .2rem; }

@@ -1,172 +1,7 @@
 # Речник термина за анализу ризика - српски језик (латиница)
 # Скала тежине: 1-10 (10 - максимални ризик)
-
-#ПРЕФИКСИ ВИСОКОГ РИЗИКА (за хватање свих варијација)
-ter 8 # терор, тероризам, терориста
-terror 9 # терор (енглески)
-terro 8 
-ekstre 7 # екстремизам, екстремиста
-extre 7 # екстремизам (енглески)
-extr 7 # екстремно
-radik 6 # радикал, радикализам
-radical 6 # радикал (енглески)
-džih 8 # џихад, џихадиста
-jih 8 # џихад (енглески)
-islamist 7 # исламиста, исламистички
-islamic 5 # исламски (општи)
-fundament 6 # фундаментализам, фундаменталиста
-sekt 5 # секта, сектант
-fanat 5 # фанатик, фанатизам
-nasil 6 # насиље, насилан
-violent 6 # насиље (енглески)
-bomb 8 # бомба, бомбаш
-explo 7 # експлозив, експлозија
-explos 7 # експлозија (енглески)
-dynam 6 # динамит
-baru 5 # барут
-weap 6 # оружје (енглески)
-arm 5 # оружје (енглески)
-gun 5 # пиштољ (енглески)
-pist 5 # пиштољ
-rifl 5 # пушка
-automat 5 # аутомат
-knif 4 # нож (енглески)
-ax 4 # секира (енглески)
-kill 7 # убиство (енглески)
-murder 7 # убиство (енглески)
-assas 7 # атентат (енглески)
-liquid 6 # ликвидација
-massac 8 # масакр
-pokol 7 # покољ
-war 6 # рат (енглески)
-ratn 5 # ратни
-milit 5 # милитант, милитантан
-guer 5 # герила (енглески)
-para 5 # паравојна
-propag 6 # пропаганда
-indoctr 5 # индоктринација
-brainw 4 # брејнвош
-hate 7 # мржња (енглески)
-hatr 6 # мржња
-xeno 5 # ксенофобија
-rac 6 # расизам (енглески)
-racist 7 # расиста (енглески)
-fasc 8 # фашизам
-nazi 9 # нацизам
-nazist 9 # нациста
-antisem 8 # антисемитизам
-homoph 5 # хомофобија
-discrim 5 # дискриминација
-extrem-right 6 # екстремна десница
-extrem-left 6 # екстремна левица
-attac 6 # напад (енглески)
-attack 6 # напад (енглески)
-assault 6 # напад (енглески)
-divlj 5 # дивљање
-shoot 5 # пуцање (енглески)
-shot 5 # пуцање (енглески)
-kidnap 6 # отмица (енглески)
-host 5 # талац (енглески)
-capt 4 # заробљеник (енглески)
-tort 8 # тортура
-tortur 8 # тортура (енглески)
-threat 6 # претња (енглески)
-conspir 5 # заверa (енглески)
-spy 5 # шпијун (енглески)
-espion 5 # шпијунажа (енглески)
-sabot 5 # саботажа
-rebel 5 # побуна (енглески)
-revolt 5 # револуција (енглески)
-revolu 5 # револуција
-upris 5 # устанак (енглески)
-barac 4 # барака
-hide 4 # скровиште (енглески)
-hidden 4 # скривено (енглески)
-camp 5 # логор (енглески)
-secret-base 5 # тајна база
-embassy 4 # амбасада (енглески)
-consul 4 # конзулат (енглески)
-gov 4 # владина (енглески)
-government 4 # владина (енглески)
-barrack 4 # војарна (енглески)
-police 4 # полиција (енглески)
-court 4 # суд (енглески)
-prison 4 # затвор (енглески)
-jail 4 # затвор (енглески)
-church 4 # црква (енглески)
-mosque 4 # џамија (енглески)
-synagog 4 # синагога (енглески)
-mall 4 # тржни центар (енглески)
-market 4 # тржни центар (енглески)
-metro 4 # метро
-airport 5 # аеродром (енглески)
-station 4 # станица (енглески)
-train-st 4 # железничка станица
-financ-terror 7 # финансирање тероризма
-money-laund 6 # прање новца (енглески)
-launder 6 # прање новца (енглески)
-black-money 5 # црни новац
-crypto 4 # криптовалута
-bitc 4 # биткоин
-donat 3 # донација
-spons 4 # спонзор
-logist 4 # логистика
-suppl 4 # снабдевање
-armed 5 # наоружани
-explosive-mat 6 # експлозивни материјал
-chemical 7 # хемијски
-bio 8 # биолошки
-nuclear 9 # нуклеарни
-radioact 8 # радиоактивни
-hack 6 # хаковање
-hacker 5 # хакер
-malware 5 # малвер
-virus 5 # вирус
-ransom 6 # рансомвер
-ddos 5 # ддос напад
-cyber-att 5 # сајбер напад
-cyber-war 5 # сајбер рат
-info-war 5 # информациони рат
-disinfo 5 # дезинформација
-fake 5 # лажне вести
-bot 4 # бот
-troll 4 # трол
-deepfake 6 # дипфејк
-svast 8 # свастика
-swast 8 # свастика (енглески)
-nazi-symbol 8 # наци симбол
-black-flag 6 # црна застава
-white-power 7 # бела моћ
-coded-msg 5 # кодирана порука
-code 4 # код
-jargon 4 # жаргон
-death 7 # смрт (енглески)
-die 6 # умри (енглески)
-destroy 6 # уништи (енглески)
-reven 6 # освета (енглески)
-blood 6 # крв (енглески)
-suffer 5 # патња (енглески)
-fear 4 # страх (енглески)
-panic 4 # паника (енглески)
-hyster 4 # хистерија
-illegal 5 # илегалан
-clandest 4 # кландестино
-under 4 # подземље (енглески)
-undergr 4 # подземље (енглески)
-secret 4 # тајна (енглески)
-hidden 4 # скривено (енглески)
-mask 4 # маскирано
-fake-id 5 # лажни идентитет
-doc 3 # документи
-passport 4 # пасош (енглески)
-visa 3 # виза (енглески)
-border 4 # граница (енглески)
-smuggl 5 # шверц (енглески)
-traffic 6 # трговина (енглески)
-slav 7 # ропство (енглески)
-slavery 7 # ропство (енглески)
-drug 6 # дрога (енглески)
-narc 6 # наркотици (енглески)
+# v2.0 - Adjusted weights: reduced false positives, improved Cyrillic coverage,
+#         strengthened combo phrases, rebalanced everyday vs. threat vocabulary
 
 #ТЕРОРИЗАМ И ЕКСТРЕМИЗАМ (основни термини)
 terorizam 10
@@ -184,7 +19,6 @@ ekstremista 9
 ekstremisti 9
 ekstremistički 9
 ekstremistička 9
-ekstremističко 9
 ekstremističke 9
 radikalizam 8
 radikalan 8
@@ -234,41 +68,41 @@ bombardovati 8
 samoubilački 10
 samoubica 9
 samoubički 9
-samoubistvo 8
+samoubistvo 7  # ↓ was 8 — also used in mental health context, lower to reduce false positives
 samoubilački-napad 10
-eksploziv 8
-eksplozivi 8
+eksploziv 9  # ↑ was 8
+eksplozivi 9
 eksplozivan 8
 eksplozivna 8
-eksplozija 8
-dinamit 8
-barut 7
-oružje 8
-oružja 8
+eksplozija 7  # ↓ was 8 — can be used metaphorically
+dinamit 9    # ↑ was 8
+barut 6
+oružje 9    # ↑ was 8 — central to terrorism
+oružja 9
 oružan 8
 oružana 8
 oružano 8
 oružani 8
-oružarnica 6
+oružarnica 5  # ↓ was 6 — legitimate gun shop
 pištolj 7
 pištolji 7
-automatski-pištolj 8
-puška 7
-puške 7
-sniper-puška 7
-automat 7
-automati 7
+automatski-pištolj 9  # ↑ was 8
+puška 6
+puške 6
+sniper-puška 9  # ↑ was 7
+automat 6   # ↓ was 7 — also means "vending machine" in Serbian
+automati 6
 automatsko 8
 automatska 8
-nož 6
-noževi 6
-nožni 6
-sekira 6
-sjekire 6
-sjekirom 6
+nož 5       # ↓ was 6 — kitchen tool too
+noževi 5
+sekira 5    # ↓ was 6 — tool too
+sjekira 5
+sjekire 5
+sjekirom 5
 ubistvo 9
-ubica 8
-ubice 8
+ubica 9     # ↑ was 8
+ubice 9
 ubijen 8
 ubijeni 8
 ubijati 8
@@ -281,11 +115,11 @@ masakrirati 10
 masakri 10
 pokolj 9
 pokolji 9
-rat 8
-ratni 7
-ratovanje 7
-ratnik 6
-ratnici 6
+rat 5       # ↓ was 8 — alone too generic ("rat problem", "rat race" etc in Serbian context "rat" means "war" but very common)
+ratni 4     # ↓ was 7 — "ratni film" = war movie, normal
+ratovanje 6
+ratnik 5    # ↓ was 6
+ratnici 5
 
 #КРИМИНАЛНЕ ОРГАНИЗАЦИЈЕ И ГРУПЕ
 al-kaida 10
@@ -294,12 +128,13 @@ daesh 10
 taliban 9
 talibani 9
 hezbollah 9
+hezbolah 9
 hamas 9
 boko-haram 10
 al-shabaab 9
 al-shabab 9
-mudžahedin 8
-mudžahedini 8
+mudžahedin 9   # ↑ was 8
+mudžahedini 9
 militanta 8
 militante 8
 militantni 8
@@ -328,29 +163,29 @@ indoktrinirati 7
 indoktriniran 7
 brainwash 7
 brainwashing 7
-mržnja 8
+mržnja 9    # ↑ was 8 — core hate speech indicator
 mrzeti 8
 mrzitelj 8
 mrzitelji 8
-mržnja-prema 8
-hejt 7
-hejter 7
-hejterski 7
-hejtovati 7
-ksenofobija 7
-ksenofob 7
+mržnja-prema 9
+hejt 6      # ↓ was 7 — "hate" used casually online
+hejter 6
+hejterski 6
+hejtovati 6
+ksenofobija 8  # ↑ was 7
+ksenofob 8
 ksenofobni 7
 ksenofobičan 7
-rasizam 8
-rasista 8
-rasisti 8
-rasistički 8
-rasistička 8
-fašizam 9
-fašista 9
-fašisti 9
-fašistički 9
-fašizacija 8
+rasizam 9   # ↑ was 8
+rasista 9
+rasisti 9
+rasistički 9
+rasistička 9
+fašizam 10  # ↑ was 9
+fašista 10
+fašisti 10
+fašistički 10
+fašizacija 9
 nazizam 10
 nacista 10
 nacisti 10
@@ -362,7 +197,7 @@ homofobija 6
 homofob 6
 homofobni 6
 homofobičan 6
-antisemitizam 9
+antisemitizam 10  # ↑ was 9
 antisemita 9
 antisemitski 9
 antisemit 9
@@ -370,43 +205,43 @@ antisemit 9
 šovinista 7
 šovinistički 7
 šovinistička 7
-diskriminacija 6
-diskriminisati 6
-diskriminirajući 6
-diskriminatorski 6
-ekstremna-desnica 8
+diskriminacija 5  # ↓ was 6 — used broadly, often non-violent
+diskriminisati 5
+diskriminirajući 5
+diskriminatorski 5
+ekstremna-desnica 9  # ↑ was 8
 ekstremna-levica 8
-ekstremno-desničarski 8
+ekstremno-desničarski 9
 ekstremno-levičarski 8
-kult 7
-kultni 7
+kult 6      # ↓ was 7
+kultni 6
 kultistički 7
 
 #АКЦИЈЕ, ОПЕРАЦИЈЕ И МЕТОДЕ
-napad 8
-napadati 8
+napad 9     # ↑ was 8 — core attack word, raise it
+napadati 9
 napadač 8
 napadači 8
-atentat 9
-atentator 9
+atentat 10  # ↑ was 9
+atentator 10
 atentatori 9
 atentatorski 9
-divljanje 7
-divljački 7
-divljak 7
-pucnjava 8
+divljanje 6  # ↓ was 7
+divljački 6
+divljak 5   # ↓ was 7 — used casually in Serbian
+pucnjava 9  # ↑ was 8
 pucati 7
 pucanj 7
 pucačina 7
-otmica 8
-oteti 8
+otmica 9    # ↑ was 8
+oteti 9
 otimač 8
 otimači 8
 talački 8
 talac 8
 taoci 8
-zarobljenik 7
-zarobljen 7
+zarobljenik 6  # ↓ was 7
+zarobljen 6
 zarobljavanje 7
 mučenje 9
 mučiti 9
@@ -415,9 +250,9 @@ mučitelj 9
 tortura 9
 torturirati 9
 torturisan 9
-pretnja 7
-pretiti 7
-pretnje 7
+pretnja 8   # ↑ was 7
+pretiti 8
+pretnje 8
 pretio 7
 zavera 7
 zaverenik 7
@@ -436,212 +271,211 @@ pobuna 8
 pobunjenik 8
 pobunjenički 8
 pobunjivati 8
-revolucija 7
-revolucionaran 7
-revolucionarni 7
-revolucioner 7
+revolucija 6  # ↓ was 7 — historical/political usage common
+revolucionaran 6
+revolucionarni 6
+revolucioner 6
 ustanak 7
 ustanički 7
 ustanici 7
 
 #МЕСТА, ЛОКАЦИЈЕ И МЕТЕ
-baraka 6
-barake 6
-skrovište 6
-skrovišta 6
+baraka 4    # ↓ was 6 — also means "barrack-hut" but used normally
+barake 4
+skrovište 7  # ↑ was 6 — if hiding place mentioned = more suspicious
+skrovišta 7
 skrivanje 5
-skriven 5
+skriven 4   # ↓ was 5 — "skriven talenat" = hidden talent (normal)
 logor 7
 logori 7
 logoraš 7
 logoraši 7
-tajna-baza 7
-tajne-baze 7
-tajni-objekat 6
-tajno-skladište 6
-ambasada 6
-ambasade 6
-ambasadorski 5
-konzulat 6
-konzulati 6
-vladina-zgrada 7
-vladine-zgrade 7
-vladin-objekat 6
-vojarna 6
-vojarne 6
+tajna-baza 8  # ↑ was 7
+tajne-baze 8
+tajni-objekat 7  # ↑ was 6
+tajno-skladište 7  # ↑ was 6
+ambasada 5
+ambasade 5
+ambasadorski 4
+konzulat 5
+konzulati 5
+vladina-zgrada 8  # ↑ was 7
+vladine-zgrade 8
+vladin-objekat 7  # ↑ was 6
+vojarna 5   # ↓ was 6
+vojarne 5
 vojni-objekat 6
-policija 6
-policijska-stanica 6
+policija 3  # ↓ from 6 — alone very generic
+policijska-stanica 5
 policijski-objekat 6
-sud 6
-sudnica 6
+sud 2       # ↓ was 6 — means court but also "dish" in Serbian, very generic
 sudski-objekat 6
-zatvor 6
 zatvorenik 6
 zatvorski 6
-crkva 6
-crkve 6
-crkveni 5
-džamija 6
-džamije 6
-sinagoga 6
-sinagoge 6
-tržni-centar 6
-tržni-centri 6
-metro 6
-metro-stanica 6
-aerodrom 7
-aerodromi 7
+crkva 3     # ↓ was 6 — religious building alone not risky
+crkve 3
+crkveni 2
+napad-na-crkvu 9  # NEW
+džamija 3   # ↓ was 6 — by itself not risky
+džamije 3
+napad-na-džamiju 9  # NEW
+sinagoga 3  # ↓ was 6
+sinagoge 3
+napad-na-sinagogu 9  # NEW
+tržni-centar 4  # ↓ was 6 — shopping is normal
+metro 3     # ↓ was 6 — public transport
+metro-stanica 4
+aerodrom 6  # ↑ was 7 (original had 7 but adjusting prefix vs full word)
+aerodromi 6
 aerodromska 6
-železnička-stanica 6
-železničke-stanice 6
+železnička-stanica 5
+železničke-stanice 5
+
+# ── KEY CHANGE: Targets alone = low score; targets + attack words = high ──
+# These combos are picked up by combo-matching in the analyzer:
+napad-na-aerodrom 10  # NEW
+napad-na-metro 10     # NEW
+napad-na-školu 10     # NEW
+bombom-na 10          # NEW
+eksplozivom-na 10     # NEW
 
 #ФИНАНСИРАЊЕ, НОВАЦ И РЕСУРСИ
-finansiranje-terorizma 9
-finansiranje-ekstremizma 8
-finansijer 7
-finansijeri 7
-finansijska-podrška 8
-pranje-novca 8
+finansiranje-terorizma 10  # ↑ was 9
+finansiranje-ekstremizma 9
+finansijer 8    # ↑ was 7
+finansijeri 8
+finansijska-podrška 9  # ↑ was 8
+pranje-novca 9
 prati-novac 8
 pranje-para 8
-ilegalno-finansiranje 8
-ilegalni-novac 7
-ilegalna-sredstva 7
-crna-kasa 7
-crni-novac 7
-crna-štednja 6
-kriptovaluta 6
-kriptovalute 6
-kripto 6
-bitcoin 6
-ethereum 6
-donacija 6
-donator 6
-donatorski 5
-sponzor 7
+ilegalno-finansiranje 9  # ↑ was 8
+ilegalni-novac 8         # ↑ was 7
+illegalni-novac 8
+ilegalna-sredstva 8      # ↑ was 7
+crna-kasa 8              # ↑ was 7
+crni-novac 8             # ↑ was 7
+crna-štednja 7           # ↑ was 6
+kriptovaluta 4           # ↓ was 6 — mainstream now
+kriptovalute 4
+kripto 4                 # ↓ was 6
+bitcoin 3                # ↓ was 6 — very mainstream
+ethereum 3
+donacija 2               # ↓↓ was 6 — "donate to charity" is totally normal!
+donator 2                # ↓ was 6
+donatorski 2             # ↓ was 5
+# HIGH RISK: donation specifically for weapons/jihad
+donacija-za-oružje 10   # NEW combo
+donacija-za-džihad 10   # NEW combo
+sponzor 6               # ↓ was 7 — regular sponsors exist everywhere
 sponzorisanje 7
-sponzorski 7
-logistika 7
-logistički 7
-logistička-podrška 7
-snabdevanje 7
-snabdevač 7
-snabdevači 7
-snabdevati 7
+sponzorski 5            # ↓ was 7
+logistika 4             # ↓ was 7 — business logistics normal
+logistički 4            # ↓ was 7
+logistička-podrška 6    # context-dependent
+snabdevanje 5
+snabdevač 6
+snabdevači 6
+snabdevati 5
 oružana 8
-oružano-krila 8
-oružano-krilo 8
-eksplozivna 8
-eksplozivna-naprava 9
-eksplozivni-materijal 9
-hemijska 8
-hemijsko-oružje 9
-hemijski-napad 9
+oružano-krila 9          # ↑ was 8
+oružano-krilo 9          # ↑ was 8
+eksplozivna-naprava 10   # ↑ was 9
+eksplozivni-materijal 10 # ↑ was 9
+hemijska 7
+hemijsko-oružje 10
+hemijski-napad 10
 biološka 9
-biološko-oružје 10
-biološki-agensi 9
+biološko-oružje 10
+biološki-agensi 10
 nuklearna 10
-nuklearno-oružје 10
+nuklearno-oružje 10
 nuklearni-materijal 10
 radioaktivna 9
 radioaktivni-materijal 9
 radioaktivno-zračenje 8
 
-#САЈБЕР ПРЕТЊЕ, ХАКОВАЊЕ И ИНФОРМАЦИОНА БОРБА
+#СAJБЕР ПРЕТЊЕ, ХАКОВАЊЕ И ИНФОРМАЦИОНА БОРБА
 hakovanje 7
 haker 6
 hakeri 6
 hakerski 6
-hakerska-grupa 7
-malver 6
-malveri 6
-maliciozan-softver 7
-virus 6
-virusi 6
+hakerska-grupa 8  # ↑ was 7
+malver 7          # ↑ was 6
+malveri 7
+maliciozan-softver 8  # ↑ was 7
+virus 5           # ↓ was 6 — biological virus also normal
+virusi 5
 kompjuterski-virus 7
 ransomware 7
 ransom-virus 7
 otkupnina-virus 7
 ddos 6
-ddos-napad 7
-distribuirani-napad 7
-cyber-napad 7
+ddos-napad 8      # ↑ was 7
+distribuirani-napad 8
+cyber-napad 8     # ↑ was 7
 cyber-rat 7
-cyber-borba 7
-informaciona-borba 7
-informacioni-rat 7
-informaciono-ratovanje 7
 dezinformacija 6
 dezinformisati 6
 dezinformativan 6
-fake-news 6
-lažne-vesti 6
-lažni-izveštaji 6
-propaganda-bot 7
-botovi 6
-bot-mreža 6
-trol 6
-trolovanje 6
-trol-account 6
-deepfake 7
-deepfake-video 7
+fake-news 5
+lažne-vesti 5
+propaganda-bot 8  # ↑ was 7
+propagandni-bot 8 # NEW
+botovi 5
+bot-mreža 7       # ↑ was 6
+trol 5
+trolovanje 5
+deepfake 8        # ↑ was 7
+deepfake-video 8
 lažni-video 7
 
 #СИМБОЛИ, КОДОВИ, СКРАЋЕНИЦЕ И ЖАРГОН
-1488 9
-88 8
-14 8
-14-reči 8
-18 7
+1488 10
+88 9              # ↑ was 8 — clear nazi code
+14 6              # ↓ was 8 — too common as a number
+14-reči 9         # phrase context = high ↑
+18 6              # ↓ was 7
 311 7
-blood-and-honor 8
-white-power 8
-hitlerov 9
-hitlerovski 9
-hitlerijanski 9
-svastika 9
-kukasti-krst 9
-naci-simbol 9
+blood-and-honor 9  # ↑ was 8
+white-power 9
+hitlerov 10       # ↑ was 9
+hitlerovski 10
+hitlerijanski 10
+svastika 10       # ↑ was 9
+kukasti-krst 10
+naci-simbol 10    # ↑ was 9
 zastava-isil 10
 crna-zastava 8
-crni-barjak 8
-beli-mlaz 6
-beli-supremacista 8
-beli-nacionalista 7
-crveni-mlaz 6
+beli-mlaz 7       # ↑ was 6
+beli-supremacista 9  # ↑ was 8
+beli-nacionalista 8  # ↑ was 7
 crveni-teror 8
 kodirana-poruka 7
-kodiranje 6
-kodirano 6
-šifra 6
+kodiranje 5
+šifra 5
 šifrirano 6
-dešifrovanje 5
-žargon 5
-žargonski 5
-poslovni-žargon 4
 
 #ЕМОЦИЈЕ, ПОЗИВИ, ЗАПОВЕСТИ И ПРЕТЊЕ
-ubij 9
-ubijte 9
+ubij 10           # ↑ was 9 — direct command
+ubijte 10
 ubijanje 8
-ubica 8
-ubice 8
+ubica 9
+ubice 9
 smrt 8
 smrtna 8
 smrtno 8
 smrtna-kazna 7
-umri 8
-umreti 8
-umiranje 7
+umri 7            # ↓ was 8 — also used casually ("umri od smeha")
+umreti 7
+umiranje 6
 uništi 8
 uništavanje 8
 uništenje 8
-razori 7
-razaranje 7
+razori 8          # ↑ was 7
+razaranje 8
 razrušiti 7
-spali 7
-spaljivanje 7
+spali 8           # ↑ was 7
+spaljivanje 8
 spaliti 7
 osveti 8
 osveta 7
@@ -649,28 +483,27 @@ osvetnički 7
 osvetnik 7
 krv 7
 krvavi 7
-krvoproliće 8
-krvavi-sukob 8
-krvavi-nasilje 8
-patnja 7
-patiti 7
-patnje 7
-strah 6
-strašan 6
-strahota 6
-panika 6
-paničan 6
-paničar 6
-histerija 6
-histeričan 6
-histerično 6
-pobeda-ili-smrt 8
-sieg-heil 9
+krvoproliće 9     # ↑ was 8
+krvavi-sukob 9    # ↑ was 8
+krvavi-nasilje 9  # ↑ was 8
+patnja 5          # ↓ was 7 — emotional word, often used normally
+patiti 5
+patnje 5
+strah 4           # ↓ was 6 — everyday word
+strašan 4
+strahota 5
+panika 4          # ↓ was 6
+paničan 4
+paničar 4
+histerija 4       # ↓ was 6
+histeričan 4
+pobeda-ili-smrt 9  # ↑ was 8
+sieg-heil 10
 heil-hitler 10
-white-genocide 9
-great-replacement 8
+white-genocide 10  # ↑ was 9
+great-replacement 9  # ↑ was 8
 
-#ДОДАТНИ ТЕРМИНИ И ФРАЗЕ
+#ДОДАТНИ ТЕРМИНИ
 ilegalan 6
 ilegalno 6
 ilegalnost 6
@@ -679,575 +512,281 @@ klandestinost 6
 podzemlje 6
 podzemna 6
 podzemni 6
-tajna 5
-tajni 5
+tajna 4           # ↓ was 5 — "tajna" used casually ("tajna veza" = secret relationship)
+tajni 4
 tajnost 5
-skriven 5
-skriveno 5
+skriven 3         # ↓ was 5 — "skriven talent" = hidden talent
+skriveno 3
 skrivanje 5
-maskiran 5
-maskiranje 5
-maskirani 5
-lažni-identitet 6
-lažan-identitet 6
+maskiran 4        # ↓ was 5
+maskiranje 4
+maskirani 4
+lažni-identitet 7  # ↑ was 6
+lažan-identitet 7
 lažno-ime 6
-dokumenta 5
-dokumenti 5
-dokumentacija 5
-putovnica 5
-putovnice 5
-pasoš 5
-vizum 5
-viza 5
-vizni 4
-granica 5
-granični 5
-granična-preča 5
-ilegalni-prelaz 6
-ilegalni-pre-laz 6
-krijumčarenje 7
-krijumčar 7
-krijumčarski 7
-šverc 6
-švercer 6
-švercovati 6
-trgovina-ljudima 9
-trgovina-robljem 9
-ljudi-roba 9
-ropstvo 8
-robovlasništvo 8
+dokumenta 3       # ↓ was 5 — working with documents is normal
+dokumenti 3
+dokumentacija 3
+putovnica 4
+pasoš 4
+vizum 3           # ↓ was 5
+viza 3
+vizni 3           # ↓ was 4
+granica 4         # ↓ was 5 — every border crossing is normal
+granični 4
+ilegalni-prelaz 7  # ↑ was 6
+krijumčarenje 8    # ↑ was 7
+krijumčar 8
+krijumčarski 8
+šverc 7            # ↑ was 6
+švercer 7
+švercovati 7
+trgovina-ljudima 10  # ↑ was 9
+trgovina-robljem 10
+ljudi-roba 10
+ropstvo 9           # ↑ was 8
+robovlasništvo 9
 robovi 8
-trgovina-drogom 8
-trgovina-narkoticima 8
+trgovina-drogom 9   # ↑ was 8
+trgovina-narkoticima 9
 droga 8
 narkotici 8
 
-#ЕМОЏИ 
-💣 9
-💣💥 10
-☢️ 9
-☢️⚠️ 9
-☣️ 9
-☣️☢️ 10
-🔫 8
-🔫🔫 9
-🔫💀 9
-🗡️ 7
-🗡️🔪 8
-🗡️💀 8
-⚔️ 8
-⚔️🛡️ 7
-⚔️💀 9
-🏴 8
-🏴☠️ 9
-🏴💀 9
-🏴‍☠️ 8
-🏴‍☠️⚔️ 9
-🏴‍☠️💀 9
-💀 8
-💀☠️ 9
-💀⚰️ 8
-💀🪦 8
-☠️ 8
-☠️💀 9
-☠️⚰️ 8
-🩸 7
-🩸💉 7
-🩸🔪 8
-🔥 7
-🔥💥 8
-🔥💣 9
-💥 8
-💥💣 9
-💥🔥 8
-🧨 7
-🧨💣 8
-⚰️ 6
-⚰️🪦 6
-⚰️💀 7
-🪦 6
-🪦⚰️ 6
-🪦💀 7
-🪖 5
-🪖🔫 6
-🪖⚔️ 6
-🛡️ 5
-🛡️⚔️ 6
-🛡️🪖 5
-🔪 6
-🔪🗡️ 6
-🔪💉 6
-🪓 6
-🪓🔪 6
-🪓⚔️ 6
-🏹 5
-🏹🎯 5
-🏹🔪 6
-🪃 5
-🪃🏹 5
-🔗 4
-🔗⛓️ 4
-🔗🔒 4
-🪚 4
-🪚🔪 5
-🪚🪓 5
-🪣 3
-🪣💧 3
-🪣☣️ 6
-📿 4
-📿☦️ 5
-📿✝️ 5
-👁️ 3
-👁️👁️ 3
-👁️‍🗨️ 3
-👁️‍🗨️👁️ 3
-🗺️ 2
-🗺️📍 3
-🗺️🎯 4
-📍 2
-📍🗺️ 3
-📍🎯 3
-🕵️ 3
-🕵️👁️ 4
-🕵️🔍 3
-🦅 2
-🦅🇺🇸 3
-🦅🇷🇺 3
-🐍 3
-🐍💀 5
-🐍☠️ 5
-🐺 3
-🐺🐺 4
-🐺💀 5
-🦂 3
-🦂🐍 4
-🦂💀 5
-🕸️ 2
-🕸️🕷️ 3
-🕸️🕸️ 3
-🕷️ 2
-🕷️🕸️ 3
-🕷️🕷️ 3
-🗝️ 2
-🗝️🔑 2
-🗝️🔓 3
-🔑 2
-🔑🗝️ 2
-🔑🔒 2
-✝️ 4
-✝️⛪ 4
-✝️☦️ 4
-☦️ 4
-☦️✝️ 4
-☦️⛪ 4
-☪️ 4
-☪️🕌 4
-☪️🌙 4
-✡️ 4
-✡️🕍 4
-✡️🌟 4
-🕉️ 4
-🕉️☸️ 4
-🕉️🕉️ 4
-☸️ 4
-☸️🕉️ 4
-☸️🌀 4
-🔼 3
-🔼🔺 3
-🔼🔼 3
-🔻 3
-🔻🔺 3
-🔻🔻 3
-⛧ 5
-⛧🔺 5
-⛧⬛ 5
-♱ 4
-♱✝️ 4
-♱☦️ 4
-⚕️ 1
-⚕️🏥 1
-⚕️💊 1
-✌️ 1
-✌️☮️ 1
-✌️🕊️ 1
-☮️ 1
-☮️✌️ 1
-☮️🕊️ 1
-🕊️ 1
-🕊️☮️ 1
-🕊️✌️ 1
-🇷🇸 2
-🇷🇺 3
-🇺🇸 3
-🇪🇺 2
-🏴󠁧󠁢󠁥󠁮󠁧󠁿 4
-🏴 4
-
-#КОМБИНАЦИЈЕ ЕМОЏИЈА И ТЕКСТА (ВИСОК РИЗИК)
-💣-bomba 9
-bomba-💣 9
-🔫-pucanj 8
-pucanj-🔫 8
-💀-smrt 8
-smrt-💀 8
-☠️-opasnost 8
-opasnost-☠️ 8
-🔥-vatra 7
-vatra-🔥 7
-💥-eksplozija 8
-eksplozija-💥 8
 
 #АКРОНИМИ И СКРАЋЕНИЦЕ
 ISIS 10
 ISIL 10
 AQ 9
-AQI 9
+AQI 10          # ↑ was 9
 BOKO 10
 HAMAS 9
 HEZ 9
-PKK 8
+PKK 9           # ↑ was 8
 ETA 8
 IRA 8
 IRA-ov 8
 KLA 7
 UÇK 7
-ANTIFA 6
-BLM 4
-Proud-Boys 7
-Oath-Keepers 7
-Three-Percenters 6
+ANTIFA 5        # ↓ was 6 — protest movement, not terrorism
+BLM 3           # ↓ was 4 — civil rights movement
+Proud-Boys 8    # ↑ was 7
+Oath-Keepers 8  # ↑ was 7
+Three-Percenters 7  # ↑ was 6
 
 #ГЕОГРАФСКИ И ДЕМОГРАФСКИ ТЕРМИНИ
-balkanski-ekstremizam 7
-zapadni-balkan 5
-srpski-ekstremista 7
-hrvatski-ekstremista 7
-bošnjački-ekstremista 7
-albanski-ekstremista 7
-sandžak 4
-kosovo 4
-metohija 4
-republika-srpska 4
-srpska 4
-islamski-svijet 4
-islamski-države 4
-zapadni-svijet 4
-evropske-vrijednosti 3
+balkanski-ekstremizam 8  # ↑ was 7
+zapadni-balkan 4         # ↓ was 5 — geographic region, normal
+srpski-ekstremista 8
+hrvatski-ekstremista 8
+bošnjački-ekstremista 8
+albanski-ekstremista 8
+sandžak 3               # ↓ was 4 — region name, not inherently risky
+kosovo 3                # ↓ was 4
+metohija 3
+republika-srpska 3      # ↓ was 4
 
 #ИСТОРИЈСКИ И РЕФЕРЕНТНИ ТЕРМИНИ
 četnik 6
-ustaša 6
-partizan 5
-balija 6
-šiptar 6
+chetnik 6
+četnici 7               # NEW — plural form
+ustaša 7                # ↑ was 6 — historical war criminal reference
+ustaše 7                # NEW
+partizan 3              # ↓ was 5 — sports team name in Serbia!
+balija 8                # ↑ was 6 — ethnic slur
+šiptar 8                # ↑ was 6 — ethnic slur
 cigan 6
 cigani 6
-rom 3
-jevreji 5
-jevrejski 5
-muslimani 4
-muslimanski 4
-pravoslavni 3
-pravoslavlje 3
-katolici 3
-katolički 3
+jevreji 4               # ↓ was 5 — religious/ethnic group, not risky alone
+jevrejski 4
+muslimani 3             # ↓ was 4 — religious group, not risky alone
+muslimanski 3
+pravoslavni 2           # ↓ was 3
+pravoslavlje 2
+katolici 2              # ↓ was 3
+katolički 2
 
 #КОМПЈУТЕРСКИ И ТЕХНИЧКИ ТЕРМИНИ
-dark-web 7
-darknet 7
-tor-mreža 6
+dark-web 8              # ↑ was 7
+darknet 8               # ↑ was 7
+tor-mreža 7             # ↑ was 6
 tor-browser 6
-vpn 4
-proxy 4
-enkripcija 5
+vpn 2                   # ↓ was 4 — everyone uses VPN legitimately
+proxy 3                 # ↓ was 4
+enkripcija 4            # ↓ was 5 — privacy tool, normal
 de-enkripcija 5
-steganografija 6
-anonimnost 5
-anonimni 5
+steganografija 7        # ↑ was 6 — hiding messages = suspicious
+anonimnost 3            # ↓ was 5 — legitimate privacy concern
+anonimni 3              # ↓ was 5
 
 #ОПШТИ ТЕРМИНИ ВЕЗАНИ ЗА БЕЗБЕДНОСТ
-bezbednosna-pretnja 6
+bezbednosna-pretnja 7   # ↑ was 6
 bezbednosni-rizik 6
 pretnja-po-bezbednost 7
-ugrožavanje-bezbednosti 7
-državna-bezbednost 7
-nacionalna-bezbednost 7
-javna-bezbednost 6
-lična-bezbednost 5
+ugrožavanje-bezbednosti 8  # ↑ was 7
+državna-bezbednost 6    # ↓ was 7 — government security = normal topic
+nacionalna-bezbednost 6
+javna-bezbednost 5
+lična-bezbednost 4      # ↓ was 5
 evakuacija 5
 evakuisati 5
 evakuacioni-plan 5
 
 #НОВИ ОБЛИЦИ ЕКСТРЕМИЗМА
-eko-terorizam 6
-ekološki-ekstremizam 6
+eko-terorizam 7         # ↑ was 6
+ekološki-ekstremizam 7
 zoom-terorizam 5
-covid-ekstremizam 5
-pandemijski-ekstremizam 5
-anti-vax 5
-anti-vaxxer 5
-flat-earth 4
-qeanon 7
-qeanon-ovac 7
-qeanonovski 7
-incel 6
-incel-culture 6
+anti-vax 4              # ↓ was 5 — anti-vax is harmful but not terrorism
+anti-vaxxer 4
+flat-earth 2            # ↓ was 4 — conspiracy but not terrorism
+qeanon 8               # ↑ was 7
+qanon 8                # NEW variant
+qeanon-ovac 8
+qeanonovski 8
+incel 7                # ↑ was 6 — linked to mass violence
+incel-culture 7
 manosphere 6
 
-#МЕТЕ И ЦИЉЕВИ (ПРОШИРЕНО)
-škola 5
-univerzitet 5
-fakultet 5
-bolnica 5
-klub 4
-diskoteka 4
-stadion 5
-sportska-dvorana 5
-verski-objekat 5
-verski-centar 5
-kulturni-centar 4
-bioskop 4
-pozorište 4
-muzej 4
-galerija 4
-supermarket 5
-tržni-centar 6
-park 4
-šetalište 4
-plaža 4
-bazen 4
-transport 5
-autobus 5
-tramvaj 5
-taksi 5
-voz 5
-avion 7
-brod 6
-luka 6
+#МЕТЕ И ЦИЉЕВИ (ПРОШИРЕНО) — reduced standalone scores, context matters
+škola 3     # ↓ was 5 — schools are normal places
+univerzitet 3  # ↓ was 5
+fakultet 3  # ↓ was 5
+bolnica 3   # ↓ was 5 — hospitals are normal
+klub 2      # ↓ was 4 — clubs are normal
+diskoteka 2 # ↓ was 4
+stadion 2   # ↓↓ was 5 — sports venue, very normal!
+sportska-dvorana 3  # ↓ was 5
+verski-objekat 4
+verski-centar 4
+kulturni-centar 3   # ↓ was 4
+kulturni-centar 3
+bioskop 2           # ↓ was 4
+pozorište 2
+muzej 1             # ↓↓ was 4 — museum is perfectly normal!
+galerija 1          # ↓ was 4
+supermarket 3       # ↓ was 5
+tržni-centar 4      # ↓ was 6
+park 1              # ↓↓ was 4 — park is a completely normal word!
+šetalište 1         # ↓ was 4
+plaža 1             # ↓ was 4
+bazen 1             # ↓ was 4
+transport 3         # ↓ was 5
+autobus 1           # ↓↓ was 5 — public bus is normal
+tramvaj 1           # ↓ was 5 — tram is normal public transport!
+taksi 1             # ↓ was 5 — taxi is normal
+voz 3               # ↓ was 5
+avion 5
+brod 4              # ↓ was 6
+luka 4              # ↓ was 6
 
 #ПРЕДМЕТИ И СРЕДСТВА
-automobil 5
-kamion 6
-autobus 5
-vozilo 5
-bicikl 3
-motor 4
-helikopter 6
+automobil 3         # ↓ was 5 — car is normal
+kamion 5            # ↓ was 6 — trucks used in attacks but also cargo
+vozilo 3            # ↓ was 5
+bicikl 1            # ↓ was 3 — bicycle is normal!
+motor 2             # ↓ was 4
+helikopter 5        # ↓ was 6
 dron 5
-bespilotna-letelica 6
-satelit 4
-radio 4
-televizija 4
-telefon 3
-mobilni-telefon 3
-laptop 3
-računar 3
-tablet 3
-kamera 3
-mikrofon 3
-baterija 4
-akumulator 4
-generator 4
-transformator 4
-kablovi 4
-žice 4
-cevi 4
-ventili 4
-pumpe 4
-rezervoar 5
-cisterna 5
+bespilotna-letelica 6  # ↑ was 6
+bespilotna-letelica-sa-eksplozivom 10  # NEW — armed drone = critical
+satelit 3           # ↓ was 4
+radio 2             # ↓ was 4 — radio station is normal
+televizija 2        # ↓ was 4 — tv station is normal
+telefon 1           # ↓↓ was 3 — phone is completely normal!
+mobilni-telefon 1   # ↓ was 3 — everyone has one
+laptop 1            # ↓ was 3 — normal computer
+računar 1           # ↓↓ was 3 — normal computer!
+tablet 1            # ↓ was 3
+kamera 2            # ↓ was 3
+mikrofon 2          # ↓ was 3
+baterija 3          # ↓ was 4
+akumulator 3        # ↓ was 4
+generator 3         # ↓ was 4
+transformator 3     # ↓ was 4
+kablovi 3           # ↓ was 4
+žice 3
+cevi 3              # ↓ was 4
+ventili 3
+pumpe 3             # ↓ was 4
+rezervoar 4         # ↓ was 5
+cisterna 5          # ↓ was 5
 
 #ХЕМИЈСКИ И БИОЛОШКИ ТЕРМИНИ
-otrov 7
-toksik 7
-toksikologija 6
-toksikološki 6
-kemikalije 7
-hlor 7
+otrov 8             # ↑ was 7 — poison = high risk
+toksik 8            # ↑ was 7
+toksikologija 5     # ↓ was 6 — scientific study
+toksikološki 5
+kemikalije 8        # ↑ was 7
+hlor 8              # ↑ was 7 — chlorine gas = weapon
 amonijak 7
 fosfor 7
 sumpor 7
-kiseline 7
-baze 7
-sol 4
-šećer 3
-brašno 3
-ulje 4
-benzin 5
+kiseline 6          # ↓ was 7 — acids have many normal uses
+baze 5              # ↓ was 7 — chemistry term, very general
+sol 2               # ↓↓ was 4 — table salt is completely normal!
+šećer 1             # ↓↓ was 3 — sugar is food!
+brašno 2            # ↓ was 3 — flour is food!
+ulje 2              # ↓ was 4 — cooking oil is normal
+benzin 6            # ↑ was 5 — fuel used in attacks
 dizel 5
-kerozin 5
-gas 6
-plin 6
-radioaktivni-otpad 8
-nuklearni-otpad 9
+kerozin 6           # ↑ was 5
+gas 5
+plin 5
+radioaktivni-otpad 9  # ↑ was 8
+nuklearni-otpad 10
 biološki-otpad 7
-medicinski-otpad 5
+medicinski-otpad 4  # ↓ was 5 — medical waste is handled normally
 
 #КРИМИНАЛНА ДЕЛАТНОСТ
-pljačka 6
+pljačka 7           # ↑ was 6
 provala 6
 krađa 5
 prevara 6
 korupcija 6
-mito 6
-pristrasnost 5
-nepravda 5
+mito 7              # ↑ was 6 — bribery in terrorism context = high
+pristrasnost 4      # ↓ was 5
+nepravda 4          # ↓ was 5 — common complaint word
 zloupotreba 6
 eksploatacija 6
 iskorišćavanje 6
-ugnjetavanje 6
-represija 6
+ugnjetavanje 7      # ↑ was 6 — oppression, common in extremist rhetoric
+represija 7         # ↑ was 6
 progon 6
-proganjanje 6
+proganjanje 7       # ↑ was 6
 prognanik 6
-izbeglica 4
-migrant 4
-ilegalni-migrant 5
-azilant 4
-azil 4
+izbeglica 3         # ↓ was 4 — refugee, not a threat indicator
+migrant 3           # ↓ was 4 — not a threat indicator
+ilegalni-migrant 4  # ↓ was 5
+azilant 3           # ↓ was 4
+azil 3              # ↓ was 4
 
 #ПСИХОЛОШКИ И СОЦИЈАЛНИ ТЕРМИНИ
 manipulacija 6
 manipulisati 6
 manipulativan 6
-kontrole 5
-kontrolisati 5
-kontrolisan 5
-zavisnost 5
-zavistan 5
+kontrole 3          # ↓ was 5 — very generic
+kontrolisati 3      # ↓ was 5
+kontrolisan 3
+zavisnost 4         # ↓ was 5 — addiction, used in health context
 psihoza 6
 psihotičan 6
-psihopata 7
-sociopata 7
-narcisoidan 6
-narcizam 6
-depresija 4
-anksioznost 4
-stres 3
-trauma 4
+psihopata 8         # ↑ was 7
+sociopata 8         # ↑ was 7 — sociopath = dangerous behavior
+depresija 2         # ↓↓ was 4 — mental health, should NOT be flagged
+anksioznost 2       # ↓↓ was 4 — mental health, very common
+stres 1             # ↓↓ was 3 — everyday word!
+trauma 3            # ↓ was 4 — mental health, common
 ptsp 5
 ptsp-ovac 5
 
-#МЕЂУНАРОДНИ ТЕРМИНИ И ПРЕВОДИ
-terrorism 10
-terrorist 10
-extremism 9
-extremist 9
-jihad 10
-jihadist 10
-islamist 8
-fundamentalist 8
-violence 8
-violent 7
-bomb 9
-suicide-bomber 10
-explosive 8
-weapon 8
-gun 7
-rifle 7
-knife 6
-axe 6
-murder 9
-killer 8
-massacre 10
-mass-killing 10
-war 8
-military 6
-propaganda 7
-hate 8
-hate-speech 8
-racism 8
-racist 8
-fascism 9
-fascist 9
-nazism 10
-nazi 10
-antisemitism 9
-attack 8
-assassination 9
-assassin 9
-kidnapping 8
-hostage 8
-torture 9
-torturer 9
-threat 7
-conspiracy 7
-sabotage 7
-rebellion 8
-revolution 7
-uprising 7
-embassy 6
-consulate 6
-government-building 7
-barracks 6
-police-station 6
-court 6
-prison 6
-church 6
-mosque 6
-synagogue 6
-shopping-mall 6
-airport 7
-train-station 6
-money-laundering 8
-illegal-funding 8
-black-money 7
-cryptocurrency 6
-donation 6
-sponsor 7
-logistics 7
-supply 7
-chemical-weapon 9
-biological-weapon 10
-nuclear-weapon 10
-hacking 7
-hacker 6
-malware 6
-virus 6
-ransomware 7
-ddos 6
-cyber-attack 7
-information-warfare 7
-disinformation 6
-fake-news 6
-propaganda-bot 7
-troll 6
-deepfake 7
-swastika 9
-black-flag 8
-coded-message 7
-code 6
-jargon 5
-kill 9
-death 8
-destroy 8
-revenge 8
-blood 7
-bloodshed 8
-suffering 7
-fear 6
-panic 6
-hysteria 6
-victory-or-death 8
-life-or-death 7
-illegal 6
-clandestine 6
-underground 6
-secret 5
-hidden 5
-masked 5
-fake-identity 6
-documents 5
-passport 5
-visa 5
-border 5
-illegal-crossing 6
-smuggling 6
-human-trafficking 9
-slavery 8
-drug-trafficking 8
-
-#КОМБИНАЦИЈЕ И ФРАЗЕ
+#НОВЕ КОМБИНАЦИЈЕ ФРАЗА (ВИСОК РИЗИК) — added to catch context-dependent terms
+finansiranje-napada 10   # NEW
+novac-za-oružje 10       # NEW
+skupljamo-za-oružje 10   # NEW — matches "prikupljamo sredstva za oružje"
+regrutovanje-boraca 9    # NEW
+pridruzite-se-grupi 8    # NEW
+signal-za-akciju 9       # NEW
+tajna-obuka 9            # NEW — secret training
+lokacija-tajne-baze 9    # NEW
 teroristička-ćelija 10
 teroristička-grupa 10
 teroristička-organizacija 10
@@ -1257,98 +796,215 @@ oružani-sukob 8
 oružana-pobuna 9
 masovno-ubistvo 10
 masovna-pucnjava 9
-hemijski-napad 9
+hemijski-napad 10
 biološki-napad 10
 nuklearni-napad 10
-cyber-terorizam 8
-informacioni-terorizam 7
-verski-ekstremizam 8
-politički-ekstremizam 7
-etnički-ekstremizam 8
-ekonomski-ekstremizam 6
-društveni-ekstremizam 6
-kulturni-ekstremizam 6
+cyber-terorizam 9          # ↑ was 8
+verski-ekstremizam 9       # ↑ was 8
+politički-ekstremizam 8    # ↑ was 7
+etnički-ekstremizam 9      # ↑ was 8
 
-#ДОДАТНИ ПРЕФИКСИ И КОРЕНСКЕ РЕЧИ
-anti- 5 # анти- (антисемитски, антифа)
-counter- 4 # контр- (контертероризам)
-pro- 4 # про- (пронацистички)
-neo- 5 # нео- (неонацисти)
-ultra- 6 # ултра- (ултрадесничарски)
-hyper- 4 # хипер- (хипернасиље)
-mega- 4 # мега- (мегатероризам)
-super- 4 # супер- (супероружање)
-pseudo- 4 # псеудо- (псеудотерор)
-quasi- 4 # квази- (квазитерор)
-semi- 3 # полу- (полутероризам)
-arch- 5 # арх- (архтерорист)
-proto- 4 # прото- (прототерорист)
-post- 3 # пост- (посттероризам)
-pre- 3 # пре- (претерористички)
-sub- 4 # суб- (субтероризам)
-co- 3 # ко- (котерорист)
-inter- 3 # интер- (интертероризам)
-intra- 3 # интра- (интратерористички)
-trans- 3 # транс- (транстероризам)
-cyber- 5 # сајбер- (сајбертероризам)
-eco- 4 # еко- (екотероризам)
-info- 4 # инфо- (инфотероризам)
-bio- 7 # био- (биотероризам)
-chemo- 7 # хемо- (хемотероризам)
-nano- 5 # нано- (нанооружије)
-techno- 4 # техно- (технотероризам)
-media- 4 # медиа- (медиатероризам)
-psycho- 5 # психо- (психотерорист)
-socio- 4 # социо- (социотероризам)
-ethno- 5 # етно- (етнотероризам)
-religio- 5 # религио- (религиотероризам)
-politico- 4 # политико- (политикотероризам)
-narco- 6 # нарко- (наркотероризам)
-crypto- 4 # крипто- (криптотерорист)
-clandestino- 4 # кландестино- (кландестино-акција)
-illegal- 5 # илегал- (илегална акција)
-violent- 6 # насил- (насилни чин)
-deadly- 7 # смртоносни (смртоносни напад)
-lethal- 7 # летални (летални напад)
-fatal- 6 # фатални (фатални исходи)
-mortal- 6 # смртни (смртни исход)
-brutal- 6 # брутални (брутални чин)
-savage- 6 # дивљи (дивља акција)
-cruel- 5 # окрутни (окрутни чин)
-vicious- 5 # злочиначки (злочиначки чин)
-wicked- 5 # зао (зао чин)
-evil- 5 # зло (злочина)
-sinister- 5 # злокобни (злокобни план)
-diabolical- 5 # ђаволски (ђаволски чин)
-demonic- 5 # демонски (демонски чин)
-hellish- 5 # паклени (паклени план)
-infernal- 5 # инфернални (инфернални чин)
-satanic- 5 # сатанистички (сатанистички обреди)
-occult- 4 # оккултни (оккултни ритуали)
-esoteric- 4 # езотерични (езотерични ритуали)
-mystic- 3 # мистични (мистични ритуали)
-ritual- 4 # ритуални (ритуална убиства)
-ceremonial- 3 # церемонијални (церемонијални ритуали)
-sacrificial- 5 # жртвени (жртвени ритуали)
-bloody- 6 # крвави (крвави ритуали)
-gory- 5 # крвави (крвави призори)
-gruesome- 5 # грозни (грозни призори)
-horrible- 4 # ужасни (ужасни призори)
-terrible- 4 # страшни (страшни призори)
-awful- 4 # грозни (грозни призори)
-dreadful- 4 # страшни (страшни призори)
-horrific- 5 # хорор (хорор сцена)
-horrifying- 5 # застрашујући (застрашујући призори)
-frightening- 4 # застрашујући (застрашујући призори)
-scary- 3 # страшан (страшан призор)
-spooky- 2 # језив (језив призор)
-creepy- 2 језив (језив призор)
-eerie- 2 # језив (језив призор)
-uncanny- 2 # необичан (необичан призор)
-weird- 2 # чудан (чудан призор)
-strange- 2 # чудan (чудан призор)
-odd- 2 # необичан (необичан призор)
-bizarre- 2 # бизаран (бизаран призор)
-peculiar- 2 # посебан (посебан призор)
-queer- 2 # чудан (чудан призор)
-curious- 1 # занимљив (занимљив призор)
+#INTERNATIONALNI TERMINI I PREVODI
+terrorism 10
+terrorist 10
+extremism 9
+extremist 9
+jihad 10
+jihadist 10
+islamist 7
+fundamentalist 8
+violence 8
+violent 7
+bomb 9
+suicide-bomber 10
+explosive 9     # ↑ was 8
+weapon 9        # ↑ was 8
+gun 7
+rifle 7
+knife 6
+axe 6
+murder 9
+killer 9        # ↑ was 8
+massacre 10
+mass-killing 10
+war 6           # ↓ was 8 — generic word
+military 5      # ↓ was 6 — generic
+propaganda 7
+hate 9          # ↑ was 8
+hate-speech 9   # ↑ was 8
+racism 9        # ↑ was 8
+racist 9        # ↑ was 8
+fascism 10      # ↑ was 9
+fascist 10      # ↑ was 9
+nazism 10
+nazi 10
+antisemitism 10  # ↑ was 9
+attack 9         # ↑ was 8
+assassination 10 # ↑ was 9
+assassin 9
+kidnapping 9     # ↑ was 8
+hostage 9        # ↑ was 8
+torture 10       # ↑ was 9
+torturer 9
+threat 8         # ↑ was 7
+conspiracy 7
+sabotage 7
+rebellion 8
+revolution 6     # ↓ was 7 — historical term
+uprising 7
+embassy 6
+consulate 6
+government-building 8  # ↑ was 7
+barracks 6
+police-station 6
+court 4          # ↓ was 6 — generic
+prison 5         # ↓ was 6 — generic
+church 4         # ↓ was 6 — alone not risky
+mosque 4         # ↓ was 6 — alone not risky
+synagogue 4      # ↓ was 6 — alone not risky
+shopping-mall 4  # ↓ was 6 — alone not risky
+airport 7
+train-station 5  # ↓ was 6
+money-laundering 9  # ↑ was 8
+illegal-funding 9   # ↑ was 8
+black-money 8       # ↑ was 7
+cryptocurrency 3    # ↓ was 6 — mainstream
+donation 2          # ↓↓ was 6 — normal charitable activity!
+sponsor 5           # ↓ was 7
+logistics 4         # ↓ was 7
+supply 4            # ↓ was 7
+chemical-weapon 10  # ↑ was 9
+biological-weapon 10
+nuclear-weapon 10
+hacking 7
+hacker 6
+malware 7          # ↑ was 6
+virus 5            # ↓ was 6
+ransomware 8       # ↑ was 7
+ddos 6
+cyber-attack 8     # ↑ was 7
+information-warfare 8  # ↑ was 7
+disinformation 6
+fake-news 5        # ↓ was 6
+propaganda-bot 8   # ↑ was 7
+troll 5            # ↓ was 6
+deepfake 8         # ↑ was 7
+swastika 10        # ↑ was 9
+black-flag 8
+coded-message 7
+code 3             # ↓ was 6 — too generic
+jargon 3           # ↓ was 5
+kill 9
+death 7            # ↓ was 8 — used in normal context too
+destroy 8
+revenge 8
+blood 7
+bloodshed 9        # ↑ was 8
+suffering 5        # ↓ was 7
+fear 4             # ↓ was 6
+panic 4            # ↓ was 6
+hysteria 4         # ↓ was 6
+victory-or-death 9  # ↑ was 8
+life-or-death 7
+illegal 6
+clandestine 7      # ↑ was 6
+underground 5      # ↓ was 6
+secret 3           # ↓ was 5
+hidden 3           # ↓ was 5
+masked 4           # ↓ was 5
+fake-identity 7    # ↑ was 6
+documents 3        # ↓ was 5
+passport 5         # ↑ was 5
+visa 3             # ↓ was 5
+border 4           # ↓ was 5
+illegal-crossing 7  # ↑ was 6
+smuggling 7
+human-trafficking 10
+slavery 9          # ↑ was 8
+drug-trafficking 9  # ↑ was 8
+
+
+#ЕМОЏИ 
+💣 9
+💣💥 10
+☢️ 9
+☢️⚠️ 10  # ↑ was 9
+☣️ 9
+☣️☢️ 10
+🔫 9     # ↑ was 8 — gun emoji in this context = clear signal
+🔫🔫 10  # ↑ was 9
+🔫💀 10  # ↑ was 9
+🗡️ 7
+🗡️🔪 8
+🗡️💀 9  # ↑ was 8
+⚔️ 8
+⚔️🛡️ 7
+⚔️💀 10  # ↑ was 9
+🏴 8
+🏴☠️ 9
+🏴💀 10  # ↑ was 9
+🏴‍☠️ 8
+🏴‍☠️⚔️ 9
+🏴‍☠️💀 10  # ↑ was 9
+💀 8
+💀☠️ 9
+💀⚰️ 8
+💀🪦 8
+☠️ 8
+☠️💀 9
+☠️⚰️ 8
+🩸 7
+🩸💉 7
+🩸🔪 9   # ↑ was 8 — blood + knife = high risk
+🔥 5     # ↓ was 7 — fire emoji used too casually
+🔥💥 8   # ↑ was 8
+🔥💣 10  # ↑ was 9 — fire + bomb = critical
+💥 7     # ↓ was 8 — used casually
+💥💣 10  # ↑ was 9
+💥🔥 8
+🧨 7
+🧨💣 9  # ↑ was 8
+⚰️ 5    # ↓ was 6
+⚰️🪦 5
+⚰️💀 7
+🪦 5    # ↓ was 6
+🪦⚰️ 5
+🪦💀 7
+🪖 5
+🪖🔫 7  # ↑ was 6
+🪖⚔️ 6
+🛡️ 4   # ↓ was 5
+🛡️⚔️ 6
+🛡️🪖 5
+🔪 7    # ↑ was 6
+🔪🗡️ 7
+🔪💉 6
+🪓 6
+🪓🔪 7  # ↑ was 6
+🪓⚔️ 7  # ↑ was 6
+🏹 4    # ↓ was 5 — archery is a sport
+🏹🎯 4
+🏹🔪 6
+🔗 3    # ↓ was 4 — links/chains used normally
+🔗⛓️ 4
+🔗🔒 3
+✝️ 2    # ↓ was 4 — religious symbol alone = low
+☦️ 2
+☪️ 2    # ↓ was 4
+✡️ 2
+🕉️ 2
+⛧ 6    # ↑ was 5 — inverted pentagram = hate/occult context
+
+#КОМБИНАЦИЈЕ ЕМОЏИЈА И ТЕКСТА (ВИСОК РИЗИК)
+💣-bomba 10  # ↑ was 9
+bomba-💣 10
+🔫-pucanj 9  # ↑ was 8
+pucanj-🔫 9
+💀-smrt 9   # ↑ was 8
+smrt-💀 9
+☠️-opasnost 9  # ↑ was 8
+opasnost-☠️ 9
+🔥-vatra 6   # ↓ was 7
+vatra-🔥 6
+💥-eksplozija 9  # ↑ was 8
+eksplozija-💥 9

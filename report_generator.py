@@ -158,6 +158,102 @@ class ReportGenerator:
         return json.dumps(payload, ensure_ascii=False, indent=2)
 
     # ------------------------------------------------------------------
+    # Chat export report
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def generate_chat_report(chat_analysis: dict,
+                             overall_risk_level: str,
+                             overall_risk_description: str,
+                             overall_recommendations: list,
+                             total_processing_time: float) -> str:
+        """
+        Build a full text report for a chat export analysis.
+
+        The overall risk level is derived from the average score across ALL
+        messages (flagged and unflagged), not from the combined-text analysis.
+        """
+        meta  = chat_analysis["chat_meta"]
+        st    = chat_analysis["stats"]
+        lines = []
+
+        # ── Header ──────────────────────────────────────────────────────
+        lines += [
+            "=" * 70,
+            "ANALIZA CHAT EXPORTA / CHAT EXPORT ANALYSIS",
+            f"Chat: {meta['chat_name']}  |  Tip: {meta['chat_type']}",
+            "=" * 70, "",
+        ]
+
+        # ── Overall risk ─────────────────────────────────────────────────
+        avg  = st["average_score"]
+        lines += [
+            "--- PROCENA RIZIKA ČETA ---",
+            f"Nivo rizika:  {overall_risk_level}",
+            f"Opis:         {overall_risk_description}",
+            f"Prosečan skor po poruci: {avg:.2f}  "
+            f"(suma: {st['total_score_sum']} / {st['analysable_messages']} poruka)",
+            "",
+            "Preporuke:",
+        ]
+        for i, rec in enumerate(overall_recommendations, 1):
+            lines.append(f"  {i}. {rec}")
+        lines.append("")
+
+        # ── Statistics ───────────────────────────────────────────────────
+        lines += [
+            "--- STATISTIKA ---",
+            f"Ukupno poruka u exportu:  {st['total_messages_in_export']}",
+            f"Analiziranih poruka:      {st['analysable_messages']}",
+            f"Označenih (skor > 0):     {st['flagged_messages_count']}",
+            f"Čistih poruka:            {st['clean_messages_count']}",
+            f"Maksimalni skor:          {st['max_score']}",
+            f"Vreme obrade:             {total_processing_time:.3f}s",
+            "",
+            "Raspodela rizika:",
+        ]
+        for level, count in sorted(st["risk_distribution"].items(),
+                                   key=lambda x: x[1], reverse=True):
+            lines.append(f"  {level}: {count}")
+        lines.append("")
+
+        # ── Top users ────────────────────────────────────────────────────
+        top = st.get("top_users_by_score", [])
+        if top:
+            lines.append("--- TOP KORISNICI PO UKUPNOM SKORU ---")
+            for u in top:
+                lines.append(
+                    f"  {u['user_name']} (ID: {u['user_id'] or '—'}): "
+                    f"skor={u['total_score']}  označenih={u['flagged']}/{u['messages']}"
+                )
+            lines.append("")
+
+        # ── Flagged messages ─────────────────────────────────────────────
+        flagged = chat_analysis["flagged_messages"]
+        if flagged:
+            lines.append(f"--- OZNAČENE PORUKE ({len(flagged)}) ---")
+            for m in flagged:
+                lines += [
+                    "",
+                    f"  Korisnik:  {m['user_name']}  (ID: {m['user_id'] or '—'})",
+                    f"  Datum:     {m['date']}",
+                    f"  Nivo:      {m['risk_level']}  |  Skor: {m['total_score']}",
+                    f"  Poruka:    {m['text']}",
+                ]
+                if m["term_frequencies"]:
+                    terms = ", ".join(
+                        f"{t}×{c}" for t, c in
+                        sorted(m["term_frequencies"].items(),
+                               key=lambda x: x[1], reverse=True)
+                    )
+                    lines.append(f"  Termini:   {terms}")
+                if m.get("verdict"):
+                    lines.append(f"  Nalaz:     {m['verdict']}")
+
+        lines += ["", "=" * 70]
+        return "\n".join(lines)
+
+    # ------------------------------------------------------------------
     # File I/O
     # ------------------------------------------------------------------
 

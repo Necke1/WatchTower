@@ -2,24 +2,59 @@
 """
 WatchTower: Chat Export Analyzer
 =================================
-Handles detection and per-message analysis of chat export JSON files
-(Telegram-style and similar formats).
+Handles detection and per-message analysis of chat export files.
+
+Supported formats
+-----------------
+• JSON chat exports  (Telegram-style and similar)
+• TXT chat exports   (timestamped log format):
+      [YYYY-MM-DD HH:MM:SS] Sender Name: message text
+      [YYYY-MM-DD HH:MM:SS] Sender Name: <Photo: filename.jpg>
 
 Public API
 ----------
-is_chat_export(parsed)          → bool
+is_chat_export(parsed)                          → bool   (JSON)
+is_txt_chat_export(raw_text)                    → bool   (TXT)
+parse_txt_chat_export(raw_text)                 → dict   (TXT → internal format)
 process_chat_export(parsed, filename, raw_bytes, analyzer) → dict
+combine_messages_text(messages)                 → str
 
-The returned dict is placed under the "chat_analysis" key in the
-/api/analyze/file response when a chat export is detected.
+The dict returned by process_chat_export is placed under the "chat_analysis"
+key in the /api/analyze/file response when a chat export is detected.
 """
 
+import re
 from collections import Counter
 from text_analyzer import TextAnalyzer
+from constants import CHAT_MESSAGE_RISK_WEIGHTS
+
+# Risk level sort order — VISOK first, BEZ RIZIKA last
+_RISK_ORDER: dict = {
+    'VISOK RIZIK':    0,
+    'SREDNJI RIZIK':  1,
+    'NIZAK RIZIK':    2,
+    'MINIMALAN RIZIK':3,
+    'BEZ RIZIKA':     4,
+}
 
 
 # ---------------------------------------------------------------------------
-# Detection
+# TXT format pattern
+# ---------------------------------------------------------------------------
+# Matches:  [2024-03-04 12:00:00] Sender Name: message text
+#           [2024-03-04 12:00:00] Sender Name:
+# Group 1 = date-time, Group 2 = sender name, Group 3 = message text (may be empty)
+
+_TXT_LINE_RE = re.compile(
+    r'^\[(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2})\]\s+(.+?):\s*(.*)',
+)
+
+# Media-only messages — no readable text to analyse
+_MEDIA_RE = re.compile(r'^<[^>]+>$')
+
+
+# ---------------------------------------------------------------------------
+# JSON export detection
 # ---------------------------------------------------------------------------
 
 def is_chat_export(parsed: dict) -> bool:
@@ -43,6 +78,89 @@ def is_chat_export(parsed: dict) -> bool:
         "content", "timestamp",
     }
     return bool(msg_keys & set(first.keys()))
+
+
+# ---------------------------------------------------------------------------
+# TXT chat export detection and parsing
+# ---------------------------------------------------------------------------
+
+def is_txt_chat_export(raw_text: str) -> bool:
+    """
+    Return True if the text looks like a timestamped chat log.
+
+    Requires at least 2 lines matching the pattern so a single accidental
+    match in plain text doesn't trigger the parser.
+
+    Accepted format:
+        [YYYY-MM-DD HH:MM:SS] Sender Name: message text
+    """
+    matches = 0
+    for line in raw_text.splitlines():
+        if _TXT_LINE_RE.match(line.strip()):
+            matches += 1
+            if matches >= 2:
+                return True
+    return False
+
+
+def parse_txt_chat_export(raw_text: str) -> dict:
+    """
+    Parse a TXT chat log into the same internal dict structure that
+    process_chat_export() expects (mirrors the JSON export schema).
+
+    Multi-line messages (lines that don't start with a timestamp) are
+    appended to the previous message's text.
+
+    Media-only lines such as ``<Photo: filename.jpg>`` are kept as
+    messages with empty text so process_chat_export filters them out
+    naturally via the ``if m["text"]:`` guard.
+
+    Returns a dict with keys:
+        name     — "TXT Chat Export"
+        type     — "txt_chat"
+        messages — list of message dicts compatible with _normalise_msg()
+    """
+    messages   = []
+    current    = None
+
+    for raw_line in raw_text.splitlines():
+        line  = raw_line.rstrip()
+        match = _TXT_LINE_RE.match(line)
+
+        if match:
+            # Save the previous message before starting a new one
+            if current is not None:
+                messages.append(current)
+
+            date, sender, text = match.group(1), match.group(2), match.group(3)
+
+            # Strip media placeholders — leave text empty so the message is
+            # skipped during analysis rather than producing garbage tokens.
+            if _MEDIA_RE.match(text.strip()):
+                text = ""
+
+            current = {
+                "id":      len(messages) + 1,
+                "type":    "message",
+                "date":    date,
+                "from":    sender,
+                "from_id": "",          # TXT format has no user IDs
+                "text":    text,
+            }
+        else:
+            # Continuation line — append to the current message
+            if current is not None and line.strip():
+                current["text"] = (current["text"] + " " + line.strip()).strip()
+
+    # Don't forget the last message
+    if current is not None:
+        messages.append(current)
+
+    return {
+        "name":     "TXT Chat Export",
+        "type":     "txt_chat",
+        "messages": messages,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -227,12 +345,16 @@ def process_chat_export(
     user_scores: dict       = {}
 
     for msg in messages:
-        raw    = analyzer.analyze_text(msg["text"])
-        an     = raw["analysis"]
-        score  = an["total_score"]
-        risk   = an["risk_level"]
-        tfreq  = an["term_frequencies"]
+        raw      = analyzer.analyze_text(msg["text"])
+        an       = raw["analysis"]
+        score    = an["total_score"]
+        tfreq    = an["term_frequencies"]
         tweights = {t: analyzer.term_to_weight.get(t, 1) for t in tfreq}
+
+        # Use message-specific thresholds — proportional document thresholds
+        # produce misleading results on short texts (a single risky word in a
+        # 9-word sentence would otherwise fire VISOK RIZIK via density signal).
+        risk, risk_desc = analyzer.calculate_message_risk_level(score)
 
         entry = {
             # ── Identity (fields requested) ───────────────────────────────
@@ -243,7 +365,7 @@ def process_chat_export(
             # ── Risk ─────────────────────────────────────────────────────
             "total_score":      score,
             "risk_level":       risk,
-            "risk_description": an["risk_description"],
+            "risk_description": risk_desc,
             "term_frequencies": tfreq,
             "term_weights":     tweights,
             # ── Human-readable verdict ────────────────────────────────────
@@ -270,6 +392,23 @@ def process_chat_export(
             user_scores[uid]["flagged"] += 1
 
     scores = [r["total_score"] for r in all_results]
+
+    # ── Exponential weighted score ──────────────────────────────────────────
+    # Each message's score is multiplied by its risk level's weight so that
+    # a single VISOK RIZIK message cannot be hidden by many clean ones.
+    weighted_score_sum = sum(
+        r["total_score"] * CHAT_MESSAGE_RISK_WEIGHTS.get(r["risk_level"], 1)
+        for r in all_results
+        if r["total_score"] > 0
+    )
+    weighted_avg = round(weighted_score_sum / max(len(messages), 1), 3)
+
+    # ── Sort flagged messages: highest risk first, then by score ────────────
+    flagged.sort(key=lambda m: (
+        _RISK_ORDER.get(m["risk_level"], 5),
+        -m["total_score"],
+    ))
+
     stats = {
         "total_messages_in_export": len(raw_messages),
         "analysable_messages":      len(messages),
@@ -278,6 +417,8 @@ def process_chat_export(
         "total_score_sum":          sum(scores),
         "average_score":            round(sum(scores) / max(len(scores), 1), 2),
         "max_score":                max(scores, default=0),
+        "weighted_score_sum":       weighted_score_sum,
+        "weighted_avg":             weighted_avg,
         "risk_distribution":        dict(Counter(r["risk_level"] for r in all_results)),
         "top_users_by_score":       sorted(
             user_scores.values(), key=lambda u: u["total_score"], reverse=True

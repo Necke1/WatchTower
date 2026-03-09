@@ -64,7 +64,6 @@
           </div>
           <button class="btn btn-ghost" onclick="clearFile()" style="font-size:.8rem;">✕ Ukloni</button>
         </div>
-        <!-- JSON text preview -->
         <div id="json-preview-wrap" class="hidden" style="margin-top:.75rem;">
           <div class="section-label">Pregled izvučenog teksta</div>
           <textarea id="json-preview-text" readonly placeholder="Ovde će se prikazati tekst izvučen iz JSON fajla…"></textarea>
@@ -73,7 +72,7 @@
 
       <!-- Options -->
       <div style="margin-top:1rem;">
-        <label>Opcije</label>
+        <label>Opcije analize</label>
         <div class="options-grid">
           <label class="option-item selected" id="opt-spellcheck">
             <input type="checkbox" id="chk-spellcheck" checked onchange="syncOption(this,'opt-spellcheck')">
@@ -94,6 +93,27 @@
             <div>
               <div class="option-label">JSON izlaz</div>
               <div class="option-flag">--json</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Interactive modes -->
+      <div style="margin-top:.85rem;">
+        <label>Interaktivni modovi</label>
+        <div class="options-grid">
+          <label class="option-item" id="opt-ic-spell">
+            <input type="checkbox" id="chk-ic-spell" onchange="syncOption(this,'opt-ic-spell')">
+            <div>
+              <div class="option-label">🔤 Interaktivna korekcija pravopisa</div>
+              <div class="option-flag">Pregled grešaka reč po reč</div>
+            </div>
+          </label>
+          <label class="option-item" id="opt-ic-context">
+            <input type="checkbox" id="chk-ic-context" onchange="syncOption(this,'opt-ic-context')">
+            <div>
+              <div class="option-label">🧠 Interaktivna analiza konteksta</div>
+              <div class="option-flag">Ocenjivanje rizičnih termina</div>
             </div>
           </label>
         </div>
@@ -158,9 +178,9 @@
 
   </div><!-- /tabs card -->
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
        RESULTS
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════ -->
   <div id="results-section" class="hidden">
 
     <!-- File info (file uploads only) -->
@@ -169,26 +189,24 @@
       <div class="card-body" id="res-file-info-body"></div>
     </div>
 
-    <!-- ═══ CHAT EXPORT ANALYSIS (shown only for chat JSON files) ═══ -->
+    <!-- ═══ CHAT EXPORT ANALYSIS ═══ -->
     <div class="card hidden" id="res-chat-card">
-      <!-- Banner -->
       <div style="padding:1.25rem 1.25rem .75rem;">
         <div class="chat-banner" id="res-chat-banner">
           <span class="chat-banner-icon">💬</span>
           <div class="chat-banner-text" id="res-chat-banner-text"></div>
         </div>
       </div>
-      <!-- Aggregate stats -->
+      <!-- Chat overall risk (separate from per-document text risk) -->
+      <div id="res-chat-overall" style="padding:0 1.25rem .75rem;"></div>
       <div class="chat-stats-row" id="res-chat-stats"></div>
-      <!-- Top users -->
       <div style="padding:1.25rem;">
         <div class="section-label" style="margin-bottom:.6rem;">Korisnici po ukupnom skoru</div>
         <div id="res-top-users"></div>
       </div>
-      <!-- Flagged messages -->
       <div style="border-top:1px solid var(--border);">
         <div style="padding:1.1rem 1.25rem .25rem;display:flex;align-items:center;justify-content:space-between;">
-          <span class="card-title">Sumnjive poruke</span>
+          <span class="card-title">Sumnjive poruke <span style="font-size:.75rem;font-weight:400;color:var(--muted);">(sortirano: visok rizik prvo)</span></span>
           <span id="res-flagged-count" class="pill pill-red"></span>
         </div>
         <div id="res-flagged-list" class="flagged-list"></div>
@@ -267,12 +285,32 @@
 </main>
 
 <!-- ══════════════════════════════════════════════════════════════
-     INTERACTIVE CORRECTION DIALOG
+     LOADING OVERLAY  (shown during analysis)
+══════════════════════════════════════════════════════════════ -->
+<div class="loading-overlay hidden" id="loading-overlay">
+  <div class="loading-card">
+    <div class="radar-wrap">
+      <div class="radar-ring radar-ring-1"></div>
+      <div class="radar-ring radar-ring-2"></div>
+      <div class="radar-ring radar-ring-3"></div>
+      <div class="radar-sweep"></div>
+      <div class="radar-center">
+        <span class="logo-dot" style="width:10px;height:10px;"></span>
+      </div>
+    </div>
+    <div class="loading-label" id="loading-msg">Analizira se…</div>
+    <div class="loading-sub">WatchTower skenira sadržaj</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     INTERACTIVE SPELL-CHECK DIALOG
 ══════════════════════════════════════════════════════════════ -->
 <div class="ic-overlay hidden" id="ic-overlay">
   <div class="ic-dialog">
     <div class="ic-dialog-header">
-      <span class="ic-dialog-title">Interaktivna korekcija pravopisa</span>
+      <span class="ic-dialog-title">🔤 Interaktivna korekcija pravopisa</span>
       <span class="ic-dialog-progress" id="ic-progress"></span>
     </div>
     <div class="ic-dialog-body">
@@ -296,7 +334,82 @@
     </div>
     <div class="ic-dialog-footer">
       <button class="btn btn-ghost" onclick="icSkip()">Preskoči</button>
-      <button class="btn btn-primary" id="ic-confirm-btn" onclick="icConfirm()" disabled>Potvrdi</button>
+      <button class="btn btn-primary" id="ic-confirm-btn" onclick="icConfirm()" disabled>Potvrdi i sačuvaj</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     INTERACTIVE CONTEXT-CHECK DIALOG
+══════════════════════════════════════════════════════════════ -->
+<div class="ic-overlay hidden" id="ctx-overlay">
+  <div class="ic-dialog" style="max-width:600px;">
+    <div class="ic-dialog-header">
+      <span class="ic-dialog-title">🧠 Interaktivna analiza konteksta</span>
+      <span class="ic-dialog-progress" id="ctx-progress"></span>
+    </div>
+    <div class="ic-dialog-body">
+      <div class="ic-prog-bar"><div class="ic-prog-fill" id="ctx-prog-fill" style="width:0%"></div></div>
+
+      <!-- Term info -->
+      <div style="display:flex;align-items:baseline;gap:.75rem;margin-bottom:.75rem;">
+        <div style="font-size:.78rem;color:var(--muted);">Pronađeni term:</div>
+        <div class="ic-word-chip" id="ctx-term" style="margin-bottom:0;"></div>
+        <div style="font-size:.78rem;color:var(--muted);" id="ctx-count"></div>
+        <div style="font-size:.78rem;color:var(--muted);" id="ctx-weight"></div>
+      </div>
+
+      <!-- Message context with highlighted term -->
+      <div style="font-size:.78rem;color:var(--muted);margin-bottom:.35rem;">Kontekst poruke:</div>
+      <div class="ctx-message-box" id="ctx-message"></div>
+
+      <!-- Custom score override -->
+      <div class="ctx-score-row">
+        <span class="ctx-score-lbl">Prilagođeni multiplikator rizika <span style="color:var(--muted);font-size:.75rem;">(opciono — ostavite prazno za podrazumevano)</span></span>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-top:.35rem;">
+          <input type="number" id="ctx-score-input" class="ctx-score-input"
+                 min="0" max="10" step="0.1" placeholder="npr. 1.5">
+          <span style="font-size:.78rem;color:var(--muted);">0.0 = ignoriši · 1.0 = neutralno · 2.0 = pojačaj · 3.0 = jako pojačaj</span>
+        </div>
+      </div>
+
+      <!-- Feedback buttons -->
+      <div style="font-size:.78rem;color:var(--muted);margin-bottom:.5rem;margin-top:.85rem;">Procena termina u ovom kontekstu:</div>
+      <div class="ctx-choices" id="ctx-choices">
+        <button class="ctx-choice-btn ctx-false"   onclick="ctxFeedback('false_positive')">
+          <span class="ctx-choice-icon">✅</span>
+          <div>
+            <div class="ctx-choice-label">Lažni alarm</div>
+            <div class="ctx-choice-sub">Term nije rizičan u ovom kontekstu</div>
+          </div>
+        </button>
+        <button class="ctx-choice-btn ctx-lower"   onclick="ctxFeedback('lower_severity')">
+          <span class="ctx-choice-icon">📉</span>
+          <div>
+            <div class="ctx-choice-label">Niži rizik</div>
+            <div class="ctx-choice-sub">Rizičan ali manje nego procenjeno</div>
+          </div>
+        </button>
+        <button class="ctx-choice-btn ctx-higher"  onclick="ctxFeedback('higher_severity')">
+          <span class="ctx-choice-icon">📈</span>
+          <div>
+            <div class="ctx-choice-label">Viši rizik</div>
+            <div class="ctx-choice-sub">Opasnije nego što skor pokazuje</div>
+          </div>
+        </button>
+        <button class="ctx-choice-btn ctx-confirm" onclick="ctxFeedback('confirmed')">
+          <span class="ctx-choice-icon">⚠️</span>
+          <div>
+            <div class="ctx-choice-label">Potvrđena pretnja</div>
+            <div class="ctx-choice-sub">Jasna, direktna operativna pretnja</div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="ic-dialog-footer">
+      <button class="btn btn-ghost" onclick="ctxSkip()">Preskoči ovaj term</button>
+      <button class="btn btn-outline" onclick="ctxFinish()">Završi pregled</button>
     </div>
   </div>
 </div>

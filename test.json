@@ -1,0 +1,6844 @@
+{
+  "name": "WatchTower Test Grupa",
+  "type": "public_supergroup",
+  "id": 1001234567,
+  "messages": [
+    {
+      "id": 1,
+      "type": "message",
+      "date": "2024-03-01T08:06:00",
+      "date_unixtime": "1709280360",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Film koji sam gledao bio je uzbudljiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Film koji sam gledao bio je uzbudljiv."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "message",
+      "date": "2024-03-01T08:48:00",
+      "date_unixtime": "1709282880",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "YouTube ima odlične tutorijale za sve.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "YouTube ima odlične tutorijale za sve."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "message",
+      "date": "2024-03-01T09:00:00",
+      "date_unixtime": "1709283600",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Dobra ideja, podržavam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dobra ideja, podržavam."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "message",
+      "date": "2024-03-01T09:01:00",
+      "date_unixtime": "1709283660",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Vidimo se uskoro.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vidimo se uskoro."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "message",
+      "date": "2024-03-01T09:07:00",
+      "date_unixtime": "1709284020",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Večeras izlazimo, ko je za to?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Večeras izlazimo, ko je za to?"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "message",
+      "date": "2024-03-01T09:46:00",
+      "date_unixtime": "1709286360",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Prijatelji su zlata vredni.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Prijatelji su zlata vredni."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "message",
+      "date": "2024-03-01T10:27:00",
+      "date_unixtime": "1709288820",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Nema mira bez pravde.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nema mira bez pravde."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "message",
+      "date": "2024-03-01T11:09:00",
+      "date_unixtime": "1709291340",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Fudbal je ponekad nepredvidiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Fudbal je ponekad nepredvidiv."
+        }
+      ],
+      "reply_to_message_id": 3
+    },
+    {
+      "id": 9,
+      "type": "message",
+      "date": "2024-03-01T11:39:00",
+      "date_unixtime": "1709293140",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Igram novu igru, preporučujem svima.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Igram novu igru, preporučujem svima."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "message",
+      "date": "2024-03-01T12:00:00",
+      "date_unixtime": "1709294400",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Uvek koristite jake lozinke.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Uvek koristite jake lozinke."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "message",
+      "date": "2024-03-01T12:35:00",
+      "date_unixtime": "1709296500",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Planirao sam letovanje na moru.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planirao sam letovanje na moru."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "message",
+      "date": "2024-03-01T13:02:00",
+      "date_unixtime": "1709298120",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Zalazak sunca jutros bio je neverovatno lep.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zalazak sunca jutros bio je neverovatno lep."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "message",
+      "date": "2024-03-01T13:44:00",
+      "date_unixtime": "1709300640",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Preporučujem kafu u kafani kod parka.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Preporučujem kafu u kafani kod parka."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "message",
+      "date": "2024-03-01T13:52:00",
+      "date_unixtime": "1709301120",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Bezbednost na internetu je jako važna.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Bezbednost na internetu je jako važna."
+        }
+      ],
+      "reply_to_message_id": 13
+    },
+    {
+      "id": 15,
+      "type": "message",
+      "date": "2024-03-01T14:17:00",
+      "date_unixtime": "1709302620",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Kakav gol, nisam mogao da verujem!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kakav gol, nisam mogao da verujem!"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "message",
+      "date": "2024-03-01T14:33:00",
+      "date_unixtime": "1709303580",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Važno je biti iskren u svemu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Važno je biti iskren u svemu."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "message",
+      "date": "2024-03-01T15:01:00",
+      "date_unixtime": "1709305260",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Proveo sam vikend sa porodicom, fenomenalno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proveo sam vikend sa porodicom, fenomenalno."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "message",
+      "date": "2024-03-01T15:06:00",
+      "date_unixtime": "1709305560",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Internet mi ne radi dobro danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Internet mi ne radi dobro danas."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "message",
+      "date": "2024-03-01T15:44:00",
+      "date_unixtime": "1709307840",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Nova verzija aplikacije je mnogo bolja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nova verzija aplikacije je mnogo bolja."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "message",
+      "date": "2024-03-01T16:03:00",
+      "date_unixtime": "1709308980",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Fudbal je ponekad nepredvidiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Fudbal je ponekad nepredvidiv."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "type": "message",
+      "date": "2024-03-01T16:46:00",
+      "date_unixtime": "1709311560",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Ko je spreman da ide do kraja za svoja uverenja?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko je spreman da ide do kraja za svoja uverenja?"
+        }
+      ],
+      "reply_to_message_id": 18
+    },
+    {
+      "id": 22,
+      "type": "message",
+      "date": "2024-03-01T16:48:00",
+      "date_unixtime": "1709311680",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Vežbe istezanja su korisne posle sat vremena za računarom.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vežbe istezanja su korisne posle sat vremena za računarom."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "message",
+      "date": "2024-03-01T17:13:00",
+      "date_unixtime": "1709313180",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Može, dogovorili smo se.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Može, dogovorili smo se."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "message",
+      "date": "2024-03-01T17:23:00",
+      "date_unixtime": "1709313780",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Treba nam podrška, situacija je kritična.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Treba nam podrška, situacija je kritična."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "message",
+      "date": "2024-03-01T18:01:00",
+      "date_unixtime": "1709316060",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Smejao sam se celo veče na ovim porukama.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Smejao sam se celo veče na ovim porukama."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "type": "message",
+      "date": "2024-03-01T18:31:00",
+      "date_unixtime": "1709317860",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Posjetio sam Niš i bio sam oduševljen.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posjetio sam Niš i bio sam oduševljen."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "type": "message",
+      "date": "2024-03-01T19:06:00",
+      "date_unixtime": "1709319960",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Kolege su mi pomogle da završim na vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kolege su mi pomogle da završim na vreme."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "message",
+      "date": "2024-03-01T19:23:00",
+      "date_unixtime": "1709320980",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Smejao sam se celo veče na ovim porukama.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Smejao sam se celo veče na ovim porukama."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "type": "message",
+      "date": "2024-03-01T19:32:00",
+      "date_unixtime": "1709321520",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Kolege su mi pomogle da završim na vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kolege su mi pomogle da završim na vreme."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "type": "message",
+      "date": "2024-03-01T20:08:00",
+      "date_unixtime": "1709323680",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Koji telefon preporučujete?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Koji telefon preporučujete?"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "type": "message",
+      "date": "2024-03-01T20:33:00",
+      "date_unixtime": "1709325180",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Zdrava ishrana je važna za dug život.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zdrava ishrana je važna za dug život."
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "type": "message",
+      "date": "2024-03-01T20:44:00",
+      "date_unixtime": "1709325840",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Proveo sam vikend sa porodicom, fenomenalno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proveo sam vikend sa porodicom, fenomenalno."
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "type": "message",
+      "date": "2024-03-01T21:17:00",
+      "date_unixtime": "1709327820",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Nova verzija aplikacije je mnogo bolja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nova verzija aplikacije je mnogo bolja."
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "type": "message",
+      "date": "2024-03-01T21:24:00",
+      "date_unixtime": "1709328240",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Teretana mi pomaže da se bolje osećam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Teretana mi pomaže da se bolje osećam."
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "type": "message",
+      "date": "2024-03-01T22:02:00",
+      "date_unixtime": "1709330520",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Smanjio sam unos šećera, osećam se bolje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Smanjio sam unos šećera, osećam se bolje."
+        }
+      ],
+      "reply_to_message_id": 34
+    },
+    {
+      "id": 36,
+      "type": "message",
+      "date": "2024-03-01T22:18:00",
+      "date_unixtime": "1709331480",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Snega ima na Kopaoniku, ko ide na skijanje?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Snega ima na Kopaoniku, ko ide na skijanje?"
+        }
+      ],
+      "reply_to_message_id": 24
+    },
+    {
+      "id": 37,
+      "type": "message",
+      "date": "2024-03-01T22:56:00",
+      "date_unixtime": "1709333760",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Zalazak sunca jutros bio je neverovatno lep.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zalazak sunca jutros bio je neverovatno lep."
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "type": "message",
+      "date": "2024-03-01T23:26:00",
+      "date_unixtime": "1709335560",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Sport je zdrav način da provedete vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sport je zdrav način da provedete vreme."
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "type": "message",
+      "date": "2024-03-01T23:48:00",
+      "date_unixtime": "1709336880",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Zlatibor je odličan za zimski odmor.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zlatibor je odličan za zimski odmor."
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "type": "message",
+      "date": "2024-03-02T00:10:00",
+      "date_unixtime": "1709338200",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Skupljamo fondove za naš pokret, pomozite.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Skupljamo fondove za naš pokret, pomozite."
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "type": "message",
+      "date": "2024-03-02T00:17:00",
+      "date_unixtime": "1709338620",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Proleće je konačno stiglo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proleće je konačno stiglo!"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "type": "message",
+      "date": "2024-03-02T00:29:00",
+      "date_unixtime": "1709339340",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Preporučujem kafu u kafani kod parka.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Preporučujem kafu u kafani kod parka."
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "type": "message",
+      "date": "2024-03-02T00:59:00",
+      "date_unixtime": "1709341140",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Dobro jutro ekipa!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dobro jutro ekipa!"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "type": "message",
+      "date": "2024-03-02T01:31:00",
+      "date_unixtime": "1709343060",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Suša je problem ove godine za poljoprivrednike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Suša je problem ove godine za poljoprivrednike."
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "type": "message",
+      "date": "2024-03-02T02:15:00",
+      "date_unixtime": "1709345700",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Lekarski pregled prošao u redu, sve je uredu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Lekarski pregled prošao u redu, sve je uredu."
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "type": "message",
+      "date": "2024-03-02T02:46:00",
+      "date_unixtime": "1709347560",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Idemo na kafu, ko dolazi?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Idemo na kafu, ko dolazi?"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "type": "message",
+      "date": "2024-03-02T03:11:00",
+      "date_unixtime": "1709349060",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Pravim večeras sarmu, ko hoće recept?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pravim večeras sarmu, ko hoće recept?"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "type": "message",
+      "date": "2024-03-02T03:49:00",
+      "date_unixtime": "1709351340",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Ovo je tačno ono što sam tražio, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ovo je tačno ono što sam tražio, hvala!"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "type": "message",
+      "date": "2024-03-02T04:18:00",
+      "date_unixtime": "1709353080",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Da li neko koristi Linux svakodnevno?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Da li neko koristi Linux svakodnevno?"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "type": "message",
+      "date": "2024-03-02T04:25:00",
+      "date_unixtime": "1709353500",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Preuzeo sam novu seriju, gledam večeras.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Preuzeo sam novu seriju, gledam večeras."
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "type": "message",
+      "date": "2024-03-02T04:36:00",
+      "date_unixtime": "1709354160",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Imam problem sa pećnicom, ne greje kako treba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam problem sa pećnicom, ne greje kako treba."
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "type": "message",
+      "date": "2024-03-02T05:07:00",
+      "date_unixtime": "1709356020",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Posetio sam Studenicu, zadivljujući manastir.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posetio sam Studenicu, zadivljujući manastir."
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "type": "message",
+      "date": "2024-03-02T05:08:00",
+      "date_unixtime": "1709356080",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Pazar je bio pun danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pazar je bio pun danas."
+        }
+      ],
+      "reply_to_message_id": 49
+    },
+    {
+      "id": 54,
+      "type": "message",
+      "date": "2024-03-02T05:52:00",
+      "date_unixtime": "1709358720",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Zelena salata uz meso je uvek dobra kombinacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zelena salata uz meso je uvek dobra kombinacija."
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "type": "message",
+      "date": "2024-03-02T06:05:00",
+      "date_unixtime": "1709359500",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Mreža naših prijatelja raste svakog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Mreža naših prijatelja raste svakog dana."
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "type": "message",
+      "date": "2024-03-02T06:23:00",
+      "date_unixtime": "1709360580",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Pišem ti sutra.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pišem ti sutra."
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "type": "message",
+      "date": "2024-03-02T06:33:00",
+      "date_unixtime": "1709361180",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Planirao sam letovanje na moru.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planirao sam letovanje na moru."
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "type": "message",
+      "date": "2024-03-02T06:53:00",
+      "date_unixtime": "1709362380",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Pazar je bio pun danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pazar je bio pun danas."
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "type": "message",
+      "date": "2024-03-02T07:16:00",
+      "date_unixtime": "1709363760",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Položio sam ispit, slavim večeras!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Položio sam ispit, slavim večeras!"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "type": "message",
+      "date": "2024-03-02T07:41:00",
+      "date_unixtime": "1709365260",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "YouTube ima odlične tutorijale za sve.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "YouTube ima odlične tutorijale za sve."
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "type": "message",
+      "date": "2024-03-02T08:14:00",
+      "date_unixtime": "1709367240",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Sistem mora biti srušen iznutra.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sistem mora biti srušen iznutra."
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "type": "message",
+      "date": "2024-03-02T08:41:00",
+      "date_unixtime": "1709368860",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Firma nam daje bonus za praznik, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Firma nam daje bonus za praznik, odlično!"
+        }
+      ],
+      "reply_to_message_id": 58
+    },
+    {
+      "id": 63,
+      "type": "message",
+      "date": "2024-03-02T09:03:00",
+      "date_unixtime": "1709370180",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Vrtlarstvo je lepa aktivnost za opuštanje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vrtlarstvo je lepa aktivnost za opuštanje."
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "type": "message",
+      "date": "2024-03-02T09:07:00",
+      "date_unixtime": "1709370420",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Tara je predivna planina za odmor.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tara je predivna planina za odmor."
+        }
+      ],
+      "reply_to_message_id": 49
+    },
+    {
+      "id": 65,
+      "type": "message",
+      "date": "2024-03-02T09:52:00",
+      "date_unixtime": "1709373120",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Ekonomski pritisak na neprijatelje je legitimna borba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ekonomski pritisak na neprijatelje je legitimna borba."
+        }
+      ],
+      "reply_to_message_id": 50
+    },
+    {
+      "id": 66,
+      "type": "message",
+      "date": "2024-03-02T09:58:00",
+      "date_unixtime": "1709373480",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Internet mi ne radi dobro danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Internet mi ne radi dobro danas."
+        }
+      ],
+      "reply_to_message_id": 59
+    },
+    {
+      "id": 67,
+      "type": "message",
+      "date": "2024-03-02T10:42:00",
+      "date_unixtime": "1709376120",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Spavanje je ključno za zdravlje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Spavanje je ključno za zdravlje."
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "type": "message",
+      "date": "2024-03-02T11:16:00",
+      "date_unixtime": "1709378160",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Putovao sam u inostranstvo prošlog meseca.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Putovao sam u inostranstvo prošlog meseca."
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "type": "message",
+      "date": "2024-03-02T11:59:00",
+      "date_unixtime": "1709380740",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Meditacija mi pomaže da se opustim.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Meditacija mi pomaže da se opustim."
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "type": "message",
+      "date": "2024-03-02T12:33:00",
+      "date_unixtime": "1709382780",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Posetio sam Studenicu, zadivljujući manastir.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posetio sam Studenicu, zadivljujući manastir."
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "type": "message",
+      "date": "2024-03-02T12:59:00",
+      "date_unixtime": "1709384340",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Divno vreme danas, izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Divno vreme danas, izlazim u šetnju."
+        }
+      ],
+      "reply_to_message_id": 61
+    },
+    {
+      "id": 72,
+      "type": "message",
+      "date": "2024-03-02T13:33:00",
+      "date_unixtime": "1709386380",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Posjetio sam Niš i bio sam oduševljen.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posjetio sam Niš i bio sam oduševljen."
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "type": "message",
+      "date": "2024-03-02T13:56:00",
+      "date_unixtime": "1709387760",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Dobra ideja, podržavam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dobra ideja, podržavam."
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "type": "message",
+      "date": "2024-03-02T14:30:00",
+      "date_unixtime": "1709389800",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Završio sam projekat na vreme, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Završio sam projekat na vreme, konačno!"
+        }
+      ],
+      "reply_to_message_id": 71
+    },
+    {
+      "id": 75,
+      "type": "message",
+      "date": "2024-03-02T14:35:00",
+      "date_unixtime": "1709390100",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Idu li neko na stadion ovog vikenda?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Idu li neko na stadion ovog vikenda?"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "type": "message",
+      "date": "2024-03-02T15:04:00",
+      "date_unixtime": "1709391840",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Nadam se da će sve proći dobro.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nadam se da će sve proći dobro."
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "type": "message",
+      "date": "2024-03-02T15:17:00",
+      "date_unixtime": "1709392620",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Planina je prelepa u ovo doba godine.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planina je prelepa u ovo doba godine."
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "type": "message",
+      "date": "2024-03-02T15:30:00",
+      "date_unixtime": "1709393400",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Pijemo kafu i razgovaramo bez politike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pijemo kafu i razgovaramo bez politike."
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "type": "message",
+      "date": "2024-03-02T16:14:00",
+      "date_unixtime": "1709396040",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Ko zna dobar restoran u centru?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko zna dobar restoran u centru?"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "type": "message",
+      "date": "2024-03-02T16:58:00",
+      "date_unixtime": "1709398680",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Volim da slikam vikendom kad imam vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Volim da slikam vikendom kad imam vremena."
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "type": "message",
+      "date": "2024-03-02T17:11:00",
+      "date_unixtime": "1709399460",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Prijatelji su zlata vredni.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Prijatelji su zlata vredni."
+        }
+      ],
+      "reply_to_message_id": 77
+    },
+    {
+      "id": 82,
+      "type": "message",
+      "date": "2024-03-02T17:54:00",
+      "date_unixtime": "1709402040",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Navijam za našu reprezentaciju svim srcem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Navijam za našu reprezentaciju svim srcem."
+        }
+      ],
+      "reply_to_message_id": 67
+    },
+    {
+      "id": 83,
+      "type": "message",
+      "date": "2024-03-02T18:21:00",
+      "date_unixtime": "1709403660",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Kiša pada ceo dan, ostajem kod kuće.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kiša pada ceo dan, ostajem kod kuće."
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "type": "message",
+      "date": "2024-03-02T18:41:00",
+      "date_unixtime": "1709404860",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Imam intervju sutra, poželite mi sreću!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam intervju sutra, poželite mi sreću!"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "type": "message",
+      "date": "2024-03-02T19:25:00",
+      "date_unixtime": "1709407500",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Sutra predajem seminarski rad.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sutra predajem seminarski rad."
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "type": "message",
+      "date": "2024-03-02T20:06:00",
+      "date_unixtime": "1709409960",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Beograd nikad ne spava, volim taj grad.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Beograd nikad ne spava, volim taj grad."
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "type": "message",
+      "date": "2024-03-02T20:23:00",
+      "date_unixtime": "1709410980",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Napravila sam kolače za decu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Napravila sam kolače za decu."
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "type": "message",
+      "date": "2024-03-02T21:06:00",
+      "date_unixtime": "1709413560",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Meditacija mi pomaže da se opustim.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Meditacija mi pomaže da se opustim."
+        }
+      ],
+      "reply_to_message_id": 85
+    },
+    {
+      "id": 89,
+      "type": "message",
+      "date": "2024-03-02T21:48:00",
+      "date_unixtime": "1709416080",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Zvezda je pobedila večeras, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zvezda je pobedila večeras, konačno!"
+        }
+      ],
+      "reply_to_message_id": 76
+    },
+    {
+      "id": 90,
+      "type": "message",
+      "date": "2024-03-02T22:01:00",
+      "date_unixtime": "1709416860",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Zdrava ishrana je važna za dug život.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zdrava ishrana je važna za dug život."
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "type": "message",
+      "date": "2024-03-02T22:08:00",
+      "date_unixtime": "1709417280",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Drugarice smo se videle po dugo vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drugarice smo se videle po dugo vremena."
+        }
+      ],
+      "reply_to_message_id": 90
+    },
+    {
+      "id": 92,
+      "type": "message",
+      "date": "2024-03-02T22:36:00",
+      "date_unixtime": "1709418960",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Vidimo se uskoro.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vidimo se uskoro."
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "type": "message",
+      "date": "2024-03-02T23:11:00",
+      "date_unixtime": "1709421060",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Da li neko koristi Linux svakodnevno?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Da li neko koristi Linux svakodnevno?"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "type": "message",
+      "date": "2024-03-02T23:24:00",
+      "date_unixtime": "1709421840",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Naša braća su u zatvoru zbog istine.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Naša braća su u zatvoru zbog istine."
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "type": "message",
+      "date": "2024-03-03T00:08:00",
+      "date_unixtime": "1709424480",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Sledi propaganda kampanja — delite materijal svuda gde možete.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sledi propaganda kampanja — delite materijal svuda gde možete."
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "type": "message",
+      "date": "2024-03-03T00:47:00",
+      "date_unixtime": "1709426820",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Kuma nam je rodila dete, čestitamo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kuma nam je rodila dete, čestitamo!"
+        }
+      ],
+      "reply_to_message_id": 89
+    },
+    {
+      "id": 97,
+      "type": "message",
+      "date": "2024-03-03T01:15:00",
+      "date_unixtime": "1709428500",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Kiša pada ceo dan, ostajem kod kuće.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kiša pada ceo dan, ostajem kod kuće."
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "type": "message",
+      "date": "2024-03-03T01:30:00",
+      "date_unixtime": "1709429400",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Javi mi kad stigneš.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Javi mi kad stigneš."
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "type": "message",
+      "date": "2024-03-03T01:40:00",
+      "date_unixtime": "1709430000",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Treba nam novac za opremu, pošaljite donacije na ovaj račun.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Treba nam novac za opremu, pošaljite donacije na ovaj račun."
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "type": "message",
+      "date": "2024-03-03T02:09:00",
+      "date_unixtime": "1709431740",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Kupujem na pijaci svakog subote.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kupujem na pijaci svakog subote."
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "type": "message",
+      "date": "2024-03-03T02:38:00",
+      "date_unixtime": "1709433480",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Tenis je moj omiljeni sport.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tenis je moj omiljeni sport."
+        }
+      ],
+      "reply_to_message_id": 88
+    },
+    {
+      "id": 102,
+      "type": "message",
+      "date": "2024-03-03T03:22:00",
+      "date_unixtime": "1709436120",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Bezbednost na internetu je jako važna.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Bezbednost na internetu je jako važna."
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "type": "message",
+      "date": "2024-03-03T03:41:00",
+      "date_unixtime": "1709437260",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Može, dogovorili smo se.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Može, dogovorili smo se."
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "type": "message",
+      "date": "2024-03-03T03:58:00",
+      "date_unixtime": "1709438280",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Drugarice smo se videle po dugo vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drugarice smo se videle po dugo vremena."
+        }
+      ],
+      "reply_to_message_id": 98
+    },
+    {
+      "id": 105,
+      "type": "message",
+      "date": "2024-03-03T04:02:00",
+      "date_unixtime": "1709438520",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Jeste li svi dobro?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Jeste li svi dobro?"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "type": "message",
+      "date": "2024-03-03T04:20:00",
+      "date_unixtime": "1709439600",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Muzej je otvorio novu izložbu, idi da vidiš.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzej je otvorio novu izložbu, idi da vidiš."
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "type": "message",
+      "date": "2024-03-03T04:22:00",
+      "date_unixtime": "1709439720",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Uvek koristite jake lozinke.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Uvek koristite jake lozinke."
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "type": "message",
+      "date": "2024-03-03T04:32:00",
+      "date_unixtime": "1709440320",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Javi mi kad stigneš.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Javi mi kad stigneš."
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "type": "message",
+      "date": "2024-03-03T04:38:00",
+      "date_unixtime": "1709440680",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "YouTube ima odlične tutorijale za sve.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "YouTube ima odlične tutorijale za sve."
+        }
+      ],
+      "reply_to_message_id": 89
+    },
+    {
+      "id": 110,
+      "type": "message",
+      "date": "2024-03-03T05:03:00",
+      "date_unixtime": "1709442180",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Šta ima novo?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Šta ima novo?"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "type": "message",
+      "date": "2024-03-03T05:07:00",
+      "date_unixtime": "1709442420",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Mreža naših prijatelja raste svakog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Mreža naših prijatelja raste svakog dana."
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "type": "message",
+      "date": "2024-03-03T05:19:00",
+      "date_unixtime": "1709443140",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Lepo rečeno, potpuno se slažem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Lepo rečeno, potpuno se slažem."
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "type": "message",
+      "date": "2024-03-03T05:53:00",
+      "date_unixtime": "1709445180",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Igram novu igru, preporučujem svima.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Igram novu igru, preporučujem svima."
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "type": "message",
+      "date": "2024-03-03T06:12:00",
+      "date_unixtime": "1709446320",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Pišem ti sutra.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pišem ti sutra."
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "type": "message",
+      "date": "2024-03-03T06:16:00",
+      "date_unixtime": "1709446560",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Burek ujutru je obavezan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Burek ujutru je obavezan."
+        }
+      ],
+      "reply_to_message_id": 113
+    },
+    {
+      "id": 116,
+      "type": "message",
+      "date": "2024-03-03T06:56:00",
+      "date_unixtime": "1709448960",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Imam dobru vest za sve vas!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam dobru vest za sve vas!"
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "type": "message",
+      "date": "2024-03-03T07:04:00",
+      "date_unixtime": "1709449440",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Novi Sad je prelepi grad, preporučujem posetu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Novi Sad je prelepi grad, preporučujem posetu."
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "type": "message",
+      "date": "2024-03-03T07:11:00",
+      "date_unixtime": "1709449860",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Putovao sam u inostranstvo prošlog meseca.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Putovao sam u inostranstvo prošlog meseca."
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "type": "message",
+      "date": "2024-03-03T07:42:00",
+      "date_unixtime": "1709451720",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Ko gleda meč večeras?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko gleda meč večeras?"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "type": "message",
+      "date": "2024-03-03T08:23:00",
+      "date_unixtime": "1709454180",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Naš vođa je rekao da je vreme za akciju, budite spremni.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Naš vođa je rekao da je vreme za akciju, budite spremni."
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "type": "message",
+      "date": "2024-03-03T09:02:00",
+      "date_unixtime": "1709456520",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Srbija ima toliko lepih mesta za turiste.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija ima toliko lepih mesta za turiste."
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "type": "message",
+      "date": "2024-03-03T09:21:00",
+      "date_unixtime": "1709457660",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Radim od kuće ovaj mesec, mnogo mi odgovara.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Radim od kuće ovaj mesec, mnogo mi odgovara."
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "type": "message",
+      "date": "2024-03-03T10:01:00",
+      "date_unixtime": "1709460060",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Nadam se da će sve proći dobro.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nadam se da će sve proći dobro."
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "type": "message",
+      "date": "2024-03-03T10:43:00",
+      "date_unixtime": "1709462580",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Ima smisla, hvala na objašnjenju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ima smisla, hvala na objašnjenju."
+        }
+      ],
+      "reply_to_message_id": 106
+    },
+    {
+      "id": 125,
+      "type": "message",
+      "date": "2024-03-03T11:27:00",
+      "date_unixtime": "1709465220",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Kuma nam je rodila dete, čestitamo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kuma nam je rodila dete, čestitamo!"
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "type": "message",
+      "date": "2024-03-03T11:46:00",
+      "date_unixtime": "1709466360",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Cilj je jasan — teror mora da odgovori terorom.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Cilj je jasan — teror mora da odgovori terorom."
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "type": "message",
+      "date": "2024-03-03T11:48:00",
+      "date_unixtime": "1709466480",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Spavanje je ključno za zdravlje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Spavanje je ključno za zdravlje."
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "type": "message",
+      "date": "2024-03-03T12:00:00",
+      "date_unixtime": "1709467200",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Venčanje je bilo predivno, sve je prošlo savršeno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Venčanje je bilo predivno, sve je prošlo savršeno."
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "type": "message",
+      "date": "2024-03-03T12:25:00",
+      "date_unixtime": "1709468700",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Imam sastanak sutra ujutru, moram rano da ustanem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam sastanak sutra ujutru, moram rano da ustanem."
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "type": "message",
+      "date": "2024-03-03T12:32:00",
+      "date_unixtime": "1709469120",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Mislim da bi trebalo da razgovaramo o tome.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Mislim da bi trebalo da razgovaramo o tome."
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "type": "message",
+      "date": "2024-03-03T12:35:00",
+      "date_unixtime": "1709469300",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Kupujem na pijaci svakog subote.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kupujem na pijaci svakog subote."
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "type": "message",
+      "date": "2024-03-03T12:59:00",
+      "date_unixtime": "1709470740",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Divno vreme danas, izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Divno vreme danas, izlazim u šetnju."
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "type": "message",
+      "date": "2024-03-03T13:24:00",
+      "date_unixtime": "1709472240",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Hvala lepo na pomoći.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Hvala lepo na pomoći."
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "type": "message",
+      "date": "2024-03-03T13:39:00",
+      "date_unixtime": "1709473140",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Hvala lepo na pomoći.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Hvala lepo na pomoći."
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "type": "message",
+      "date": "2024-03-03T14:04:00",
+      "date_unixtime": "1709474640",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Novi Sad je prelepi grad, preporučujem posetu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Novi Sad je prelepi grad, preporučujem posetu."
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "type": "message",
+      "date": "2024-03-03T14:25:00",
+      "date_unixtime": "1709475900",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Vlada mora da padne, mi smo ti koji ćemo to da uradimo.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vlada mora da padne, mi smo ti koji ćemo to da uradimo."
+        }
+      ],
+      "reply_to_message_id": 126
+    },
+    {
+      "id": 137,
+      "type": "message",
+      "date": "2024-03-03T14:59:00",
+      "date_unixtime": "1709477940",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Šetao sam uz reku, divno se osećam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Šetao sam uz reku, divno se osećam."
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "type": "message",
+      "date": "2024-03-03T15:18:00",
+      "date_unixtime": "1709479080",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Idemo na kafu, ko dolazi?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Idemo na kafu, ko dolazi?"
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "type": "message",
+      "date": "2024-03-03T15:29:00",
+      "date_unixtime": "1709479740",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Spavanje je ključno za zdravlje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Spavanje je ključno za zdravlje."
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "type": "message",
+      "date": "2024-03-03T15:57:00",
+      "date_unixtime": "1709481420",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Napravila sam kolače za decu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Napravila sam kolače za decu."
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "type": "message",
+      "date": "2024-03-03T15:58:00",
+      "date_unixtime": "1709481480",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Imate li kontakte u policiji koji mogu da nam pomognu?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imate li kontakte u policiji koji mogu da nam pomognu?"
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "type": "message",
+      "date": "2024-03-03T16:14:00",
+      "date_unixtime": "1709482440",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Kiša pada ceo dan, ostajem kod kuće.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kiša pada ceo dan, ostajem kod kuće."
+        }
+      ],
+      "reply_to_message_id": 134
+    },
+    {
+      "id": 143,
+      "type": "message",
+      "date": "2024-03-03T16:36:00",
+      "date_unixtime": "1709483760",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Posjetio sam Niš i bio sam oduševljen.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posjetio sam Niš i bio sam oduševljen."
+        }
+      ],
+      "reply_to_message_id": 123
+    },
+    {
+      "id": 144,
+      "type": "message",
+      "date": "2024-03-03T16:42:00",
+      "date_unixtime": "1709484120",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Jeste li svi dobro?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Jeste li svi dobro?"
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "type": "message",
+      "date": "2024-03-03T16:57:00",
+      "date_unixtime": "1709485020",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Leto je moje omiljeno godišnje doba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Leto je moje omiljeno godišnje doba."
+        }
+      ],
+      "reply_to_message_id": 131
+    },
+    {
+      "id": 146,
+      "type": "message",
+      "date": "2024-03-03T17:09:00",
+      "date_unixtime": "1709485740",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Snega ima na Kopaoniku, ko ide na skijanje?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Snega ima na Kopaoniku, ko ide na skijanje?"
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "type": "message",
+      "date": "2024-03-03T17:21:00",
+      "date_unixtime": "1709486460",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Ovo je tačno ono što sam tražio, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ovo je tačno ono što sam tražio, hvala!"
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "type": "message",
+      "date": "2024-03-03T17:51:00",
+      "date_unixtime": "1709488260",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Razumem te, to je komplikovana situacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Razumem te, to je komplikovana situacija."
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "type": "message",
+      "date": "2024-03-03T18:20:00",
+      "date_unixtime": "1709490000",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Teretana mi pomaže da se bolje osećam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Teretana mi pomaže da se bolje osećam."
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "type": "message",
+      "date": "2024-03-03T19:02:00",
+      "date_unixtime": "1709492520",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Tenis je moj omiljeni sport.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tenis je moj omiljeni sport."
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "type": "message",
+      "date": "2024-03-03T19:20:00",
+      "date_unixtime": "1709493600",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Delim ovaj link, jako je zanimljiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Delim ovaj link, jako je zanimljiv."
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "type": "message",
+      "date": "2024-03-03T19:28:00",
+      "date_unixtime": "1709494080",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Srbija se plasirala na EP, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija se plasirala na EP, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "type": "message",
+      "date": "2024-03-03T20:09:00",
+      "date_unixtime": "1709496540",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Prijatelji su zlata vredni.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Prijatelji su zlata vredni."
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "type": "message",
+      "date": "2024-03-03T20:37:00",
+      "date_unixtime": "1709498220",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Beograd nikad ne spava, volim taj grad.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Beograd nikad ne spava, volim taj grad."
+        }
+      ],
+      "reply_to_message_id": 143
+    },
+    {
+      "id": 155,
+      "type": "message",
+      "date": "2024-03-03T20:42:00",
+      "date_unixtime": "1709498520",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Položio sam ispit, slavim večeras!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Položio sam ispit, slavim večeras!"
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "type": "message",
+      "date": "2024-03-03T20:52:00",
+      "date_unixtime": "1709499120",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Imam sastanak sutra ujutru, moram rano da ustanem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam sastanak sutra ujutru, moram rano da ustanem."
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "type": "message",
+      "date": "2024-03-03T20:56:00",
+      "date_unixtime": "1709499360",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Napravila sam kolače za decu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Napravila sam kolače za decu."
+        }
+      ],
+      "reply_to_message_id": 145
+    },
+    {
+      "id": 158,
+      "type": "message",
+      "date": "2024-03-03T21:09:00",
+      "date_unixtime": "1709500140",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Film koji sam gledao bio je uzbudljiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Film koji sam gledao bio je uzbudljiv."
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "type": "message",
+      "date": "2024-03-03T21:30:00",
+      "date_unixtime": "1709501400",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Šetao sam uz reku, divno se osećam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Šetao sam uz reku, divno se osećam."
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "type": "message",
+      "date": "2024-03-03T21:34:00",
+      "date_unixtime": "1709501640",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Ko zna dobar restoran u centru?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko zna dobar restoran u centru?"
+        }
+      ]
+    },
+    {
+      "id": 161,
+      "type": "message",
+      "date": "2024-03-03T21:37:00",
+      "date_unixtime": "1709501820",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Ćao, kako ste?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ćao, kako ste?"
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "type": "message",
+      "date": "2024-03-03T22:03:00",
+      "date_unixtime": "1709503380",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Da li neko koristi Linux svakodnevno?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Da li neko koristi Linux svakodnevno?"
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "type": "message",
+      "date": "2024-03-03T22:13:00",
+      "date_unixtime": "1709503980",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Pijemo kafu i razgovaramo bez politike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pijemo kafu i razgovaramo bez politike."
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "type": "message",
+      "date": "2024-03-03T22:56:00",
+      "date_unixtime": "1709506560",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Imam dobru vest za sve vas!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam dobru vest za sve vas!"
+        }
+      ],
+      "reply_to_message_id": 154
+    },
+    {
+      "id": 165,
+      "type": "message",
+      "date": "2024-03-03T23:11:00",
+      "date_unixtime": "1709507460",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Imam sastanak sutra ujutru, moram rano da ustanem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam sastanak sutra ujutru, moram rano da ustanem."
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "type": "message",
+      "date": "2024-03-03T23:52:00",
+      "date_unixtime": "1709509920",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Kopaonik je svetska klasa po snegu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kopaonik je svetska klasa po snegu."
+        }
+      ],
+      "reply_to_message_id": 150
+    },
+    {
+      "id": 167,
+      "type": "message",
+      "date": "2024-03-04T00:16:00",
+      "date_unixtime": "1709511360",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Zlatibor je odličan za zimski odmor.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zlatibor je odličan za zimski odmor."
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "type": "message",
+      "date": "2024-03-04T00:53:00",
+      "date_unixtime": "1709513580",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Kuvanje je postalo moj hobi.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kuvanje je postalo moj hobi."
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "type": "message",
+      "date": "2024-03-04T01:15:00",
+      "date_unixtime": "1709514900",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Venčanje je bilo predivno, sve je prošlo savršeno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Venčanje je bilo predivno, sve je prošlo savršeno."
+        }
+      ],
+      "reply_to_message_id": 159
+    },
+    {
+      "id": 170,
+      "type": "message",
+      "date": "2024-03-04T01:18:00",
+      "date_unixtime": "1709515080",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Exit festival je uvek nezaboravan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Exit festival je uvek nezaboravan."
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "type": "message",
+      "date": "2024-03-04T01:46:00",
+      "date_unixtime": "1709516760",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Pravim večeras sarmu, ko hoće recept?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pravim večeras sarmu, ko hoće recept?"
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "type": "message",
+      "date": "2024-03-04T01:59:00",
+      "date_unixtime": "1709517540",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Sledeće okupljanje je ilegalno ali nužno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sledeće okupljanje je ilegalno ali nužno."
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "type": "message",
+      "date": "2024-03-04T02:44:00",
+      "date_unixtime": "1709520240",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Nema mesta za slabosti, ovo je sveti rat.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nema mesta za slabosti, ovo je sveti rat."
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "type": "message",
+      "date": "2024-03-04T02:52:00",
+      "date_unixtime": "1709520720",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Idu li neko na stadion ovog vikenda?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Idu li neko na stadion ovog vikenda?"
+        }
+      ],
+      "reply_to_message_id": 164
+    },
+    {
+      "id": 175,
+      "type": "message",
+      "date": "2024-03-04T03:30:00",
+      "date_unixtime": "1709523000",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Kakav gol, nisam mogao da verujem!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kakav gol, nisam mogao da verujem!"
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "type": "message",
+      "date": "2024-03-04T03:54:00",
+      "date_unixtime": "1709524440",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Python je odličan programski jezik za početnike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Python je odličan programski jezik za početnike."
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "type": "message",
+      "date": "2024-03-04T04:11:00",
+      "date_unixtime": "1709525460",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Koji telefon preporučujete?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Koji telefon preporučujete?"
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "type": "message",
+      "date": "2024-03-04T04:49:00",
+      "date_unixtime": "1709527740",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Mislim da bi trebalo da razgovaramo o tome.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Mislim da bi trebalo da razgovaramo o tome."
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "type": "message",
+      "date": "2024-03-04T05:18:00",
+      "date_unixtime": "1709529480",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Novi Sad je prelepi grad, preporučujem posetu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Novi Sad je prelepi grad, preporučujem posetu."
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "type": "message",
+      "date": "2024-03-04T05:30:00",
+      "date_unixtime": "1709530200",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Srbija se plasirala na EP, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija se plasirala na EP, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 181,
+      "type": "message",
+      "date": "2024-03-04T05:56:00",
+      "date_unixtime": "1709531760",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Volim da slikam vikendom kad imam vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Volim da slikam vikendom kad imam vremena."
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "type": "message",
+      "date": "2024-03-04T06:17:00",
+      "date_unixtime": "1709533020",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Imam sastanak sutra ujutru, moram rano da ustanem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam sastanak sutra ujutru, moram rano da ustanem."
+        }
+      ],
+      "reply_to_message_id": 172
+    },
+    {
+      "id": 183,
+      "type": "message",
+      "date": "2024-03-04T06:25:00",
+      "date_unixtime": "1709533500",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Moj brat je dobio posao, srećan sam za njega.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moj brat je dobio posao, srećan sam za njega."
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "type": "message",
+      "date": "2024-03-04T07:07:00",
+      "date_unixtime": "1709536020",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Koordinišemo se u tajnosti zbog bezbednosti.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Koordinišemo se u tajnosti zbog bezbednosti."
+        }
+      ],
+      "reply_to_message_id": 164
+    },
+    {
+      "id": 185,
+      "type": "message",
+      "date": "2024-03-04T07:31:00",
+      "date_unixtime": "1709537460",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Moj brat je dobio posao, srećan sam za njega.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moj brat je dobio posao, srećan sam za njega."
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "type": "message",
+      "date": "2024-03-04T08:11:00",
+      "date_unixtime": "1709539860",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Internet mi ne radi dobro danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Internet mi ne radi dobro danas."
+        }
+      ],
+      "reply_to_message_id": 175
+    },
+    {
+      "id": 187,
+      "type": "message",
+      "date": "2024-03-04T08:54:00",
+      "date_unixtime": "1709542440",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Srbija se plasirala na EP, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija se plasirala na EP, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "type": "message",
+      "date": "2024-03-04T09:14:00",
+      "date_unixtime": "1709543640",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Važno je biti iskren u svemu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Važno je biti iskren u svemu."
+        }
+      ],
+      "reply_to_message_id": 186
+    },
+    {
+      "id": 189,
+      "type": "message",
+      "date": "2024-03-04T09:30:00",
+      "date_unixtime": "1709544600",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Naučio sam da sviram gitaru, srećan sam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Naučio sam da sviram gitaru, srećan sam."
+        }
+      ],
+      "reply_to_message_id": 180
+    },
+    {
+      "id": 190,
+      "type": "message",
+      "date": "2024-03-04T10:10:00",
+      "date_unixtime": "1709547000",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Imam dobru vest za sve vas!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam dobru vest za sve vas!"
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "type": "message",
+      "date": "2024-03-04T10:44:00",
+      "date_unixtime": "1709549040",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Zlatibor je odličan za zimski odmor.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zlatibor je odličan za zimski odmor."
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "type": "message",
+      "date": "2024-03-04T11:21:00",
+      "date_unixtime": "1709551260",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Muzika me uvek opusti posle napornog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzika me uvek opusti posle napornog dana."
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "type": "message",
+      "date": "2024-03-04T11:48:00",
+      "date_unixtime": "1709552880",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Ne brini, sve će biti u redu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ne brini, sve će biti u redu."
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "type": "message",
+      "date": "2024-03-04T12:32:00",
+      "date_unixtime": "1709555520",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Imam intervju sutra, poželite mi sreću!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam intervju sutra, poželite mi sreću!"
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "type": "message",
+      "date": "2024-03-04T12:50:00",
+      "date_unixtime": "1709556600",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Venčanje je bilo predivno, sve je prošlo savršeno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Venčanje je bilo predivno, sve je prošlo savršeno."
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "type": "message",
+      "date": "2024-03-04T13:06:00",
+      "date_unixtime": "1709557560",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Jeste li svi dobro?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Jeste li svi dobro?"
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "type": "message",
+      "date": "2024-03-04T13:44:00",
+      "date_unixtime": "1709559840",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Imam slobodan vikend, predlozi?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam slobodan vikend, predlozi?"
+        }
+      ]
+    },
+    {
+      "id": 198,
+      "type": "message",
+      "date": "2024-03-04T13:50:00",
+      "date_unixtime": "1709560200",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Vitamini su dobri u zimskom periodu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vitamini su dobri u zimskom periodu."
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "type": "message",
+      "date": "2024-03-04T14:16:00",
+      "date_unixtime": "1709561760",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Uvek koristite jake lozinke.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Uvek koristite jake lozinke."
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "type": "message",
+      "date": "2024-03-04T14:42:00",
+      "date_unixtime": "1709563320",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Šuma je puna gljiva ovog jesenja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Šuma je puna gljiva ovog jesenja."
+        }
+      ],
+      "reply_to_message_id": 196
+    },
+    {
+      "id": 201,
+      "type": "message",
+      "date": "2024-03-04T14:54:00",
+      "date_unixtime": "1709564040",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Vidimo se uskoro.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vidimo se uskoro."
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "type": "message",
+      "date": "2024-03-04T15:31:00",
+      "date_unixtime": "1709566260",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Ko želi da donira za svetu borbu, kontaktirajte me privatno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko želi da donira za svetu borbu, kontaktirajte me privatno."
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "type": "message",
+      "date": "2024-03-04T16:13:00",
+      "date_unixtime": "1709568780",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Teretana mi pomaže da se bolje osećam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Teretana mi pomaže da se bolje osećam."
+        }
+      ]
+    },
+    {
+      "id": 204,
+      "type": "message",
+      "date": "2024-03-04T16:24:00",
+      "date_unixtime": "1709569440",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Večeras izlazimo, ko je za to?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Večeras izlazimo, ko je za to?"
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "type": "message",
+      "date": "2024-03-04T17:02:00",
+      "date_unixtime": "1709571720",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Šta ima novo?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Šta ima novo?"
+        }
+      ]
+    },
+    {
+      "id": 206,
+      "type": "message",
+      "date": "2024-03-04T17:31:00",
+      "date_unixtime": "1709573460",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Zdravo svima!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zdravo svima!"
+        }
+      ],
+      "reply_to_message_id": 203
+    },
+    {
+      "id": 207,
+      "type": "message",
+      "date": "2024-03-04T18:01:00",
+      "date_unixtime": "1709575260",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Venčanje je bilo predivno, sve je prošlo savršeno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Venčanje je bilo predivno, sve je prošlo savršeno."
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "type": "message",
+      "date": "2024-03-04T18:13:00",
+      "date_unixtime": "1709575980",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Naučio sam da sviram gitaru, srećan sam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Naučio sam da sviram gitaru, srećan sam."
+        }
+      ]
+    },
+    {
+      "id": 209,
+      "type": "message",
+      "date": "2024-03-04T18:14:00",
+      "date_unixtime": "1709576040",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Snega ima na Kopaoniku, ko ide na skijanje?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Snega ima na Kopaoniku, ko ide na skijanje?"
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "type": "message",
+      "date": "2024-03-04T18:55:00",
+      "date_unixtime": "1709578500",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Pozorišna predstava juče bila je prelepa.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pozorišna predstava juče bila je prelepa."
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "type": "message",
+      "date": "2024-03-04T19:06:00",
+      "date_unixtime": "1709579160",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Fotografišem prirodu kad izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Fotografišem prirodu kad izlazim u šetnju."
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "type": "message",
+      "date": "2024-03-04T19:31:00",
+      "date_unixtime": "1709580660",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Pravim večeras sarmu, ko hoće recept?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pravim večeras sarmu, ko hoće recept?"
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "type": "message",
+      "date": "2024-03-04T19:35:00",
+      "date_unixtime": "1709580900",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Dvostruka autentifikacija štiti vaš nalog.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dvostruka autentifikacija štiti vaš nalog."
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "type": "message",
+      "date": "2024-03-04T20:12:00",
+      "date_unixtime": "1709583120",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Ne brini, sve će biti u redu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ne brini, sve će biti u redu."
+        }
+      ],
+      "reply_to_message_id": 199
+    },
+    {
+      "id": 215,
+      "type": "message",
+      "date": "2024-03-04T20:25:00",
+      "date_unixtime": "1709583900",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Kolege su mi pomogle da završim na vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kolege su mi pomogle da završim na vreme."
+        }
+      ]
+    },
+    {
+      "id": 216,
+      "type": "message",
+      "date": "2024-03-04T20:52:00",
+      "date_unixtime": "1709585520",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Ima smisla, hvala na objašnjenju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ima smisla, hvala na objašnjenju."
+        }
+      ],
+      "reply_to_message_id": 209
+    },
+    {
+      "id": 217,
+      "type": "message",
+      "date": "2024-03-04T20:55:00",
+      "date_unixtime": "1709585700",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Studije su teške ali se isplati.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Studije su teške ali se isplati."
+        }
+      ]
+    },
+    {
+      "id": 218,
+      "type": "message",
+      "date": "2024-03-04T21:09:00",
+      "date_unixtime": "1709586540",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Tražim posao, znate li neko gde se traže programeri?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tražim posao, znate li neko gde se traže programeri?"
+        }
+      ],
+      "reply_to_message_id": 214
+    },
+    {
+      "id": 219,
+      "type": "message",
+      "date": "2024-03-04T21:32:00",
+      "date_unixtime": "1709587920",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Exit festival je uvek nezaboravan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Exit festival je uvek nezaboravan."
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "type": "message",
+      "date": "2024-03-04T21:52:00",
+      "date_unixtime": "1709589120",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Koordinišemo se u tajnosti zbog bezbednosti.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Koordinišemo se u tajnosti zbog bezbednosti."
+        }
+      ]
+    },
+    {
+      "id": 221,
+      "type": "message",
+      "date": "2024-03-04T21:53:00",
+      "date_unixtime": "1709589180",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Tara je predivna planina za odmor.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tara je predivna planina za odmor."
+        }
+      ]
+    },
+    {
+      "id": 222,
+      "type": "message",
+      "date": "2024-03-04T22:26:00",
+      "date_unixtime": "1709591160",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Sport je zdrav način da provedete vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sport je zdrav način da provedete vreme."
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "type": "message",
+      "date": "2024-03-04T23:07:00",
+      "date_unixtime": "1709593620",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Tražim posao, znate li neko gde se traže programeri?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tražim posao, znate li neko gde se traže programeri?"
+        }
+      ]
+    },
+    {
+      "id": 224,
+      "type": "message",
+      "date": "2024-03-04T23:34:00",
+      "date_unixtime": "1709595240",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Smejao sam se celo veče na ovim porukama.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Smejao sam se celo veče na ovim porukama."
+        }
+      ]
+    },
+    {
+      "id": 225,
+      "type": "message",
+      "date": "2024-03-04T23:56:00",
+      "date_unixtime": "1709596560",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Ne brini, sve će biti u redu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ne brini, sve će biti u redu."
+        }
+      ]
+    },
+    {
+      "id": 226,
+      "type": "message",
+      "date": "2024-03-05T00:07:00",
+      "date_unixtime": "1709597220",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Dvostruka autentifikacija štiti vaš nalog.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dvostruka autentifikacija štiti vaš nalog."
+        }
+      ]
+    },
+    {
+      "id": 227,
+      "type": "message",
+      "date": "2024-03-05T00:38:00",
+      "date_unixtime": "1709599080",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Proslavljamo godišnjicu braka večeras.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proslavljamo godišnjicu braka večeras."
+        }
+      ]
+    },
+    {
+      "id": 228,
+      "type": "message",
+      "date": "2024-03-05T00:54:00",
+      "date_unixtime": "1709600040",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Kupujem na pijaci svakog subote.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kupujem na pijaci svakog subote."
+        }
+      ]
+    },
+    {
+      "id": 229,
+      "type": "message",
+      "date": "2024-03-05T01:03:00",
+      "date_unixtime": "1709600580",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Teretana mi pomaže da se bolje osećam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Teretana mi pomaže da se bolje osećam."
+        }
+      ]
+    },
+    {
+      "id": 230,
+      "type": "message",
+      "date": "2024-03-05T01:28:00",
+      "date_unixtime": "1709602080",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Skupljamo fondove za naš pokret, pomozite.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Skupljamo fondove za naš pokret, pomozite."
+        }
+      ]
+    },
+    {
+      "id": 231,
+      "type": "message",
+      "date": "2024-03-05T01:36:00",
+      "date_unixtime": "1709602560",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Drago mi je što si tu!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drago mi je što si tu!"
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "type": "message",
+      "date": "2024-03-05T02:21:00",
+      "date_unixtime": "1709605260",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Pazar je bio pun danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pazar je bio pun danas."
+        }
+      ]
+    },
+    {
+      "id": 233,
+      "type": "message",
+      "date": "2024-03-05T03:02:00",
+      "date_unixtime": "1709607720",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Vrtlarstvo je lepa aktivnost za opuštanje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vrtlarstvo je lepa aktivnost za opuštanje."
+        }
+      ]
+    },
+    {
+      "id": 234,
+      "type": "message",
+      "date": "2024-03-05T03:43:00",
+      "date_unixtime": "1709610180",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Divno vreme danas, izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Divno vreme danas, izlazim u šetnju."
+        }
+      ]
+    },
+    {
+      "id": 235,
+      "type": "message",
+      "date": "2024-03-05T04:08:00",
+      "date_unixtime": "1709611680",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Kuvanje je postalo moj hobi.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kuvanje je postalo moj hobi."
+        }
+      ],
+      "reply_to_message_id": 219
+    },
+    {
+      "id": 236,
+      "type": "message",
+      "date": "2024-03-05T04:12:00",
+      "date_unixtime": "1709611920",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Bezbednost na internetu je jako važna.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Bezbednost na internetu je jako važna."
+        }
+      ],
+      "reply_to_message_id": 218
+    },
+    {
+      "id": 237,
+      "type": "message",
+      "date": "2024-03-05T04:19:00",
+      "date_unixtime": "1709612340",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Sledeća akcija je u petak, svi se pripremite.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sledeća akcija je u petak, svi se pripremite."
+        }
+      ]
+    },
+    {
+      "id": 238,
+      "type": "message",
+      "date": "2024-03-05T04:58:00",
+      "date_unixtime": "1709614680",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Muzika me uvek opusti posle napornog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzika me uvek opusti posle napornog dana."
+        }
+      ]
+    },
+    {
+      "id": 239,
+      "type": "message",
+      "date": "2024-03-05T05:08:00",
+      "date_unixtime": "1709615280",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Dobro jutro ekipa!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dobro jutro ekipa!"
+        }
+      ]
+    },
+    {
+      "id": 240,
+      "type": "message",
+      "date": "2024-03-05T05:27:00",
+      "date_unixtime": "1709616420",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Proleće je konačno stiglo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proleće je konačno stiglo!"
+        }
+      ]
+    },
+    {
+      "id": 241,
+      "type": "message",
+      "date": "2024-03-05T06:03:00",
+      "date_unixtime": "1709618580",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Kopaonik je svetska klasa po snegu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kopaonik je svetska klasa po snegu."
+        }
+      ]
+    },
+    {
+      "id": 242,
+      "type": "message",
+      "date": "2024-03-05T06:26:00",
+      "date_unixtime": "1709619960",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Počeo sam da trčim svaki dan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Počeo sam da trčim svaki dan."
+        }
+      ],
+      "reply_to_message_id": 229
+    },
+    {
+      "id": 243,
+      "type": "message",
+      "date": "2024-03-05T06:45:00",
+      "date_unixtime": "1709621100",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Posao mi je danas bio naporan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posao mi je danas bio naporan."
+        }
+      ]
+    },
+    {
+      "id": 244,
+      "type": "message",
+      "date": "2024-03-05T06:46:00",
+      "date_unixtime": "1709621160",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Posao mi je danas bio naporan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posao mi je danas bio naporan."
+        }
+      ]
+    },
+    {
+      "id": 245,
+      "type": "message",
+      "date": "2024-03-05T07:23:00",
+      "date_unixtime": "1709623380",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Gledao sam juče utakmicu, fantastično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Gledao sam juče utakmicu, fantastično!"
+        }
+      ]
+    },
+    {
+      "id": 246,
+      "type": "message",
+      "date": "2024-03-05T07:50:00",
+      "date_unixtime": "1709625000",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Deca su se lepo provela na slavi.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Deca su se lepo provela na slavi."
+        }
+      ],
+      "reply_to_message_id": 245
+    },
+    {
+      "id": 247,
+      "type": "message",
+      "date": "2024-03-05T08:23:00",
+      "date_unixtime": "1709626980",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Sport je zdrav način da provedete vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sport je zdrav način da provedete vreme."
+        }
+      ],
+      "reply_to_message_id": 232
+    },
+    {
+      "id": 248,
+      "type": "message",
+      "date": "2024-03-05T08:57:00",
+      "date_unixtime": "1709629020",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Zelena salata uz meso je uvek dobra kombinacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zelena salata uz meso je uvek dobra kombinacija."
+        }
+      ],
+      "reply_to_message_id": 245
+    },
+    {
+      "id": 249,
+      "type": "message",
+      "date": "2024-03-05T09:18:00",
+      "date_unixtime": "1709630280",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Fudbal je ponekad nepredvidiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Fudbal je ponekad nepredvidiv."
+        }
+      ],
+      "reply_to_message_id": 239
+    },
+    {
+      "id": 250,
+      "type": "message",
+      "date": "2024-03-05T10:02:00",
+      "date_unixtime": "1709632920",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Završio sam projekat na vreme, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Završio sam projekat na vreme, konačno!"
+        }
+      ]
+    },
+    {
+      "id": 251,
+      "type": "message",
+      "date": "2024-03-05T10:18:00",
+      "date_unixtime": "1709633880",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Napravila sam kolače za decu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Napravila sam kolače za decu."
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "type": "message",
+      "date": "2024-03-05T10:35:00",
+      "date_unixtime": "1709634900",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Ko zna dobar restoran u centru?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko zna dobar restoran u centru?"
+        }
+      ]
+    },
+    {
+      "id": 253,
+      "type": "message",
+      "date": "2024-03-05T10:59:00",
+      "date_unixtime": "1709636340",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Naučio sam da sviram gitaru, srećan sam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Naučio sam da sviram gitaru, srećan sam."
+        }
+      ]
+    },
+    {
+      "id": 254,
+      "type": "message",
+      "date": "2024-03-05T11:40:00",
+      "date_unixtime": "1709638800",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Završio sam projekat na vreme, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Završio sam projekat na vreme, konačno!"
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "type": "message",
+      "date": "2024-03-05T11:42:00",
+      "date_unixtime": "1709638920",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Sve je okej kod mene, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sve je okej kod mene, hvala!"
+        }
+      ]
+    },
+    {
+      "id": 256,
+      "type": "message",
+      "date": "2024-03-05T12:25:00",
+      "date_unixtime": "1709641500",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Nadam se da će sve proći dobro.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nadam se da će sve proći dobro."
+        }
+      ]
+    },
+    {
+      "id": 257,
+      "type": "message",
+      "date": "2024-03-05T12:26:00",
+      "date_unixtime": "1709641560",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Vlada ne sluša narod, mora da se promeni sistem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vlada ne sluša narod, mora da se promeni sistem."
+        }
+      ]
+    },
+    {
+      "id": 258,
+      "type": "message",
+      "date": "2024-03-05T12:33:00",
+      "date_unixtime": "1709641980",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Važno je biti iskren u svemu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Važno je biti iskren u svemu."
+        }
+      ]
+    },
+    {
+      "id": 259,
+      "type": "message",
+      "date": "2024-03-05T13:13:00",
+      "date_unixtime": "1709644380",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Muzika me uvek opusti posle napornog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzika me uvek opusti posle napornog dana."
+        }
+      ]
+    },
+    {
+      "id": 260,
+      "type": "message",
+      "date": "2024-03-05T13:56:00",
+      "date_unixtime": "1709646960",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Sledeće okupljanje je ilegalno ali nužno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sledeće okupljanje je ilegalno ali nužno."
+        }
+      ],
+      "reply_to_message_id": 241
+    },
+    {
+      "id": 261,
+      "type": "message",
+      "date": "2024-03-05T14:37:00",
+      "date_unixtime": "1709649420",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Ima smisla, hvala na objašnjenju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ima smisla, hvala na objašnjenju."
+        }
+      ]
+    },
+    {
+      "id": 262,
+      "type": "message",
+      "date": "2024-03-05T14:38:00",
+      "date_unixtime": "1709649480",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Imam slobodan vikend, predlozi?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam slobodan vikend, predlozi?"
+        }
+      ],
+      "reply_to_message_id": 248
+    },
+    {
+      "id": 263,
+      "type": "message",
+      "date": "2024-03-05T14:51:00",
+      "date_unixtime": "1709650260",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Nova verzija aplikacije je mnogo bolja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nova verzija aplikacije je mnogo bolja."
+        }
+      ]
+    },
+    {
+      "id": 264,
+      "type": "message",
+      "date": "2024-03-05T15:13:00",
+      "date_unixtime": "1709651580",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Srbija ima toliko lepih mesta za turiste.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija ima toliko lepih mesta za turiste."
+        }
+      ],
+      "reply_to_message_id": 257
+    },
+    {
+      "id": 265,
+      "type": "message",
+      "date": "2024-03-05T15:46:00",
+      "date_unixtime": "1709653560",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Ćevapi su uvek dobra ideja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ćevapi su uvek dobra ideja."
+        }
+      ]
+    },
+    {
+      "id": 266,
+      "type": "message",
+      "date": "2024-03-05T15:53:00",
+      "date_unixtime": "1709653980",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Firma nam daje bonus za praznik, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Firma nam daje bonus za praznik, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 267,
+      "type": "message",
+      "date": "2024-03-05T15:59:00",
+      "date_unixtime": "1709654340",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Posao mi je danas bio naporan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posao mi je danas bio naporan."
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "type": "message",
+      "date": "2024-03-05T16:15:00",
+      "date_unixtime": "1709655300",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Imam problem sa pećnicom, ne greje kako treba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam problem sa pećnicom, ne greje kako treba."
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "type": "message",
+      "date": "2024-03-05T16:51:00",
+      "date_unixtime": "1709657460",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Fotografišem prirodu kad izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Fotografišem prirodu kad izlazim u šetnju."
+        }
+      ]
+    },
+    {
+      "id": 270,
+      "type": "message",
+      "date": "2024-03-05T16:57:00",
+      "date_unixtime": "1709657820",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Smanjio sam unos šećera, osećam se bolje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Smanjio sam unos šećera, osećam se bolje."
+        }
+      ]
+    },
+    {
+      "id": 271,
+      "type": "message",
+      "date": "2024-03-05T16:59:00",
+      "date_unixtime": "1709657940",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Proveo sam vikend sa porodicom, fenomenalno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proveo sam vikend sa porodicom, fenomenalno."
+        }
+      ]
+    },
+    {
+      "id": 272,
+      "type": "message",
+      "date": "2024-03-05T17:31:00",
+      "date_unixtime": "1709659860",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Večeras izlazimo, ko je za to?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Večeras izlazimo, ko je za to?"
+        }
+      ]
+    },
+    {
+      "id": 273,
+      "type": "message",
+      "date": "2024-03-05T18:09:00",
+      "date_unixtime": "1709662140",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Putovao sam u inostranstvo prošlog meseca.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Putovao sam u inostranstvo prošlog meseca."
+        }
+      ]
+    },
+    {
+      "id": 274,
+      "type": "message",
+      "date": "2024-03-05T18:40:00",
+      "date_unixtime": "1709664000",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Imam intervju sutra, poželite mi sreću!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam intervju sutra, poželite mi sreću!"
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "type": "message",
+      "date": "2024-03-05T19:10:00",
+      "date_unixtime": "1709665800",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Sve je okej kod mene, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sve je okej kod mene, hvala!"
+        }
+      ],
+      "reply_to_message_id": 262
+    },
+    {
+      "id": 276,
+      "type": "message",
+      "date": "2024-03-05T19:24:00",
+      "date_unixtime": "1709666640",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Leto je moje omiljeno godišnje doba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Leto je moje omiljeno godišnje doba."
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "type": "message",
+      "date": "2024-03-05T20:00:00",
+      "date_unixtime": "1709668800",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Smanjio sam unos šećera, osećam se bolje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Smanjio sam unos šećera, osećam se bolje."
+        }
+      ]
+    },
+    {
+      "id": 278,
+      "type": "message",
+      "date": "2024-03-05T20:31:00",
+      "date_unixtime": "1709670660",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Slažem se sa ovim potpuno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Slažem se sa ovim potpuno."
+        }
+      ]
+    },
+    {
+      "id": 279,
+      "type": "message",
+      "date": "2024-03-05T20:38:00",
+      "date_unixtime": "1709671080",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Razumem te, to je komplikovana situacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Razumem te, to je komplikovana situacija."
+        }
+      ]
+    },
+    {
+      "id": 280,
+      "type": "message",
+      "date": "2024-03-05T21:20:00",
+      "date_unixtime": "1709673600",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Može, dogovorili smo se.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Može, dogovorili smo se."
+        }
+      ]
+    },
+    {
+      "id": 281,
+      "type": "message",
+      "date": "2024-03-05T21:22:00",
+      "date_unixtime": "1709673720",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Muzika me uvek opusti posle napornog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzika me uvek opusti posle napornog dana."
+        }
+      ]
+    },
+    {
+      "id": 282,
+      "type": "message",
+      "date": "2024-03-05T22:02:00",
+      "date_unixtime": "1709676120",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Imam problem sa pećnicom, ne greje kako treba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam problem sa pećnicom, ne greje kako treba."
+        }
+      ],
+      "reply_to_message_id": 277
+    },
+    {
+      "id": 283,
+      "type": "message",
+      "date": "2024-03-05T22:28:00",
+      "date_unixtime": "1709677680",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Kiša pada ceo dan, ostajem kod kuće.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kiša pada ceo dan, ostajem kod kuće."
+        }
+      ],
+      "reply_to_message_id": 277
+    },
+    {
+      "id": 284,
+      "type": "message",
+      "date": "2024-03-05T22:37:00",
+      "date_unixtime": "1709678220",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Firma nam daje bonus za praznik, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Firma nam daje bonus za praznik, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 285,
+      "type": "message",
+      "date": "2024-03-05T23:08:00",
+      "date_unixtime": "1709680080",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Igram novu igru, preporučujem svima.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Igram novu igru, preporučujem svima."
+        }
+      ]
+    },
+    {
+      "id": 286,
+      "type": "message",
+      "date": "2024-03-05T23:17:00",
+      "date_unixtime": "1709680620",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Vitamini su dobri u zimskom periodu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vitamini su dobri u zimskom periodu."
+        }
+      ],
+      "reply_to_message_id": 279
+    },
+    {
+      "id": 287,
+      "type": "message",
+      "date": "2024-03-05T23:35:00",
+      "date_unixtime": "1709681700",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Planirao sam letovanje na moru.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planirao sam letovanje na moru."
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "type": "message",
+      "date": "2024-03-05T23:36:00",
+      "date_unixtime": "1709681760",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Dvostruka autentifikacija štiti vaš nalog.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dvostruka autentifikacija štiti vaš nalog."
+        }
+      ]
+    },
+    {
+      "id": 289,
+      "type": "message",
+      "date": "2024-03-05T23:49:00",
+      "date_unixtime": "1709682540",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Sistem mora biti srušen iznutra.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sistem mora biti srušen iznutra."
+        }
+      ]
+    },
+    {
+      "id": 290,
+      "type": "message",
+      "date": "2024-03-05T23:50:00",
+      "date_unixtime": "1709682600",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Studije su teške ali se isplati.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Studije su teške ali se isplati."
+        }
+      ]
+    },
+    {
+      "id": 291,
+      "type": "message",
+      "date": "2024-03-06T00:24:00",
+      "date_unixtime": "1709684640",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Delim ovaj link, jako je zanimljiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Delim ovaj link, jako je zanimljiv."
+        }
+      ],
+      "reply_to_message_id": 286
+    },
+    {
+      "id": 292,
+      "type": "message",
+      "date": "2024-03-06T01:03:00",
+      "date_unixtime": "1709686980",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Pravim večeras sarmu, ko hoće recept?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pravim večeras sarmu, ko hoće recept?"
+        }
+      ]
+    },
+    {
+      "id": 293,
+      "type": "message",
+      "date": "2024-03-06T01:04:00",
+      "date_unixtime": "1709687040",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Danas sam kuvao pasulj, isao sam po maminoj recepturi.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Danas sam kuvao pasulj, isao sam po maminoj recepturi."
+        }
+      ]
+    },
+    {
+      "id": 294,
+      "type": "message",
+      "date": "2024-03-06T01:29:00",
+      "date_unixtime": "1709688540",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "I ja sam dobro, hvala na pitanju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "I ja sam dobro, hvala na pitanju."
+        }
+      ]
+    },
+    {
+      "id": 295,
+      "type": "message",
+      "date": "2024-03-06T01:59:00",
+      "date_unixtime": "1709690340",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Srećan vam dan svima.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srećan vam dan svima."
+        }
+      ]
+    },
+    {
+      "id": 296,
+      "type": "message",
+      "date": "2024-03-06T02:35:00",
+      "date_unixtime": "1709692500",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Moj brat je dobio posao, srećan sam za njega.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moj brat je dobio posao, srećan sam za njega."
+        }
+      ]
+    },
+    {
+      "id": 297,
+      "type": "message",
+      "date": "2024-03-06T03:09:00",
+      "date_unixtime": "1709694540",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Imam intervju sutra, poželite mi sreću!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Imam intervju sutra, poželite mi sreću!"
+        }
+      ]
+    },
+    {
+      "id": 298,
+      "type": "message",
+      "date": "2024-03-06T03:11:00",
+      "date_unixtime": "1709694660",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Mislim da bi trebalo da razgovaramo o tome.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Mislim da bi trebalo da razgovaramo o tome."
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "type": "message",
+      "date": "2024-03-06T03:42:00",
+      "date_unixtime": "1709696520",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Planirao sam letovanje na moru.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planirao sam letovanje na moru."
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "type": "message",
+      "date": "2024-03-06T03:44:00",
+      "date_unixtime": "1709696640",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Tražim posao, znate li neko gde se traže programeri?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tražim posao, znate li neko gde se traže programeri?"
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "type": "message",
+      "date": "2024-03-06T04:22:00",
+      "date_unixtime": "1709698920",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Zvezda je pobedila večeras, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zvezda je pobedila večeras, konačno!"
+        }
+      ],
+      "reply_to_message_id": 283
+    },
+    {
+      "id": 302,
+      "type": "message",
+      "date": "2024-03-06T05:04:00",
+      "date_unixtime": "1709701440",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Divno vreme danas, izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Divno vreme danas, izlazim u šetnju."
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "type": "message",
+      "date": "2024-03-06T05:18:00",
+      "date_unixtime": "1709702280",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Muzej je otvorio novu izložbu, idi da vidiš.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzej je otvorio novu izložbu, idi da vidiš."
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "type": "message",
+      "date": "2024-03-06T05:43:00",
+      "date_unixtime": "1709703780",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Spavanje je ključno za zdravlje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Spavanje je ključno za zdravlje."
+        }
+      ]
+    },
+    {
+      "id": 305,
+      "type": "message",
+      "date": "2024-03-06T06:24:00",
+      "date_unixtime": "1709706240",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Zalazak sunca jutros bio je neverovatno lep.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zalazak sunca jutros bio je neverovatno lep."
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "type": "message",
+      "date": "2024-03-06T06:54:00",
+      "date_unixtime": "1709708040",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Suša je problem ove godine za poljoprivrednike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Suša je problem ove godine za poljoprivrednike."
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "type": "message",
+      "date": "2024-03-06T07:18:00",
+      "date_unixtime": "1709709480",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Delim ovaj link, jako je zanimljiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Delim ovaj link, jako je zanimljiv."
+        }
+      ],
+      "reply_to_message_id": 287
+    },
+    {
+      "id": 308,
+      "type": "message",
+      "date": "2024-03-06T07:41:00",
+      "date_unixtime": "1709710860",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Pica ili roštilj večeras?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pica ili roštilj večeras?"
+        }
+      ]
+    },
+    {
+      "id": 309,
+      "type": "message",
+      "date": "2024-03-06T08:13:00",
+      "date_unixtime": "1709712780",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Lekarski pregled prošao u redu, sve je uredu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Lekarski pregled prošao u redu, sve je uredu."
+        }
+      ]
+    },
+    {
+      "id": 310,
+      "type": "message",
+      "date": "2024-03-06T08:18:00",
+      "date_unixtime": "1709713080",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Ko zna dobar restoran u centru?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko zna dobar restoran u centru?"
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "type": "message",
+      "date": "2024-03-06T08:20:00",
+      "date_unixtime": "1709713200",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Spavanje je ključno za zdravlje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Spavanje je ključno za zdravlje."
+        }
+      ]
+    },
+    {
+      "id": 312,
+      "type": "message",
+      "date": "2024-03-06T09:04:00",
+      "date_unixtime": "1709715840",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Nema mira bez pravde.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nema mira bez pravde."
+        }
+      ]
+    },
+    {
+      "id": 313,
+      "type": "message",
+      "date": "2024-03-06T09:47:00",
+      "date_unixtime": "1709718420",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Pišem ti sutra.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pišem ti sutra."
+        }
+      ]
+    },
+    {
+      "id": 314,
+      "type": "message",
+      "date": "2024-03-06T10:26:00",
+      "date_unixtime": "1709720760",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Ideja o napadu na džamiju/crkvu mora da se realizuje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ideja o napadu na džamiju/crkvu mora da se realizuje."
+        }
+      ]
+    },
+    {
+      "id": 315,
+      "type": "message",
+      "date": "2024-03-06T10:30:00",
+      "date_unixtime": "1709721000",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Čitam odličnu knjigu, preporučujem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Čitam odličnu knjigu, preporučujem."
+        }
+      ]
+    },
+    {
+      "id": 316,
+      "type": "message",
+      "date": "2024-03-06T10:44:00",
+      "date_unixtime": "1709721840",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Drago mi je što si tu!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drago mi je što si tu!"
+        }
+      ],
+      "reply_to_message_id": 309
+    },
+    {
+      "id": 317,
+      "type": "message",
+      "date": "2024-03-06T11:00:00",
+      "date_unixtime": "1709722800",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Nema boljeg osećaja od završenog posla.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nema boljeg osećaja od završenog posla."
+        }
+      ],
+      "reply_to_message_id": 299
+    },
+    {
+      "id": 318,
+      "type": "message",
+      "date": "2024-03-06T11:33:00",
+      "date_unixtime": "1709724780",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Kupujem na pijaci svakog subote.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kupujem na pijaci svakog subote."
+        }
+      ]
+    },
+    {
+      "id": 319,
+      "type": "message",
+      "date": "2024-03-06T11:47:00",
+      "date_unixtime": "1709725620",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Ko gleda meč večeras?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko gleda meč večeras?"
+        }
+      ]
+    },
+    {
+      "id": 320,
+      "type": "message",
+      "date": "2024-03-06T12:21:00",
+      "date_unixtime": "1709727660",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Slažem se sa ovim potpuno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Slažem se sa ovim potpuno."
+        }
+      ]
+    },
+    {
+      "id": 321,
+      "type": "message",
+      "date": "2024-03-06T13:04:00",
+      "date_unixtime": "1709730240",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Leto je moje omiljeno godišnje doba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Leto je moje omiljeno godišnje doba."
+        }
+      ]
+    },
+    {
+      "id": 322,
+      "type": "message",
+      "date": "2024-03-06T13:44:00",
+      "date_unixtime": "1709732640",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Moji roditelji su me posetili, bili smo zajedno tri dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moji roditelji su me posetili, bili smo zajedno tri dana."
+        }
+      ]
+    },
+    {
+      "id": 323,
+      "type": "message",
+      "date": "2024-03-06T13:51:00",
+      "date_unixtime": "1709733060",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Burek ujutru je obavezan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Burek ujutru je obavezan."
+        }
+      ]
+    },
+    {
+      "id": 324,
+      "type": "message",
+      "date": "2024-03-06T14:16:00",
+      "date_unixtime": "1709734560",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Moji roditelji su me posetili, bili smo zajedno tri dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moji roditelji su me posetili, bili smo zajedno tri dana."
+        }
+      ]
+    },
+    {
+      "id": 325,
+      "type": "message",
+      "date": "2024-03-06T14:23:00",
+      "date_unixtime": "1709734980",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Tara je predivna planina za odmor.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tara je predivna planina za odmor."
+        }
+      ]
+    },
+    {
+      "id": 326,
+      "type": "message",
+      "date": "2024-03-06T14:33:00",
+      "date_unixtime": "1709735580",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Vežbe istezanja su korisne posle sat vremena za računarom.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vežbe istezanja su korisne posle sat vremena za računarom."
+        }
+      ]
+    },
+    {
+      "id": 327,
+      "type": "message",
+      "date": "2024-03-06T14:55:00",
+      "date_unixtime": "1709736900",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Burek ujutru je obavezan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Burek ujutru je obavezan."
+        }
+      ]
+    },
+    {
+      "id": 328,
+      "type": "message",
+      "date": "2024-03-06T15:21:00",
+      "date_unixtime": "1709738460",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Pazar je bio pun danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pazar je bio pun danas."
+        }
+      ]
+    },
+    {
+      "id": 329,
+      "type": "message",
+      "date": "2024-03-06T15:25:00",
+      "date_unixtime": "1709738700",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Srećan vam dan svima.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srećan vam dan svima."
+        }
+      ]
+    },
+    {
+      "id": 330,
+      "type": "message",
+      "date": "2024-03-06T15:49:00",
+      "date_unixtime": "1709740140",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Gledao sam juče utakmicu, fantastično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Gledao sam juče utakmicu, fantastično!"
+        }
+      ],
+      "reply_to_message_id": 318
+    },
+    {
+      "id": 331,
+      "type": "message",
+      "date": "2024-03-06T16:16:00",
+      "date_unixtime": "1709741760",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Narod se budi, vreme je za promene.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Narod se budi, vreme je za promene."
+        }
+      ]
+    },
+    {
+      "id": 332,
+      "type": "message",
+      "date": "2024-03-06T16:56:00",
+      "date_unixtime": "1709744160",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Završio sam projekat na vreme, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Završio sam projekat na vreme, konačno!"
+        }
+      ],
+      "reply_to_message_id": 327
+    },
+    {
+      "id": 333,
+      "type": "message",
+      "date": "2024-03-06T17:38:00",
+      "date_unixtime": "1709746680",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Internet mi ne radi dobro danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Internet mi ne radi dobro danas."
+        }
+      ]
+    },
+    {
+      "id": 334,
+      "type": "message",
+      "date": "2024-03-06T18:19:00",
+      "date_unixtime": "1709749140",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Sestra mi dolazi iz Nemačke sledeće nedelje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sestra mi dolazi iz Nemačke sledeće nedelje."
+        }
+      ],
+      "reply_to_message_id": 332
+    },
+    {
+      "id": 335,
+      "type": "message",
+      "date": "2024-03-06T19:04:00",
+      "date_unixtime": "1709751840",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Venčanje je bilo predivno, sve je prošlo savršeno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Venčanje je bilo predivno, sve je prošlo savršeno."
+        }
+      ],
+      "reply_to_message_id": 334
+    },
+    {
+      "id": 336,
+      "type": "message",
+      "date": "2024-03-06T19:29:00",
+      "date_unixtime": "1709753340",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Fudbal je ponekad nepredvidiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Fudbal je ponekad nepredvidiv."
+        }
+      ]
+    },
+    {
+      "id": 337,
+      "type": "message",
+      "date": "2024-03-06T19:50:00",
+      "date_unixtime": "1709754600",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Srećan vam dan svima.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srećan vam dan svima."
+        }
+      ]
+    },
+    {
+      "id": 338,
+      "type": "message",
+      "date": "2024-03-06T20:25:00",
+      "date_unixtime": "1709756700",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Drago mi je što si tu!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drago mi je što si tu!"
+        }
+      ]
+    },
+    {
+      "id": 339,
+      "type": "message",
+      "date": "2024-03-06T20:47:00",
+      "date_unixtime": "1709758020",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Vlast nas provocira, moramo odgovoriti.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vlast nas provocira, moramo odgovoriti."
+        }
+      ]
+    },
+    {
+      "id": 340,
+      "type": "message",
+      "date": "2024-03-06T20:59:00",
+      "date_unixtime": "1709758740",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Preporučujem kafu u kafani kod parka.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Preporučujem kafu u kafani kod parka."
+        }
+      ]
+    },
+    {
+      "id": 341,
+      "type": "message",
+      "date": "2024-03-06T21:04:00",
+      "date_unixtime": "1709759040",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Planina je prelepa u ovo doba godine.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planina je prelepa u ovo doba godine."
+        }
+      ]
+    },
+    {
+      "id": 342,
+      "type": "message",
+      "date": "2024-03-06T21:09:00",
+      "date_unixtime": "1709759340",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Pozorišna predstava juče bila je prelepa.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pozorišna predstava juče bila je prelepa."
+        }
+      ]
+    },
+    {
+      "id": 343,
+      "type": "message",
+      "date": "2024-03-06T21:20:00",
+      "date_unixtime": "1709760000",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Muzika me uvek opusti posle napornog dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Muzika me uvek opusti posle napornog dana."
+        }
+      ]
+    },
+    {
+      "id": 344,
+      "type": "message",
+      "date": "2024-03-06T21:37:00",
+      "date_unixtime": "1709761020",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Kontaktirajte brata Admira koji će vas uvesti u mrežu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kontaktirajte brata Admira koji će vas uvesti u mrežu."
+        }
+      ]
+    },
+    {
+      "id": 345,
+      "type": "message",
+      "date": "2024-03-06T21:52:00",
+      "date_unixtime": "1709761920",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Proveo sam vikend sa porodicom, fenomenalno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proveo sam vikend sa porodicom, fenomenalno."
+        }
+      ]
+    },
+    {
+      "id": 346,
+      "type": "message",
+      "date": "2024-03-06T22:36:00",
+      "date_unixtime": "1709764560",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Suša je problem ove godine za poljoprivrednike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Suša je problem ove godine za poljoprivrednike."
+        }
+      ]
+    },
+    {
+      "id": 347,
+      "type": "message",
+      "date": "2024-03-06T22:54:00",
+      "date_unixtime": "1709765640",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Puno vode piti je važno svaki dan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Puno vode piti je važno svaki dan."
+        }
+      ]
+    },
+    {
+      "id": 348,
+      "type": "message",
+      "date": "2024-03-06T23:31:00",
+      "date_unixtime": "1709767860",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Uvek koristite jake lozinke.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Uvek koristite jake lozinke."
+        }
+      ]
+    },
+    {
+      "id": 349,
+      "type": "message",
+      "date": "2024-03-06T23:44:00",
+      "date_unixtime": "1709768640",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Dobra ideja, podržavam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dobra ideja, podržavam."
+        }
+      ]
+    },
+    {
+      "id": 350,
+      "type": "message",
+      "date": "2024-03-07T00:21:00",
+      "date_unixtime": "1709770860",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Ćao, kako ste?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ćao, kako ste?"
+        }
+      ]
+    },
+    {
+      "id": 351,
+      "type": "message",
+      "date": "2024-03-07T00:24:00",
+      "date_unixtime": "1709771040",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Ne znam šta misliti o tome iskreno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ne znam šta misliti o tome iskreno."
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "type": "message",
+      "date": "2024-03-07T01:06:00",
+      "date_unixtime": "1709773560",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Drago mi je što si tu!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drago mi je što si tu!"
+        }
+      ]
+    },
+    {
+      "id": 353,
+      "type": "message",
+      "date": "2024-03-07T01:10:00",
+      "date_unixtime": "1709773800",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Nole je opet pobedio na turniru, ponos Srbije!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nole je opet pobedio na turniru, ponos Srbije!"
+        }
+      ],
+      "reply_to_message_id": 333
+    },
+    {
+      "id": 354,
+      "type": "message",
+      "date": "2024-03-07T01:37:00",
+      "date_unixtime": "1709775420",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Ne znam šta misliti o tome iskreno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ne znam šta misliti o tome iskreno."
+        }
+      ]
+    },
+    {
+      "id": 355,
+      "type": "message",
+      "date": "2024-03-07T01:58:00",
+      "date_unixtime": "1709776680",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Suša je problem ove godine za poljoprivrednike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Suša je problem ove godine za poljoprivrednike."
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "type": "message",
+      "date": "2024-03-07T02:42:00",
+      "date_unixtime": "1709779320",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Nema boljeg osećaja od završenog posla.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nema boljeg osećaja od završenog posla."
+        }
+      ]
+    },
+    {
+      "id": 357,
+      "type": "message",
+      "date": "2024-03-07T03:11:00",
+      "date_unixtime": "1709781060",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Pica ili roštilj večeras?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pica ili roštilj večeras?"
+        }
+      ]
+    },
+    {
+      "id": 358,
+      "type": "message",
+      "date": "2024-03-07T03:32:00",
+      "date_unixtime": "1709782320",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Srbija se plasirala na EP, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija se plasirala na EP, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 359,
+      "type": "message",
+      "date": "2024-03-07T04:04:00",
+      "date_unixtime": "1709784240",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Ovo je tačno ono što sam tražio, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ovo je tačno ono što sam tražio, hvala!"
+        }
+      ]
+    },
+    {
+      "id": 360,
+      "type": "message",
+      "date": "2024-03-07T04:36:00",
+      "date_unixtime": "1709786160",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Pijemo kafu i razgovaramo bez politike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pijemo kafu i razgovaramo bez politike."
+        }
+      ]
+    },
+    {
+      "id": 361,
+      "type": "message",
+      "date": "2024-03-07T04:45:00",
+      "date_unixtime": "1709786700",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Gledao sam juče utakmicu, fantastično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Gledao sam juče utakmicu, fantastično!"
+        }
+      ]
+    },
+    {
+      "id": 362,
+      "type": "message",
+      "date": "2024-03-07T05:04:00",
+      "date_unixtime": "1709787840",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Grčka je uvek lepa destinacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Grčka je uvek lepa destinacija."
+        }
+      ]
+    },
+    {
+      "id": 363,
+      "type": "message",
+      "date": "2024-03-07T05:38:00",
+      "date_unixtime": "1709789880",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Planirajmo napad na institucije koje nas ugnjetavaju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Planirajmo napad na institucije koje nas ugnjetavaju."
+        }
+      ]
+    },
+    {
+      "id": 364,
+      "type": "message",
+      "date": "2024-03-07T06:01:00",
+      "date_unixtime": "1709791260",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Dobra ideja, podržavam.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Dobra ideja, podržavam."
+        }
+      ]
+    },
+    {
+      "id": 365,
+      "type": "message",
+      "date": "2024-03-07T06:16:00",
+      "date_unixtime": "1709792160",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Danas sam kuvao pasulj, isao sam po maminoj recepturi.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Danas sam kuvao pasulj, isao sam po maminoj recepturi."
+        }
+      ],
+      "reply_to_message_id": 355
+    },
+    {
+      "id": 366,
+      "type": "message",
+      "date": "2024-03-07T06:22:00",
+      "date_unixtime": "1709792520",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Moji roditelji su me posetili, bili smo zajedno tri dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moji roditelji su me posetili, bili smo zajedno tri dana."
+        }
+      ]
+    },
+    {
+      "id": 367,
+      "type": "message",
+      "date": "2024-03-07T06:41:00",
+      "date_unixtime": "1709793660",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Ako niko ne uradi ništa, mi ćemo morati.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ako niko ne uradi ništa, mi ćemo morati."
+        }
+      ]
+    },
+    {
+      "id": 368,
+      "type": "message",
+      "date": "2024-03-07T07:18:00",
+      "date_unixtime": "1709795880",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Srbija ima toliko lepih mesta za turiste.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija ima toliko lepih mesta za turiste."
+        }
+      ],
+      "reply_to_message_id": 348
+    },
+    {
+      "id": 369,
+      "type": "message",
+      "date": "2024-03-07T07:59:00",
+      "date_unixtime": "1709798340",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Beograd nikad ne spava, volim taj grad.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Beograd nikad ne spava, volim taj grad."
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "type": "message",
+      "date": "2024-03-07T08:16:00",
+      "date_unixtime": "1709799360",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Snega ima na Kopaoniku, ko ide na skijanje?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Snega ima na Kopaoniku, ko ide na skijanje?"
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "type": "message",
+      "date": "2024-03-07T08:23:00",
+      "date_unixtime": "1709799780",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Vežbe istezanja su korisne posle sat vremena za računarom.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vežbe istezanja su korisne posle sat vremena za računarom."
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "type": "message",
+      "date": "2024-03-07T08:46:00",
+      "date_unixtime": "1709801160",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Prikupljamo sredstva za oružje, svaka donacija je dobrodošla.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Prikupljamo sredstva za oružje, svaka donacija je dobrodošla."
+        }
+      ]
+    },
+    {
+      "id": 373,
+      "type": "message",
+      "date": "2024-03-07T09:02:00",
+      "date_unixtime": "1709802120",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Suša je problem ove godine za poljoprivrednike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Suša je problem ove godine za poljoprivrednike."
+        }
+      ]
+    },
+    {
+      "id": 374,
+      "type": "message",
+      "date": "2024-03-07T09:12:00",
+      "date_unixtime": "1709802720",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Vežbe istezanja su korisne posle sat vremena za računarom.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vežbe istezanja su korisne posle sat vremena za računarom."
+        }
+      ],
+      "reply_to_message_id": 357
+    },
+    {
+      "id": 375,
+      "type": "message",
+      "date": "2024-03-07T09:29:00",
+      "date_unixtime": "1709803740",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Putovao sam u inostranstvo prošlog meseca.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Putovao sam u inostranstvo prošlog meseca."
+        }
+      ],
+      "reply_to_message_id": 370
+    },
+    {
+      "id": 376,
+      "type": "message",
+      "date": "2024-03-07T10:09:00",
+      "date_unixtime": "1709806140",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Zdrava ishrana je važna za dug život.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zdrava ishrana je važna za dug život."
+        }
+      ]
+    },
+    {
+      "id": 377,
+      "type": "message",
+      "date": "2024-03-07T10:51:00",
+      "date_unixtime": "1709808660",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Tenis je moj omiljeni sport.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tenis je moj omiljeni sport."
+        }
+      ],
+      "reply_to_message_id": 368
+    },
+    {
+      "id": 378,
+      "type": "message",
+      "date": "2024-03-07T11:34:00",
+      "date_unixtime": "1709811240",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Šuma je puna gljiva ovog jesenja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Šuma je puna gljiva ovog jesenja."
+        }
+      ]
+    },
+    {
+      "id": 379,
+      "type": "message",
+      "date": "2024-03-07T12:15:00",
+      "date_unixtime": "1709813700",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Sestra mi dolazi iz Nemačke sledeće nedelje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sestra mi dolazi iz Nemačke sledeće nedelje."
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "type": "message",
+      "date": "2024-03-07T12:31:00",
+      "date_unixtime": "1709814660",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Važno je biti iskren u svemu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Važno je biti iskren u svemu."
+        }
+      ]
+    },
+    {
+      "id": 381,
+      "type": "message",
+      "date": "2024-03-07T12:46:00",
+      "date_unixtime": "1709815560",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Drugarice smo se videle po dugo vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drugarice smo se videle po dugo vremena."
+        }
+      ]
+    },
+    {
+      "id": 382,
+      "type": "message",
+      "date": "2024-03-07T13:09:00",
+      "date_unixtime": "1709816940",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Pozdrav iz Beograda!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pozdrav iz Beograda!"
+        }
+      ],
+      "reply_to_message_id": 364
+    },
+    {
+      "id": 383,
+      "type": "message",
+      "date": "2024-03-07T13:20:00",
+      "date_unixtime": "1709817600",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Pozdrav iz Beograda!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pozdrav iz Beograda!"
+        }
+      ]
+    },
+    {
+      "id": 384,
+      "type": "message",
+      "date": "2024-03-07T14:05:00",
+      "date_unixtime": "1709820300",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Važno je biti iskren u svemu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Važno je biti iskren u svemu."
+        }
+      ]
+    },
+    {
+      "id": 385,
+      "type": "message",
+      "date": "2024-03-07T14:49:00",
+      "date_unixtime": "1709822940",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Posjetio sam Niš i bio sam oduševljen.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posjetio sam Niš i bio sam oduševljen."
+        }
+      ]
+    },
+    {
+      "id": 386,
+      "type": "message",
+      "date": "2024-03-07T15:15:00",
+      "date_unixtime": "1709824500",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Firma nam daje bonus za praznik, odlično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Firma nam daje bonus za praznik, odlično!"
+        }
+      ]
+    },
+    {
+      "id": 387,
+      "type": "message",
+      "date": "2024-03-07T15:50:00",
+      "date_unixtime": "1709826600",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Tenis je moj omiljeni sport.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tenis je moj omiljeni sport."
+        }
+      ]
+    },
+    {
+      "id": 388,
+      "type": "message",
+      "date": "2024-03-07T16:06:00",
+      "date_unixtime": "1709827560",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Sport je zdrav način da provedete vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sport je zdrav način da provedete vreme."
+        }
+      ]
+    },
+    {
+      "id": 389,
+      "type": "message",
+      "date": "2024-03-07T16:21:00",
+      "date_unixtime": "1709828460",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Moji roditelji su me posetili, bili smo zajedno tri dana.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Moji roditelji su me posetili, bili smo zajedno tri dana."
+        }
+      ]
+    },
+    {
+      "id": 390,
+      "type": "message",
+      "date": "2024-03-07T17:02:00",
+      "date_unixtime": "1709830920",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Grčka je uvek lepa destinacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Grčka je uvek lepa destinacija."
+        }
+      ]
+    },
+    {
+      "id": 391,
+      "type": "message",
+      "date": "2024-03-07T17:11:00",
+      "date_unixtime": "1709831460",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Idemo na kafu, ko dolazi?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Idemo na kafu, ko dolazi?"
+        }
+      ]
+    },
+    {
+      "id": 392,
+      "type": "message",
+      "date": "2024-03-07T17:42:00",
+      "date_unixtime": "1709833320",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Leto je moje omiljeno godišnje doba.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Leto je moje omiljeno godišnje doba."
+        }
+      ],
+      "reply_to_message_id": 388
+    },
+    {
+      "id": 393,
+      "type": "message",
+      "date": "2024-03-07T18:18:00",
+      "date_unixtime": "1709835480",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Napravila sam kolače za decu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Napravila sam kolače za decu."
+        }
+      ]
+    },
+    {
+      "id": 394,
+      "type": "message",
+      "date": "2024-03-07T18:21:00",
+      "date_unixtime": "1709835660",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Drugarice smo se videle po dugo vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Drugarice smo se videle po dugo vremena."
+        }
+      ],
+      "reply_to_message_id": 380
+    },
+    {
+      "id": 395,
+      "type": "message",
+      "date": "2024-03-07T19:05:00",
+      "date_unixtime": "1709838300",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Zvezda je pobedila večeras, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Zvezda je pobedila večeras, konačno!"
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "type": "message",
+      "date": "2024-03-07T19:30:00",
+      "date_unixtime": "1709839800",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Gledao sam juče utakmicu, fantastično!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Gledao sam juče utakmicu, fantastično!"
+        }
+      ]
+    },
+    {
+      "id": 397,
+      "type": "message",
+      "date": "2024-03-07T20:14:00",
+      "date_unixtime": "1709842440",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Tražim posao, znate li neko gde se traže programeri?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tražim posao, znate li neko gde se traže programeri?"
+        }
+      ]
+    },
+    {
+      "id": 398,
+      "type": "message",
+      "date": "2024-03-07T20:50:00",
+      "date_unixtime": "1709844600",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Čitam odličnu knjigu, preporučujem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Čitam odličnu knjigu, preporučujem."
+        }
+      ]
+    },
+    {
+      "id": 399,
+      "type": "message",
+      "date": "2024-03-07T21:16:00",
+      "date_unixtime": "1709846160",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Radim od kuće ovaj mesec, mnogo mi odgovara.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Radim od kuće ovaj mesec, mnogo mi odgovara."
+        }
+      ],
+      "reply_to_message_id": 380
+    },
+    {
+      "id": 400,
+      "type": "message",
+      "date": "2024-03-07T21:41:00",
+      "date_unixtime": "1709847660",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Razumem te, to je komplikovana situacija.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Razumem te, to je komplikovana situacija."
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "type": "message",
+      "date": "2024-03-07T22:10:00",
+      "date_unixtime": "1709849400",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Ovo je tačno ono što sam tražio, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ovo je tačno ono što sam tražio, hvala!"
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "type": "message",
+      "date": "2024-03-07T22:17:00",
+      "date_unixtime": "1709849820",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Ne znam šta misliti o tome iskreno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ne znam šta misliti o tome iskreno."
+        }
+      ]
+    },
+    {
+      "id": 403,
+      "type": "message",
+      "date": "2024-03-07T22:42:00",
+      "date_unixtime": "1709851320",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Pijemo kafu i razgovaramo bez politike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Pijemo kafu i razgovaramo bez politike."
+        }
+      ]
+    },
+    {
+      "id": 404,
+      "type": "message",
+      "date": "2024-03-07T23:16:00",
+      "date_unixtime": "1709853360",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Da li neko koristi Linux svakodnevno?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Da li neko koristi Linux svakodnevno?"
+        }
+      ]
+    },
+    {
+      "id": 405,
+      "type": "message",
+      "date": "2024-03-07T23:23:00",
+      "date_unixtime": "1709853780",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Radim od kuće ovaj mesec, mnogo mi odgovara.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Radim od kuće ovaj mesec, mnogo mi odgovara."
+        }
+      ]
+    },
+    {
+      "id": 406,
+      "type": "message",
+      "date": "2024-03-07T23:41:00",
+      "date_unixtime": "1709854860",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Volim da slikam vikendom kad imam vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Volim da slikam vikendom kad imam vremena."
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "type": "message",
+      "date": "2024-03-08T00:22:00",
+      "date_unixtime": "1709857320",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Posao mi je danas bio naporan.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posao mi je danas bio naporan."
+        }
+      ],
+      "reply_to_message_id": 388
+    },
+    {
+      "id": 408,
+      "type": "message",
+      "date": "2024-03-08T00:45:00",
+      "date_unixtime": "1709858700",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Sestra mi dolazi iz Nemačke sledeće nedelje.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sestra mi dolazi iz Nemačke sledeće nedelje."
+        }
+      ]
+    },
+    {
+      "id": 409,
+      "type": "message",
+      "date": "2024-03-08T01:30:00",
+      "date_unixtime": "1709861400",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Kiša pada ceo dan, ostajem kod kuće.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kiša pada ceo dan, ostajem kod kuće."
+        }
+      ],
+      "reply_to_message_id": 392
+    },
+    {
+      "id": 410,
+      "type": "message",
+      "date": "2024-03-08T01:40:00",
+      "date_unixtime": "1709862000",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Python je odličan programski jezik za početnike.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Python je odličan programski jezik za početnike."
+        }
+      ],
+      "reply_to_message_id": 399
+    },
+    {
+      "id": 411,
+      "type": "message",
+      "date": "2024-03-08T02:19:00",
+      "date_unixtime": "1709864340",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Ko gleda meč večeras?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ko gleda meč večeras?"
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "type": "message",
+      "date": "2024-03-08T02:42:00",
+      "date_unixtime": "1709865720",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Proslavljamo godišnjicu braka večeras.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proslavljamo godišnjicu braka večeras."
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "type": "message",
+      "date": "2024-03-08T03:23:00",
+      "date_unixtime": "1709868180",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Volim da slikam vikendom kad imam vremena.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Volim da slikam vikendom kad imam vremena."
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "type": "message",
+      "date": "2024-03-08T04:01:00",
+      "date_unixtime": "1709870460",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Vitamini su dobri u zimskom periodu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vitamini su dobri u zimskom periodu."
+        }
+      ]
+    },
+    {
+      "id": 415,
+      "type": "message",
+      "date": "2024-03-08T04:33:00",
+      "date_unixtime": "1709872380",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Lepo rečeno, potpuno se slažem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Lepo rečeno, potpuno se slažem."
+        }
+      ]
+    },
+    {
+      "id": 416,
+      "type": "message",
+      "date": "2024-03-08T05:16:00",
+      "date_unixtime": "1709874960",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Sport je zdrav način da provedete vreme.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sport je zdrav način da provedete vreme."
+        }
+      ]
+    },
+    {
+      "id": 417,
+      "type": "message",
+      "date": "2024-03-08T05:22:00",
+      "date_unixtime": "1709875320",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Kuma nam je rodila dete, čestitamo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kuma nam je rodila dete, čestitamo!"
+        }
+      ]
+    },
+    {
+      "id": 418,
+      "type": "message",
+      "date": "2024-03-08T05:52:00",
+      "date_unixtime": "1709877120",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Vlada ne sluša narod, mora da se promeni sistem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vlada ne sluša narod, mora da se promeni sistem."
+        }
+      ]
+    },
+    {
+      "id": 419,
+      "type": "message",
+      "date": "2024-03-08T06:16:00",
+      "date_unixtime": "1709878560",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Tražim posao, znate li neko gde se traže programeri?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Tražim posao, znate li neko gde se traže programeri?"
+        }
+      ],
+      "reply_to_message_id": 405
+    },
+    {
+      "id": 420,
+      "type": "message",
+      "date": "2024-03-08T06:50:00",
+      "date_unixtime": "1709880600",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Film koji sam gledao bio je uzbudljiv.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Film koji sam gledao bio je uzbudljiv."
+        }
+      ]
+    },
+    {
+      "id": 421,
+      "type": "message",
+      "date": "2024-03-08T07:03:00",
+      "date_unixtime": "1709881380",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Javi mi kad stigneš.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Javi mi kad stigneš."
+        }
+      ],
+      "reply_to_message_id": 415
+    },
+    {
+      "id": 422,
+      "type": "message",
+      "date": "2024-03-08T07:15:00",
+      "date_unixtime": "1709882100",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Studije su teške ali se isplati.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Studije su teške ali se isplati."
+        }
+      ]
+    },
+    {
+      "id": 423,
+      "type": "message",
+      "date": "2024-03-08T07:24:00",
+      "date_unixtime": "1709882640",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Divno vreme danas, izlazim u šetnju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Divno vreme danas, izlazim u šetnju."
+        }
+      ]
+    },
+    {
+      "id": 424,
+      "type": "message",
+      "date": "2024-03-08T08:09:00",
+      "date_unixtime": "1709885340",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Nema boljeg osećaja od završenog posla.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Nema boljeg osećaja od završenog posla."
+        }
+      ]
+    },
+    {
+      "id": 425,
+      "type": "message",
+      "date": "2024-03-08T08:40:00",
+      "date_unixtime": "1709887200",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Srbija ima toliko lepih mesta za turiste.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Srbija ima toliko lepih mesta za turiste."
+        }
+      ]
+    },
+    {
+      "id": 426,
+      "type": "message",
+      "date": "2024-03-08T08:47:00",
+      "date_unixtime": "1709887620",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Internet mi ne radi dobro danas.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Internet mi ne radi dobro danas."
+        }
+      ]
+    },
+    {
+      "id": 427,
+      "type": "message",
+      "date": "2024-03-08T09:06:00",
+      "date_unixtime": "1709888760",
+      "from": "Aleksandar Ilić",
+      "from_id": "user107",
+      "text": "Navijam za našu reprezentaciju svim srcem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Navijam za našu reprezentaciju svim srcem."
+        }
+      ]
+    },
+    {
+      "id": 428,
+      "type": "message",
+      "date": "2024-03-08T09:27:00",
+      "date_unixtime": "1709890020",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Ćevapi su uvek dobra ideja.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ćevapi su uvek dobra ideja."
+        }
+      ]
+    },
+    {
+      "id": 429,
+      "type": "message",
+      "date": "2024-03-08T09:34:00",
+      "date_unixtime": "1709890440",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Sutra predajem seminarski rad.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sutra predajem seminarski rad."
+        }
+      ],
+      "reply_to_message_id": 421
+    },
+    {
+      "id": 430,
+      "type": "message",
+      "date": "2024-03-08T09:52:00",
+      "date_unixtime": "1709891520",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Preuzeo sam novu seriju, gledam večeras.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Preuzeo sam novu seriju, gledam večeras."
+        }
+      ],
+      "reply_to_message_id": 412
+    },
+    {
+      "id": 431,
+      "type": "message",
+      "date": "2024-03-08T10:29:00",
+      "date_unixtime": "1709893740",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "Koji telefon preporučujete?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Koji telefon preporučujete?"
+        }
+      ]
+    },
+    {
+      "id": 432,
+      "type": "message",
+      "date": "2024-03-08T10:54:00",
+      "date_unixtime": "1709895240",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Naša organizacija traži nove članove koji veruju u cilj.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Naša organizacija traži nove članove koji veruju u cilj."
+        }
+      ]
+    },
+    {
+      "id": 433,
+      "type": "message",
+      "date": "2024-03-08T11:01:00",
+      "date_unixtime": "1709895660",
+      "from": "Dragan Stanković",
+      "from_id": "user109",
+      "text": "Posetio sam Studenicu, zadivljujući manastir.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Posetio sam Studenicu, zadivljujući manastir."
+        }
+      ]
+    },
+    {
+      "id": 434,
+      "type": "message",
+      "date": "2024-03-08T11:23:00",
+      "date_unixtime": "1709896980",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Proleće je konačno stiglo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proleće je konačno stiglo!"
+        }
+      ],
+      "reply_to_message_id": 418
+    },
+    {
+      "id": 435,
+      "type": "message",
+      "date": "2024-03-08T11:36:00",
+      "date_unixtime": "1709897760",
+      "from": "Ivana Lukić",
+      "from_id": "user110",
+      "text": "Napadi u Evropi pokazuju da smo na pravom putu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Napadi u Evropi pokazuju da smo na pravom putu."
+        }
+      ],
+      "reply_to_message_id": 431
+    },
+    {
+      "id": 436,
+      "type": "message",
+      "date": "2024-03-08T12:16:00",
+      "date_unixtime": "1709900160",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Završio sam projekat na vreme, konačno!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Završio sam projekat na vreme, konačno!"
+        }
+      ]
+    },
+    {
+      "id": 437,
+      "type": "message",
+      "date": "2024-03-08T12:46:00",
+      "date_unixtime": "1709901960",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Slažem se sa ovim potpuno.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Slažem se sa ovim potpuno."
+        }
+      ]
+    },
+    {
+      "id": 438,
+      "type": "message",
+      "date": "2024-03-08T13:08:00",
+      "date_unixtime": "1709903280",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Sutra predajem seminarski rad.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Sutra predajem seminarski rad."
+        }
+      ]
+    },
+    {
+      "id": 439,
+      "type": "message",
+      "date": "2024-03-08T13:14:00",
+      "date_unixtime": "1709903640",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Ima smisla, hvala na objašnjenju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ima smisla, hvala na objašnjenju."
+        }
+      ]
+    },
+    {
+      "id": 440,
+      "type": "message",
+      "date": "2024-03-08T13:54:00",
+      "date_unixtime": "1709906040",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Lekarski pregled prošao u redu, sve je uredu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Lekarski pregled prošao u redu, sve je uredu."
+        }
+      ]
+    },
+    {
+      "id": 441,
+      "type": "message",
+      "date": "2024-03-08T14:02:00",
+      "date_unixtime": "1709906520",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Mislim da bi trebalo da razgovaramo o tome.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Mislim da bi trebalo da razgovaramo o tome."
+        }
+      ]
+    },
+    {
+      "id": 442,
+      "type": "message",
+      "date": "2024-03-08T14:07:00",
+      "date_unixtime": "1709906820",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Kuvanje je postalo moj hobi.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Kuvanje je postalo moj hobi."
+        }
+      ]
+    },
+    {
+      "id": 443,
+      "type": "message",
+      "date": "2024-03-08T14:36:00",
+      "date_unixtime": "1709908560",
+      "from": "Nemanja Đorđević",
+      "from_id": "user105",
+      "text": "Vitamini su dobri u zimskom periodu.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Vitamini su dobri u zimskom periodu."
+        }
+      ],
+      "reply_to_message_id": 424
+    },
+    {
+      "id": 444,
+      "type": "message",
+      "date": "2024-03-08T15:01:00",
+      "date_unixtime": "1709910060",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Prijatelji su zlata vredni.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Prijatelji su zlata vredni."
+        }
+      ]
+    },
+    {
+      "id": 445,
+      "type": "message",
+      "date": "2024-03-08T15:35:00",
+      "date_unixtime": "1709912100",
+      "from": "Stefan Petrović",
+      "from_id": "user103",
+      "text": "Koji VPN koristite za zaštitu privatnosti?",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Koji VPN koristite za zaštitu privatnosti?"
+        }
+      ]
+    },
+    {
+      "id": 446,
+      "type": "message",
+      "date": "2024-03-08T16:04:00",
+      "date_unixtime": "1709913840",
+      "from": "Milica Stojanović",
+      "from_id": "user104",
+      "text": "Proleće je konačno stiglo!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Proleće je konačno stiglo!"
+        }
+      ]
+    },
+    {
+      "id": 447,
+      "type": "message",
+      "date": "2024-03-08T16:48:00",
+      "date_unixtime": "1709916480",
+      "from": "TamaraKović",
+      "from_id": "user108",
+      "text": "Ovo je tačno ono što sam tražio, hvala!",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ovo je tačno ono što sam tražio, hvala!"
+        }
+      ],
+      "reply_to_message_id": 431
+    },
+    {
+      "id": 448,
+      "type": "message",
+      "date": "2024-03-08T17:08:00",
+      "date_unixtime": "1709917680",
+      "from": "Ana Jovanović",
+      "from_id": "user102",
+      "text": "Ima smisla, hvala na objašnjenju.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Ima smisla, hvala na objašnjenju."
+        }
+      ]
+    },
+    {
+      "id": 449,
+      "type": "message",
+      "date": "2024-03-08T17:52:00",
+      "date_unixtime": "1709920320",
+      "from": "Jelena Popović",
+      "from_id": "user106",
+      "text": "YouTube ima odlične tutorijale za sve.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "YouTube ima odlične tutorijale za sve."
+        }
+      ]
+    },
+    {
+      "id": 450,
+      "type": "message",
+      "date": "2024-03-08T18:31:00",
+      "date_unixtime": "1709922660",
+      "from": "Marko Nikolić",
+      "from_id": "user101",
+      "text": "Čitam odličnu knjigu, preporučujem.",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "Čitam odličnu knjigu, preporučujem."
+        }
+      ]
+    }
+  ]
+}

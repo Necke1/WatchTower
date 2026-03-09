@@ -18,7 +18,7 @@ def tmp_corrections_file(tmp_path):
 
 @pytest.fixture
 def checker(tmp_corrections_file):
-    return SerbianSpellChecker(user_corrections_file=tmp_corrections_file)
+    return SerbianSpellChecker(spell_corrections_file=tmp_corrections_file)
 
 
 def test_add_and_retrieve_correction(checker):
@@ -37,10 +37,10 @@ def test_unknown_word_returns_none(checker):
 
 
 def test_correction_persisted_to_file(tmp_corrections_file):
-    c1 = SerbianSpellChecker(user_corrections_file=tmp_corrections_file)
+    c1 = SerbianSpellChecker(spell_corrections_file=tmp_corrections_file)
     c1.add_user_correction("strasn", "strašan", rating=2)
 
-    c2 = SerbianSpellChecker(user_corrections_file=tmp_corrections_file)
+    c2 = SerbianSpellChecker(spell_corrections_file=tmp_corrections_file)
     assert c2.get_user_correction("strasn") == "strašan"
 
 
