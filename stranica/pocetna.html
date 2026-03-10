@@ -30,6 +30,7 @@
       <button class="tab-btn" onclick="switchTab('demo')">Demo</button>
       <button class="tab-btn" onclick="switchTab('dictionary')">Rečnik</button>
       <button class="tab-btn" onclick="switchTab('corrections')">Korekcije</button>
+      <button class="tab-btn" onclick="switchTab('patterns')">Naučeni paterne</button>
     </div>
 
     <!-- ═══ TAB: Analyze ═══ -->
@@ -173,6 +174,24 @@
       </div>
       <div id="corrections-content">
         <div class="empty-state"><div class="empty-icon">✏️</div>Učitavanje…</div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB: Patterns ═══ -->
+    <div class="tab-panel" id="tab-patterns">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;">
+        <p style="font-size:.875rem;color:var(--muted);">
+          Naučeni kontekstualni paterne iz interaktivnog moda analize konteksta.
+          Svaki patern vezuje term za kontekstne reči i menja njegov skor pri sledećoj analizi.
+        </p>
+        <div style="display:flex;gap:.5rem;">
+          <button class="btn btn-outline" onclick="loadPatterns()">↻ Osveži</button>
+          <button class="btn btn-danger"  onclick="clearPatterns()">Obriši sve</button>
+        </div>
+      </div>
+      <div id="patterns-summary" class="hidden" style="margin-bottom:1rem;"></div>
+      <div id="patterns-content">
+        <div class="empty-state"><div class="empty-icon">🧠</div>Učitavanje…</div>
       </div>
     </div>
 

@@ -2,12 +2,13 @@ const API = '';
 
 // ── Tabs ──────────────────────────────────────────────────────────────────
 function switchTab(name) {
-  const order = ['analyze','demo','dictionary','corrections'];
+  const order = ['analyze','demo','dictionary','corrections','patterns'];
   document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', order[i] === name));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   if (name === 'dictionary')  loadDictionary();
   if (name === 'corrections') loadCorrections();
+  if (name === 'patterns')    loadPatterns();
 }
 
 // ── Option checkboxes ─────────────────────────────────────────────────────
@@ -679,6 +680,137 @@ async function clearCorrections() {
     alert(d.message || 'Korekcije obrisane.');
   } catch(e) { alert('Greška pri brisanju korekcija.'); }
   loadCorrections();
+}
+
+// ── Patterns ──────────────────────────────────────────────────────────────
+
+const _MULTIPLIER_META = {
+  ignore:    { label: 'Ignoriši',          cls: 'pat-ignore',  icon: '🚫' },
+  dampen:    { label: 'Prigušivač',        cls: 'pat-dampen',  icon: '📉' },
+  amplify:   { label: 'Pojačivač',         cls: 'pat-amplify', icon: '📈' },
+  confirmed: { label: 'Potvrđena pretnja', cls: 'pat-confirm', icon: '⚠️'  },
+  neutral:   { label: 'Neutralno',         cls: 'pat-neutral', icon: '➖' },
+};
+
+function _patMeta(mult) {
+  if (mult <= 0.1)  return _MULTIPLIER_META.ignore;
+  if (mult < 1.0)   return _MULTIPLIER_META.dampen;
+  if (mult >= 1.5)  return _MULTIPLIER_META.amplify;
+  if (mult >= 1.99) return _MULTIPLIER_META.confirmed;
+  return _MULTIPLIER_META.neutral;
+}
+
+function _confidenceBar(confidence) {
+  const pct  = Math.round(confidence * 100);
+  const col  = pct >= 80 ? 'var(--green)' : pct >= 50 ? '#f59e0b' : 'var(--muted)';
+  return `<div class="pat-conf-wrap">
+    <div class="pat-conf-bar" style="width:${pct}%;background:${col};"></div>
+    <span class="pat-conf-label">${pct}%</span>
+  </div>`;
+}
+
+async function loadPatterns() {
+  const content = document.getElementById('patterns-content');
+  const summary = document.getElementById('patterns-summary');
+  content.innerHTML = '<div class="loading"><div class="spinner"></div> Učitavanje…</div>';
+  summary.classList.add('hidden');
+  try {
+    const r = await fetch(`${API}/api/patterns`);
+    const d = await r.json();
+    const patterns = d.patterns || [];
+
+    if (patterns.length === 0) {
+      content.innerHTML = `<div class="empty-state">
+        <div class="empty-icon">🧠</div>
+        Nema naučenih paterna.<br>
+        <span style="font-size:.8rem;">Koristite interaktivni mod analize konteksta da dodate paterne.</span>
+      </div>`;
+      return;
+    }
+
+    // Summary strip
+    const counts = { ignore: 0, dampen: 0, amplify: 0, neutral: 0 };
+    for (const p of patterns) {
+      const m = p.multiplier;
+      if (m <= 0.1)       counts.ignore++;
+      else if (m < 1.0)   counts.dampen++;
+      else if (m >= 1.5)  counts.amplify++;
+      else                counts.neutral++;
+    }
+    summary.classList.remove('hidden');
+    summary.innerHTML = `
+      <div class="pat-summary-row">
+        <div class="pat-summary-chip pat-ignore-chip">
+          ${_MULTIPLIER_META.ignore.icon} ${counts.ignore} Ignoriši
+        </div>
+        <div class="pat-summary-chip pat-dampen-chip">
+          ${_MULTIPLIER_META.dampen.icon} ${counts.dampen} Prigušivač
+        </div>
+        <div class="pat-summary-chip pat-amplify-chip">
+          ${_MULTIPLIER_META.amplify.icon} ${counts.amplify} Pojačivač
+        </div>
+        <div class="pat-summary-chip pat-neutral-chip">
+          ${_MULTIPLIER_META.neutral.icon} ${counts.neutral} Neutralno
+        </div>
+        <div class="pat-summary-chip" style="margin-left:auto;color:var(--muted);background:var(--bg);border-color:var(--border);">
+          Ukupno: <strong>${patterns.length}</strong>
+        </div>
+      </div>`;
+
+    // Pattern cards grouped by term
+    const byTerm = {};
+    for (const p of patterns) {
+      if (!byTerm[p.term]) byTerm[p.term] = [];
+      byTerm[p.term].push(p);
+    }
+
+    const html = Object.entries(byTerm).map(([term, plist]) => {
+      const rows = plist.map(p => {
+        const meta = _patMeta(p.multiplier);
+        const ctx  = (p.context || []).map(w =>
+          `<span class="pat-ctx-word">${esc(w)}</span>`).join('');
+        return `<div class="pat-row">
+          <div class="pat-row-left">
+            <span class="pat-type-badge ${meta.cls}">${meta.icon} ${meta.label}</span>
+            <div class="pat-ctx-words">${ctx || '<span style="color:var(--muted);font-size:.75rem;">bez kontekstnih reči</span>'}</div>
+          </div>
+          <div class="pat-row-right">
+            <div class="pat-mult">×${p.multiplier.toFixed(2)}</div>
+            <div class="pat-eff" title="Efektivni multiplikator na osnovu broja upotreba">
+              ef. ×${p.effective_at_full.toFixed(2)}
+            </div>
+            ${_confidenceBar(p.confidence)}
+            <div class="pat-meta">
+              ${p.count}× · ${esc(p.last_used)}
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+
+      return `<div class="pat-group">
+        <div class="pat-group-header">
+          <span class="pat-term">${esc(term)}</span>
+          <span class="pat-count-badge">${plist.length} patern${plist.length === 1 ? '' : 'a'}</span>
+        </div>
+        <div class="pat-rows">${rows}</div>
+      </div>`;
+    }).join('');
+
+    content.innerHTML = `<div class="pat-list">${html}</div>`;
+
+  } catch(e) {
+    content.innerHTML = `<div class="empty-state" style="color:var(--red);">Greška pri učitavanju paterna.</div>`;
+  }
+}
+
+async function clearPatterns() {
+  if (!confirm('Obrisati sve naučene paterne konteksta? Ova akcija je nepovratna.')) return;
+  try {
+    const r = await fetch(`${API}/api/patterns`, { method: 'DELETE' });
+    const d = await r.json();
+    alert(d.message || 'Paterne obrisane.');
+  } catch(e) { alert('Greška pri brisanju paterna.'); }
+  loadPatterns();
 }
 
 // ── Health ────────────────────────────────────────────────────────────────
